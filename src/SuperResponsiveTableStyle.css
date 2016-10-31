@@ -1,0 +1,53 @@
+/* inspired by: https://css-tricks.com/responsive-data-tables/ */
+.responsiveTable {
+	width: 100%;
+}
+
+.responsiveTable td .tdBefore {
+	display: none;
+}
+
+@media screen and (max-width: 47.9375em) {
+	.responsiveTable {
+      /* Force table elements to not behave like tables anymore */
+      /* Hide table headers (but not display: none;, for accessibility) */;
+	}
+
+	.responsiveTable table, .responsiveTable thead, .responsiveTable tbody, .responsiveTable th, .responsiveTable td, .responsiveTable tr {
+		display: block;
+	}
+
+	.responsiveTable thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+		border-bottom: 2px solid #333;
+	}
+
+	.responsiveTable tbody tr {
+		border: 1px solid #eee;
+		padding-top: 1em;
+	}
+
+	.responsiveTable td.pivoted {
+        /* Behave like a "row" */
+		border: none !important;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50% !important;
+		text-align: left !important;
+	}
+
+	.responsiveTable td .tdBefore {
+        /* Now like a table header */
+		position: absolute;
+		display: block;
+        /* Top/left values mimic padding */
+		left: 1rem;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		text-align: left !important;
+		font-weight: 600;
+	}
+}
