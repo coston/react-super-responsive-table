@@ -1,6 +1,6 @@
 # Super Responsive Table
 
-The mission is to develop a better simple react table component that pivots to list view on mobile devices. 
+The mission is to develop a better simple react table component that pivots to list view on mobile devices.
 
 Task List:
 - [ ] importable table component
@@ -37,11 +37,12 @@ npm install react-super-responsive-table --save
 
 ## Usage
 
-__EXPLAIN USAGE HERE__
+To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'.. Then, copy or import the superResponsiveTableStyles.css file into your project. Write your html table with capitol letters, and voilà!
 
 ```
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import './superResponsiveTableStyles.css'
 
 ...
 <Table>
@@ -108,7 +109,7 @@ import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 
 ### Notes
 
-__ADDITIONAL USAGE NOTES__
+This project needs some work.
 
 
 ## Development (`src`, `lib` and the build process)
