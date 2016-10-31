@@ -1,6 +1,6 @@
 # Super Responsive Table
 
-The mission is to develop a better react table component.
+The mission is to develop a better simple react table component that pivots to list view on mobile devices. 
 
 Task List:
 - [ ] importable table component
