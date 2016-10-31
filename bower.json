@@ -1,0 +1,30 @@
+{
+  "name": "react-super-responsive-table",
+  "version": "0.0.1",
+  "description": "Super Responsive Table",
+  "main": "dist/react-super-responsive-table.min.js",
+  "homepage": "https://github.com/coston/react-super-responsive-table",
+  "authors": [
+    "Jason Phillips",
+    "Coston Perkins"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}

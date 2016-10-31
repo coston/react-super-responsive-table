@@ -12,7 +12,7 @@ Task List:
 
 ## Demo & Examples
 
-Live demo: [coston.github.io/react-super-responsive-table](http://coston.github.io/react-super-responsive-table/)
+Live demo: [ua-oira.github.io/react-super-responsive-table](http://ua-oira.github.io/react-super-responsive-table/)
 
 To build the examples locally, run:
 
