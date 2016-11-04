@@ -1,16 +1,16 @@
 {
   "name": "react-super-responsive-table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Super Responsive Table",
   "main": "lib/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
-  "homepage": "https://github.com/coston/react-super-responsive-table",
+  "homepage": "https://github.com/ua-oira/react-super-responsive-table",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coston/react-super-responsive-table.git"
+    "url": "https://github.com/ua-oira/react-super-responsive-table.git"
   },
   "bugs": {
-    "url": "https://github.com/coston/react-super-responsive-table/issues"
+    "url": "https://github.com/ua-oira/react-super-responsive-table/issues"
   },
   "dependencies": {
     "classnames": "^2.1.2"
