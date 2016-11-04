@@ -1,9 +1,8 @@
 # Super Responsive Table
 
-The mission is to develop a better simple react table component that pivots to list view on mobile devices.
+Let's develop a better simple react table component that pivots to list view on mobile devices.
 
 Task List:
-- [ ] importable table component
 - [ ] generic style handling for table component
 - [ ] json to table
 - [ ] csv to table
@@ -42,7 +41,7 @@ To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-
 ```
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
-import './superResponsiveTableStyles.css'
+import 'node_modules/react-super-responsive-table/src/SuperResponsiveTableStyle.css'
 
 ...
 <Table>
