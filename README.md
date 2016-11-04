@@ -41,7 +41,7 @@ To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-
 ```
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
-import 'node_modules/react-super-responsive-table/src/SuperResponsiveTableStyle.css'
+import 'react-super-responsive-table/src/SuperResponsiveTableStyle.css'
 
 ...
 <Table>
