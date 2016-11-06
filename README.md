@@ -1,6 +1,6 @@
 # Super Responsive Table
 
-Let's develop a better simple react table component that pivots to list view on mobile devices.
+Super Responsive Table converts your table data to a user-friendly list in mobile view. No more swiping, freezing rows, or ugly interfaces, just elegant key–value pairs.
 
 Task List:
 - [ ] generic style handling for table component
@@ -8,10 +8,11 @@ Task List:
 - [ ] csv to table
 
 
-
 ## Demo & Examples
 
 Live demo: [ua-oira.github.io/react-super-responsive-table](http://ua-oira.github.io/react-super-responsive-table/)
+
+![Tables Comparison Image](https://github.com/ua-oira/react-super-responsive-table/blob/master/rsrt_preview.png "Tables Comparison Image")
 
 To build the examples locally, run:
 
