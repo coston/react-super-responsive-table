@@ -12,7 +12,7 @@ Task List:
 
 Live demo: [ua-oira.github.io/react-super-responsive-table](http://ua-oira.github.io/react-super-responsive-table/)
 
-![Tables Comparison Image](https://github.com/ua-oira/react-super-responsive-table/blob/master/rsrt_preview.png "Tables Comparison Image")
+![Tables Comparison Image](https://github.com/ua-oira/react-super-responsive-table/blob/master/preview.png "Tables Comparison Image")
 
 To build the examples locally, run:
 
