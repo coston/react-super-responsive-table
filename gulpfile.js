@@ -1,5 +1,5 @@
-var gulp = require('gulp');
-var initGulpTasks = require('react-component-gulp-tasks');
+var gulp = require('gulp')
+var initGulpTasks = require('react-component-gulp-tasks')
 
 /**
  * Tasks are added by the react-component-gulp-tasks package
@@ -37,6 +37,6 @@ var taskConfig = {
 		]
 	}
 
-};
+}
 
-initGulpTasks(gulp, taskConfig);
+initGulpTasks(gulp, taskConfig)
