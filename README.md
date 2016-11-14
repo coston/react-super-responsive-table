@@ -1,4 +1,6 @@
 # Super Responsive Table
+[![npm version](https://img.shields.io/npm/v/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
+[![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
 
 Super Responsive Table converts your table data to a user-friendly list in mobile view.
 
