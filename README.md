@@ -5,10 +5,13 @@
 
 Super Responsive Table converts your table data to a user-friendly list in mobile view.
 
-Task List:
-- [ ] generic style handling for table component
-- [ ] json to table
-- [ ] csv to table
+
+## Documentation
+* [Demo & Examples](#demo--examples)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Development](#development-src-lib-and-the-build-process)
+* [License](#license)
 
 
 ## Demo & Examples
