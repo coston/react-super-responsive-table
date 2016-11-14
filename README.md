@@ -1,4 +1,5 @@
 # Super Responsive Table
+[![Build Status](https://travis-ci.org/ua-oira/react-super-responsive-table.svg)](https://travis-ci.org/ua-oira/react-super-responsive-table)
 [![npm version](https://img.shields.io/npm/v/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
 
