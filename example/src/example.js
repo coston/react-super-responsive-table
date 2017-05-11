@@ -3,274 +3,286 @@ import ReactDOM from 'react-dom'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 
 class App extends React.Component {
-	render () {
-		return (
-			<div>
-			<Table>
-						<Thead>
-							<Tr>
-								<Th>Annual Conference</Th>
-								<Th>Year</Th>
-								<Th>Location</Th>
-								<Th>President</Th>
-								<Th>Program Chair</Th>
-								<Th>Conference Theme</Th>
-							</Tr>
-						</Thead>
-						<Tbody>
-							<Tr>
-								<Td>31</Td>
-								<Td>2017</Td>
-								<Td>Alabama Community College System (ACCS)</Td>
-								<Td>Mr. Toner Evans, Samford University</Td>
-								<Td>Ms. Kelly Birchfield, Auburn University Montgomery</Td>
-								<Td />
-							</Tr>
-							<Tr>
-								<Td>30</Td>
-								<Td>2016</Td>
-								<Td>Samford University</Td>
-								<Td>Ms. Angel Jowers, University of West Alabama</Td>
-								<Td>Mr. Toner Evans, Samford University</Td>
-								<Td>Academ(ia) Awards: Best Practices/Performances in IR</Td>
-							</Tr>
-							<Tr>
-								<Td>29</Td>
-								<Td>2015</Td>
-								<Td>Eufaula (Wallace Community College Dothan)</Td>
-								<Td>Dr. Annette Cederholm, Snead State Community College</Td>
-								<Td>Ms. Angel Jowers, University of West Alabama</Td>
-								<Td>Back to the Future</Td>
-							</Tr>
-							<Tr>
-								<Td>28</Td>
-								<Td>2014</Td>
-								<Td>Huntsville (J.F. Drake State Community and Technical College)</Td>
-								<Td>Dr. Jon C. Acker, The University of Alabama</Td>
-								<Td>Dr. Annette Cederholm, Snead State Community College</Td>
-								<Td>Institutional Research…and Beyond!</Td>
-							</Tr>
-							<Tr>
-								<Td>27</Td>
-								<Td>2013</Td>
-								<Td>The University of Alabama</Td>
-								<Td>Mr. John McIntosh, Northwest-Shoals Community College</Td>
-								<Td>Dr. Jon C. Acker, The University of Alabama</Td>
-								<Td>Moving the Ball Forward</Td>
-							</Tr>
-							<Tr>
-								<Td>26</Td>
-								<Td>2012</Td>
-								<Td>Fairhope (Faulkner State Community College)</Td>
-								<Td>Mr. John McIntosh, Northwest-Shoals Community College</Td>
-								<Td>Mr. John McIntosh, Northwest-Shoals Community College</Td>
-								<Td>Institutional Research: Gaining Insight and Promoting Improvement</Td>
-							</Tr>
-							<Tr>
-								<Td>25</Td>
-								<Td>2011</Td>
-								<Td>Troy University</Td>
-								<Td>Ms. Tara George, Jefferson State Community College</Td>
-								<Td>Ms. Patricia Pratt, University of West Alabama</Td>
-								<Td>The ART of Institutional Research</Td>
-							</Tr>
-							<Tr>
-								<Td>24</Td>
-								<Td>2010</Td>
-								<Td>Florence (University of North Alabama)</Td>
-								<Td>Dr. Alicia Simmons, Jacksonville State University</Td>
-								<Td>Ms. Tara George, Jefferson State Community College</Td>
-								<Td>In Tune with IR</Td>
-							</Tr>
-							<Tr>
-								<Td>23</Td>
-								<Td>2009</Td>
-								<Td>Opelika (Auburn University)</Td>
-								<Td>Ms. Diane Sherman, Alabama Commission on Higher Education (ACHE)</Td>
-								<Td>Dr. Alicia Simmons, Jacksonville State University</Td>
-								<Td>Making Difficult Decisions in Challenging Times</Td>
-							</Tr>
-							<Tr>
-								<Td>22</Td>
-								<Td>2008</Td>
-								<Td>Jacksonville State University</Td>
-								<Td>Dr. Yardley Bailey, University of Alabama System</Td>
-								<Td>Ms. Diane Sherman, Alabama Commission on Higher Education (ACHE)</Td>
-								<Td>A Breath of Fresh AIR</Td>
-							</Tr>
-							<Tr>
-								<Td>21</Td>
-								<Td>2007</Td>
-								<Td>Alabama A&M University</Td>
-								<Td>Dr. Sarah Latham, Samford University</Td>
-								<Td>Dr. Yardley Bailey, University of Alabama System</Td>
-								<Td>Institutional Research: Is it Rocket Science?</Td>
-							</Tr>
-							<Tr>
-								<Td>20</Td>
-								<Td>2006</Td>
-								<Td>The University of Alabama</Td>
-								<Td>Dr. Cara Mia Pugh, Auburn University</Td>
-								<Td>Dr. Sarah Latham, Samford University</Td>
-								<Td>Twenty Years Later: New Challenges…New Opportunities</Td>
-							</Tr>
-							<Tr>
-								<Td>19</Td>
-								<Td>2005</Td>
-								<Td>Fairhope (Faulkner State Community College)</Td>
-								<Td>Ms. Kris Mascetti, Auburn University at Montgomery</Td>
-								<Td>Dr. Cara Mia Pugh, Auburn University</Td>
-								<Td>Off to a Good Start</Td>
-							</Tr>
-							<Tr>
-								<Td>18</Td>
-								<Td>2004</Td>
-								<Td>University of Alabama at Birmingham</Td>
-								<Td>Mr. Dan Tennimon, Troy State University Montgomery</Td>
-								<Td>Ms. Kris Mascetti, Auburn University at Montgomery</Td>
-								<Td>Research-Based Planning and Evaluation</Td>
-							</Tr>
-							<Tr>
-								<Td>17</Td>
-								<Td>2003</Td>
-								<Td>Troy State University Montgomery</Td>
-								<Td>Dr. Jim Eck, Samford University</Td>
-								<Td>Mr. Dan Tennimon, Troy State University Montgomery</Td>
-								<Td>Non-Traditional: The New Majority</Td>
-							</Tr>
-							<Tr>
-								<Td>16</Td>
-								<Td>2002</Td>
-								<Td>Samford University</Td>
-								<Td>Dr. Priscilla Holland, University of North Alabama</Td>
-								<Td>Dr. Jim Eck, Samford University</Td>
-								<Td>Alike or Different?: Product Differentiation and the Institutional Researcher</Td>
-							</Tr>
-							<Tr>
-								<Td>15</Td>
-								<Td>2001</Td>
-								<Td>University of North Alabama</Td>
-								<Td>Ms. Mimi McDaniel Johnson, Alabama State University</Td>
-								<Td>Dr. Priscilla Holland, University of North Alabama</Td>
-								<Td>Data Driven Decisions</Td>
-							</Tr>
-							<Tr>
-								<Td>14</Td>
-								<Td>2000</Td>
-								<Td>Gulf Shores (Faulkner State Community College and Bishop State Community College)</Td>
-								<Td>Ms. Teresa Hall, University of Alabama at Birmingham</Td>
-								<Td>Ms. Mimi McDaniel Johnson, Alabama State University</Td>
-								<Td>IR: Thinking Outside of the Box</Td>
-							</Tr>
-							<Tr>
-								<Td>13</Td>
-								<Td>1999</Td>
-								<Td>Auburn University</Td>
-								<Td>Dr. Anna T. Waggener, University of South Alabama</Td>
-								<Td>Ms. Teresa Hall, University of Alabama at Birmingham</Td>
-								<Td>Ready or Not, It's Here: IR Meets Y2K</Td>
-							</Tr>
-							<Tr>
-								<Td>12</Td>
-								<Td>1998</Td>
-								<Td>University of Alabama in Huntsville</Td>
-								<Td>Dr. Myrtes Dunn Green, Stillman College</Td>
-								<Td>Dr. Anna T. Waggener, University of South Alabama</Td>
-								<Td>Challenges and Responses: Anticipating the Twenty-First Century</Td>
-							</Tr>
-							<Tr>
-								<Td>11</Td>
-								<Td>1997</Td>
-								<Td>The University of Alabama</Td>
-								<Td>Dr. Julia S. Rogers, University of Montevallo</Td>
-								<Td>Dr. Myrtes Dunn Green, Stillman College</Td>
-								<Td>Public Perceptions and Misperceptions of Accountability: The Challenges for Institutional Research</Td>
-							</Tr>
-							<Tr>
-								<Td>10</Td>
-								<Td>1996</Td>
-								<Td>Samford University</Td>
-								<Td>Mr. Sam Lowther, Auburn University</Td>
-								<Td>Dr. Julia S. Rogers, University of Montevallo</Td>
-								<Td>Indicators, Outcomes, and Effectiveness: Quantifying the Past and Preparing for the Future</Td>
-							</Tr>
-							<Tr>
-								<Td>9</Td>
-								<Td>1995</Td>
-								<Td>Troy State University Dothan</Td>
-								<Td>Dr. Judy Miller, Enterprise State Junior College</Td>
-								<Td>Mr. Sam Lowther, Auburn University</Td>
-								<Td>The Changing Face of Institutional Research: New Responsibilities and New Techniques</Td>
-							</Tr>
-							<Tr>
-								<Td>8</Td>
-								<Td>1994</Td>
-								<Td>University of Alabama in Huntsville</Td>
-								<Td>Dr. Harriott D. Calhoun, Jefferson State Community College</Td>
-								<Td>Dr. Judy Miller, Enterprise State Junior College</Td>
-								<Td>Technology and Ethics: Implications for Institutional Research</Td>
-							</Tr>
-							<Tr>
-								<Td>7</Td>
-								<Td>1993</Td>
-								<Td>University of Montevallo</Td>
-								<Td>Dr. Albert M. Searway, Jacksonville State University</Td>
-								<Td>Dr. Harriott D. Calhoun, Jefferson State Community College</Td>
-								<Td>Quality and Effectiveness - Issues of the Decade</Td>
-							</Tr>
-							<Tr>
-								<Td>6</Td>
-								<Td>1992</Td>
-								<Td>University of South Alabama</Td>
-								<Td>Mr. Don E. Dailey, University of Alabama at Birmingham</Td>
-								<Td>Dr. Albert M. Searway, Jacksonville State University</Td>
-								<Td>Effectiveness in Higher Education</Td>
-							</Tr>
-							<Tr>
-								<Td>5</Td>
-								<Td>1991</Td>
-								<Td>The University of Alabama</Td>
-								<Td>Dr. Kitty C. Collier, Alabama Commission on Higher Education (ACHE)</Td>
-								<Td>Mr. Don E. Dailey, University of Alabama at Birmingham</Td>
-								<Td>Putting It All Together: Institutional Research and Planning in the 1990's</Td>
-							</Tr>
-							<Tr>
-								<Td>4</Td>
-								<Td>1990</Td>
-								<Td>Auburn University</Td>
-								<Td>Ms. Debbie Dailey, University of Alabama at Birmingham</Td>
-								<Td>Dr. Kitty C. Collier, Alabama Commission on Higher Education (ACHE)</Td>
-								<Td>From Statistics to Strategy: Making the Most of Institutional Research</Td>
-							</Tr>
-							<Tr>
-								<Td>3</Td>
-								<Td>1989</Td>
-								<Td>University of Alabama at Birmingham</Td>
-								<Td>Dr. Thomas McAlpine, Alabama A&M University</Td>
-								<Td>Ms. Debbie Dailey, University of Alabama at Birmingham</Td>
-								<Td>Developing the Institutional Research Office: A Nuts and Bolts Approach</Td>
-							</Tr>
-							<Tr>
-								<Td>2</Td>
-								<Td>1988</Td>
-								<Td>Alabama State University</Td>
-								<Td>Mr. Alfred H. Yeager, University of South Alabama</Td>
-								<Td>Dr. Thomas McAlpine, Alabama A&M University</Td>
-								<Td>Building and Expanding Institutional Research</Td>
-							</Tr>
-							<Tr>
-								<Td>1</Td>
-								<Td>1987</Td>
-								<Td>Birmingham (Organizational Meeting)</Td>
-								<Td>Ms. Kay Staub, The University of Alabama (Convener)</Td>
-								<Td>Dr. Gerald S. Leischuck, Auburn University</Td>
-								<Td>Strategic Planning and Outcomes Assessment</Td>
-							</Tr>
-						</Tbody>
-					</Table>
-			</div>
-		)
-	}
+  render () {
+    return (
+      <div>
+        <Table>
+          <Thead>
+            <Tr>
+              <Th>Annual Conference</Th>
+              <Th>Year</Th>
+              <Th>Location</Th>
+              <Th>President</Th>
+              <Th>Program Chair</Th>
+              <Th>Conference Theme</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {data.map((datum, index) => (
+              <Tr key={index}>
+                <Td key={index}>{datum.Conference}</Td>
+								<Td key={index}>{datum.Year}</Td>
+								<Td key={index}>{datum.Location}</Td>
+								<Td key={index}>{datum.President}</Td>
+								<Td key={index}>{datum.Chair}</Td>
+								<Td key={index}>{datum.Theme}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </div>
+    )
+  }
 }
 
+const data = [{
+  'Conference': 31,
+  'Year': 2017,
+  'Location': 'Alabama Community College System (ACCS)',
+  'President': 'Mr. Toner Evans, Samford University',
+  'Chair': 'Ms. Kelly Birchfield, Auburn University Montgomery',
+  'Theme': 'COMMUNITY!'
+},
+{
+  'Conference': 30,
+  'Year': 2016,
+  'Location': 'Samford University',
+  'President': 'Ms. Angel Jowers, University of West Alabama',
+  'Chair': 'Mr. Toner Evans, Samford University',
+  'Theme': 'Academ(ia) Awards: Best Practices/Performances in IR'
+},
+{
+  'Conference': 29,
+  'Year': 2015,
+  'Location': 'Eufaula (Wallace Community College Dothan)',
+  'President': 'Dr. Annette Cederholm, Snead State Community College',
+  'Chair': 'Ms. Angel Jowers, University of West Alabama',
+  'Theme': 'Back to the Future'
+},
+{
+  'Conference': 28,
+  'Year': 2014,
+  'Location': 'Huntsville (J.F. Drake State Community and Technical College)',
+  'President': 'Dr. Jon C. Acker, The University of Alabama',
+  'Chair': 'Dr. Annette Cederholm, Snead State Community College',
+  'Theme': 'Institutional Research…and Beyond!'
+},
+{
+  'Conference': 27,
+  'Year': 2013,
+  'Location': 'The University of Alabama',
+  'President': 'Mr. John McIntosh, Northwest-Shoals Community College',
+  'Chair': 'Dr. Jon C. Acker, The University of Alabama',
+  'Theme': 'Moving the Ball Forward'
+},
+{
+  'Conference': 26,
+  'Year': 2012,
+  'Location': 'Fairhope (Faulkner State Community College)',
+  'President': 'Mr. John McIntosh, Northwest-Shoals Community College',
+  'Chair': 'Mr. John McIntosh, Northwest-Shoals Community College',
+  'Theme': 'Institutional Research: Gaining Insight and Promoting Improvement'
+},
+{
+  'Conference': 25,
+  'Year': 2011,
+  'Location': 'Troy University',
+  'President': 'Ms. Tara George, Jefferson State Community College',
+  'Chair': 'Ms. Patricia Pratt, University of West Alabama',
+  'Theme': 'The ART of Institutional Research'
+},
+{
+  'Conference': 24,
+  'Year': 2010,
+  'Location': 'Florence (University of North Alabama)',
+  'President': 'Dr. Alicia Simmons, Jacksonville State University',
+  'Chair': 'Ms. Tara George, Jefferson State Community College',
+  'Theme': 'In Tune with IR'
+},
+{
+  'Conference': 23,
+  'Year': 2009,
+  'Location': 'Opelika (Auburn University)',
+  'President': 'Ms. Diane Sherman, Alabama Commission on Higher Education (ACHE)',
+  'Chair': 'Dr. Alicia Simmons, Jacksonville State University',
+  'Theme': 'Making Difficult Decisions in Challenging Times'
+},
+{
+  'Conference': 22,
+  'Year': 2008,
+  'Location': 'Jacksonville State University',
+  'President': 'Dr. Yardley Bailey, University of Alabama System',
+  'Chair': 'Ms. Diane Sherman, Alabama Commission on Higher Education (ACHE)',
+  'Theme': 'A Breath of Fresh AIR'
+},
+{
+  'Conference': 21,
+  'Year': 2007,
+  'Location': 'Alabama A&M University',
+  'President': 'Dr. Sarah Latham, Samford University',
+  'Chair': 'Dr. Yardley Bailey, University of Alabama System',
+  'Theme': 'Institutional Research: Is it Rocket Science?'
+},
+{
+  'Conference': 20,
+  'Year': 2006,
+  'Location': 'The University of Alabama',
+  'President': 'Dr. Cara Mia Pugh, Auburn University',
+  'Chair': 'Dr. Sarah Latham, Samford University',
+  'Theme': 'Twenty Years Later: New Challenges…New Opportunities'
+},
+{
+  'Conference': 19,
+  'Year': 2005,
+  'Location': 'Fairhope (Faulkner State Community College)',
+  'President': 'Ms. Kris Mascetti, Auburn University at Montgomery',
+  'Chair': 'Dr. Cara Mia Pugh, Auburn University',
+  'Theme': 'Off to a Good Start'
+},
+{
+  'Conference': 18,
+  'Year': 2004,
+  'Location': 'University of Alabama at Birmingham',
+  'President': 'Mr. Dan Tennimon, Troy State University Montgomery',
+  'Chair': 'Ms. Kris Mascetti, Auburn University at Montgomery',
+  'Theme': 'Research-Based Planning and Evaluation'
+},
+{
+  'Conference': 17,
+  'Year': 2003,
+  'Location': 'Troy State University Montgomery',
+  'President': 'Dr. Jim Eck, Samford University',
+  'Chair': 'Mr. Dan Tennimon, Troy State University Montgomery',
+  'Theme': 'Non-Traditional: The New Majority'
+},
+{
+  'Conference': 16,
+  'Year': 2002,
+  'Location': 'Samford University',
+  'President': 'Dr. Priscilla Holland, University of North Alabama',
+  'Chair': 'Dr. Jim Eck, Samford University',
+  'Theme': 'Alike or Different?: Product Differentiation and the Institutional Researcher'
+},
+{
+  'Conference': 15,
+  'Year': 2001,
+  'Location': 'University of North Alabama',
+  'President': 'Ms. Mimi McDaniel Johnson, Alabama State University',
+  'Chair': 'Dr. Priscilla Holland, University of North Alabama',
+  'Theme': 'Data Driven Decisions'
+},
+{
+  'Conference': 14,
+  'Year': 2000,
+  'Location': 'Gulf Shores (Faulkner State Community College and Bishop State Community College)',
+  'President': 'Ms. Teresa Hall, University of Alabama at Birmingham',
+  'Chair': 'Ms. Mimi McDaniel Johnson, Alabama State University',
+  'Theme': 'IR: Thinking Outside of the Box'
+},
+{
+  'Conference': 13,
+  'Year': 1999,
+  'Location': 'Auburn University',
+  'President': 'Dr. Anna T. Waggener, University of South Alabama',
+  'Chair': 'Ms. Teresa Hall, University of Alabama at Birmingham',
+  'Theme': "Ready or Not, It's Here: IR Meets Y2K"
+},
+{
+  'Conference': 12,
+  'Year': 1998,
+  'Location': 'University of Alabama in Huntsville',
+  'President': 'Dr. Myrtes Dunn Green, Stillman College',
+  'Chair': 'Dr. Anna T. Waggener, University of South Alabama',
+  'Theme': 'Challenges and Responses: Anticipating the Twenty-First Century'
+},
+{
+  'Conference': 11,
+  'Year': 1997,
+  'Location': 'The University of Alabama',
+  'President': 'Dr. Julia S. Rogers, University of Montevallo',
+  'Chair': 'Dr. Myrtes Dunn Green, Stillman College',
+  'Theme': 'Public Perceptions and Misperceptions of Accountability: The Challenges for Institutional Research'
+},
+{
+  'Conference': 10,
+  'Year': 1996,
+  'Location': 'Samford University',
+  'President': 'Mr. Sam Lowther, Auburn University',
+  'Chair': 'Dr. Julia S. Rogers, University of Montevallo',
+  'Theme': 'Indicators, Outcomes, and Effectiveness: Quantifying the Past and Preparing for the Future'
+},
+{
+  'Conference': 9,
+  'Year': 1995,
+  'Location': 'Troy State University Dothan',
+  'President': 'Dr. Judy Miller, Enterprise State Junior College',
+  'Chair': 'Mr. Sam Lowther, Auburn University',
+  'Theme': 'The Changing Face of Institutional Research: New Responsibilities and New Techniques'
+},
+{
+  'Conference': 8,
+  'Year': 1994,
+  'Location': 'University of Alabama in Huntsville',
+  'President': 'Dr. Harriott D. Calhoun, Jefferson State Community College',
+  'Chair': 'Dr. Judy Miller, Enterprise State Junior College',
+  'Theme': 'Technology and Ethics: Implications for Institutional Research'
+},
+{
+  'Conference': 7,
+  'Year': 1993,
+  'Location': 'University of Montevallo',
+  'President': 'Dr. Albert M. Searway, Jacksonville State University',
+  'Chair': 'Dr. Harriott D. Calhoun, Jefferson State Community College',
+  'Theme': 'Quality and Effectiveness - Issues of the Decade'
+},
+{
+  'Conference': 6,
+  'Year': 1992,
+  'Location': 'University of South Alabama',
+  'President': 'Mr. Don E. Dailey, University of Alabama at Birmingham',
+  'Chair': 'Dr. Albert M. Searway, Jacksonville State University',
+  'Theme': 'Effectiveness in Higher Education'
+},
+{
+  'Conference': 5,
+  'Year': 1991,
+  'Location': 'The University of Alabama',
+  'President': 'Dr. Kitty C. Collier, Alabama Commission on Higher Education (ACHE)',
+  'Chair': 'Mr. Don E. Dailey, University of Alabama at Birmingham',
+  'Theme': "Putting It All Together: Institutional Research and Planning in the 1990's"
+},
+{
+  'Conference': 4,
+  'Year': 1990,
+  'Location': 'Auburn University',
+  'President': 'Ms. Debbie Dailey, University of Alabama at Birmingham',
+  'Chair': 'Dr. Kitty C. Collier, Alabama Commission on Higher Education (ACHE)',
+  'Theme': 'From Statistics to Strategy: Making the Most of Institutional Research'
+},
+{
+  'Conference': 3,
+  'Year': 1989,
+  'Location': 'University of Alabama at Birmingham',
+  'President': 'Dr. Thomas McAlpine, Alabama A&M University',
+  'Chair': 'Ms. Debbie Dailey, University of Alabama at Birmingham',
+  'Theme': 'Developing the Institutional Research Office: A Nuts and Bolts Approach'
+},
+{
+  'Conference': 2,
+  'Year': 1988,
+  'Location': 'Alabama State University',
+  'President': 'Mr. Alfred H. Yeager, University of South Alabama',
+  'Chair': 'Dr. Thomas McAlpine, Alabama A&M University',
+  'Theme': 'Building and Expanding Institutional Research'
+},
+{
+  'Conference': 1,
+  'Year': 1987,
+  'Location': 'Birmingham (Organizational Meeting)',
+  'President': 'Ms. Kay Staub, The University of Alabama (Convener)',
+  'Chair': 'Dr. Gerald S. Leischuck, Auburn University',
+  'Theme': 'Strategic Planning and Outcomes Assessment'
+}]
+
 ReactDOM.render(<App />, document.getElementById('app'))
+

@@ -6,14 +6,14 @@ const provideContext = (contextKey, contextType) => (
       [contextKey]: contextType
     },
 
-    getChildContext() {
+    getChildContext () {
       const { children, ...props } = this.props
       return {
         [contextKey]: props
       }
     },
 
-    render() {
+    render () {
       return React.Children.only(this.props.children)
     }
   })

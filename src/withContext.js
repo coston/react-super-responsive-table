@@ -1,19 +1,18 @@
 import React from 'react'
 
-export default (contextKey, contextType) => (
+export default (contextKey, contextType) =>
   (Component) => (
     React.createClass({
       contextTypes: {
         [contextKey]: contextType
       },
 
-      render() {
+      render () {
         const props = {
           ...this.props,
           [contextKey]: this.context[contextKey]
         }
-        return <Component {...props}/>
+        return <Component {...props} />
       }
     })
   )
-)
