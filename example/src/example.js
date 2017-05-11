@@ -20,12 +20,12 @@ class App extends React.Component {
           <Tbody>
             {data.map((datum, index) => (
               <Tr key={index}>
-                <Td key={index}>{datum.Conference}</Td>
-								<Td key={index}>{datum.Year}</Td>
-								<Td key={index}>{datum.Location}</Td>
-								<Td key={index}>{datum.President}</Td>
-								<Td key={index}>{datum.Chair}</Td>
-								<Td key={index}>{datum.Theme}</Td>
+								<Td>{datum.Conference}</Td>
+								<Td>{datum.Year}</Td>
+								<Td>{datum.Location}</Td>
+								<Td>{datum.President}</Td>
+								<Td>{datum.Chair}</Td>
+								<Td>{datum.Theme}</Td>
               </Tr>
             ))}
           </Tbody>
