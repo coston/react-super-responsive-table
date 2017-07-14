@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import provideContext from './provideContext'
 import withContext from './withContext'
 
-const contextShape = React.PropTypes.shape({headers: React.PropTypes.object})
+const contextShape = PropTypes.shape({headers: PropTypes.object})
 const TableContext = provideContext('responsiveTable', contextShape)
 const withTableContext = withContext('responsiveTable', contextShape)
 const pick = (obj, props) => Array.prototype.reduce.call(
