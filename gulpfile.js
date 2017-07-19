@@ -16,6 +16,7 @@ var taskConfig = {
 		name: 'SuperResponsiveTable',
 		dependencies: [
 			'classnames',
+			'prop-types',
 			'react',
 			'react-dom'
 		],
