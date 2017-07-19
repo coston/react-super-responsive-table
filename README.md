@@ -11,6 +11,7 @@ Super Responsive Table converts your table data to a user-friendly list in mobil
 * [Installation](#installation)
 * [Usage](#usage)
 * [Development](#development-src-lib-and-the-build-process)
+* [Contributors](#contributors)
 * [License](#license)
 
 
@@ -107,14 +108,6 @@ import 'react-super-responsive-table/src/SuperResponsiveTableStyle.css'
 ...
 
 ```
-<!--
-### Properties
-
-* __DOCUMENT PROPERTIES HERE__
-
-### Notes
-
-This project needs some work. -->
 
 
 ## Development (`src`, `lib` and the build process)
@@ -122,6 +115,15 @@ This project needs some work. -->
 **NOTE:** The source code for the component is in `src`. A transpiled CommonJS version (generated with Babel) is available in `lib` for use with node.js, browserify and webpack. A UMD bundle is also built to `dist`, which can be included without the need for any build system.
 
 To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `lib`, run `npm run watch` (this is useful if you are working with `npm link`).
+
+## Contributors
+Super Responsive Tables are made possible by these great community members:
+- [jasonphillips](https://github.com/jasonphillips)
+- [coston](https://github.com/coston)
+- [jorrit](https://github.com/jorrit)
+
+## Contributing
+Please help turn the tables on unresponsive data! Submit any issues and/or make a pull request!
 
 ## License
 
