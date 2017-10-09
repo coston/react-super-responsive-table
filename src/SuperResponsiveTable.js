@@ -73,8 +73,9 @@ class TdInner extends React.Component {
     const {responsiveTable: {
 				headers
 			}, children, columnKey} = this.props
+		const classes = (this.props.className || '') + ' pivoted'
     return (
-      <td className='pivoted'>
+      <td className={classes}>
         <div className='tdBefore'>{headers[columnKey]}</div>
         {(children !== undefined)
 					? children
