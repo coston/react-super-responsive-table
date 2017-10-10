@@ -121,6 +121,7 @@ Super Responsive Tables are made possible by these great community members:
 - [jasonphillips](https://github.com/jasonphillips)
 - [coston](https://github.com/coston)
 - [jorrit](https://github.com/jorrit)
+- [Droow](https://github.com/droow)
 
 ## Contributing
 Please help turn the tables on unresponsive data! Submit any issues and/or make a pull request!
