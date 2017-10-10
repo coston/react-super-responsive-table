@@ -14,7 +14,7 @@ const pick = (obj, props) => Array.prototype.reduce.call(
       : built
   ), {}
 )
-const allowed = (props) => pick(props, ['className', 'id', 'style', 'children'])
+const allowed = (props) => pick(props, ['className', 'id', 'style', 'children', 'onClick'])
 
 export class Table extends React.Component {
   constructor (props) {
