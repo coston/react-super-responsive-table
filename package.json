@@ -17,9 +17,14 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "build": "babel src -o dist/super-responsive-table.js && cp src/SuperResponsiveTableStyle.css dist",
+    "build": "babel -d dist src --copy-files",
     "clean": "rm -rf dist && mkdir dist",
     "watch": "babel -w -d dist src --copy-files",
+    "build-example": "browserify -t browserify-css ./example/example.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "watch-example": "watchify -t browserify-css ./example/example.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
+    "serve-example": "http-server ./example/ -p 8080",
+    "start": "npm run build; npm run build-example; npm run serve-example",
+    "deploy-example": "npm run build-example; gh-pages -d ./example",
     "test": "no tests yet!",
     "preversion": "npm run clean && npm run build",
     "postpublish": "git push && git push --tag"
@@ -30,13 +35,25 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "browserify-css": "^0.12.0",
     "chai": "^4.0.2",
     "core-js": "^2.4.1",
+    "gh-pages": "^1.0.0",
+    "http-server": "^0.10.0",
     "mocha": "^3.4.2",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-addons-test-utils": "^15.6.0",
-    "react-shallow-output": "^0.2.0"
+    "react-dom": "^16.0.0",
+    "react-shallow-output": "^0.2.0",
+    "watchify": "^3.9.0"
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
   },
   "keywords": [
     "react",
