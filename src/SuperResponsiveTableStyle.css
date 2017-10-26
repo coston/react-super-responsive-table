@@ -7,11 +7,11 @@
 	display: none;
 }
 
-@media screen and (max-width: 47.9375em) {
+@media screen and (max-width: 40em) {
 	.responsiveTable {
-      /* Force table elements to not behave like tables anymore */
-      /* Hide table headers (but not display: none;, for accessibility) */
-	}
+		/* Force table elements to not behave like tables anymore */
+		/* Hide table headers (but not display: none;, for accessibility) */
+	  }
 
 	.responsiveTable table, .responsiveTable thead, .responsiveTable tbody, .responsiveTable th, .responsiveTable td, .responsiveTable tr {
 		display: block;
@@ -25,14 +25,14 @@
 	}
 
 	.responsiveTable tbody tr {
-		border: 1px solid #eee;
-		padding-top: 1em;
+		border: 1px solid #000;
+		padding: .25em;
 	}
 
 	.responsiveTable td.pivoted {
         /* Behave like a "row" */
 		border: none !important;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid #000;
 		position: relative;
 		padding-left: 50% !important;
 		text-align: left !important;
