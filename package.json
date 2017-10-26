@@ -1,8 +1,8 @@
 {
   "name": "react-super-responsive-table",
-  "version": "0.3.1",
-  "description": "Super Responsive Table",
-  "main": "lib/SuperResponsiveTable.js",
+  "version": "4.0.0",
+  "description": "React Super Responsive Table",
+  "main": "dist/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
   "homepage": "https://github.com/ua-oira/react-super-responsive-table",
   "repository": {
@@ -12,39 +12,38 @@
   "bugs": {
     "url": "https://github.com/ua-oira/react-super-responsive-table/issues"
   },
-  "dependencies": {
-    "classnames": "^2.2.5"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.0.1",
-    "eslint": "^4.8.0",
-    "eslint-plugin-react": "^7.4.0",
-    "gulp": "^3.9.1",
-    "prop-types": "*",
-    "react": "^16.0.0",
-    "react-component-gulp-tasks": "^0.7.7",
-    "react-dom": "^16.0.0"
-  },
-  "peerDependencies": {
-    "prop-types": "*",
-    "react": "^16.0.0"
-  },
-  "browserify-shim": {
-    "prop-types": "global:PropTypes",
-    "react": "global:React"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
   },
   "scripts": {
-    "build": "gulp clean && NODE_ENV=production gulp build",
-    "examples": "gulp dev:server",
-    "lint": "eslint ./; true",
-    "publish:site": "NODE_ENV=production gulp publish:examples",
-    "release": "NODE_ENV=production gulp release",
-    "start": "gulp dev",
-    "test": "echo \"no tests yet\" && exit 0",
-    "watch": "gulp watch:lib"
+    "build": "babel src -o dist/super-responsive-table.js && cp src/SuperResponsiveTableStyle.css dist",
+    "clean": "rm -rf dist && mkdir dist",
+    "watch": "babel -w -d dist src --copy-files",
+    "test": "no tests yet!",
+    "preversion": "npm run clean && npm run build",
+    "postpublish": "git push && git push --tag"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.0.2",
+    "core-js": "^2.4.1",
+    "mocha": "^3.4.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-addons-test-utils": "^15.6.0",
+    "react-shallow-output": "^0.2.0"
   },
   "keywords": [
     "react",
-    "react-component"
-  ]
+    "react-component",
+    "table"
+  ],
+  "directories": {
+    "test": "test"
+  }
 }

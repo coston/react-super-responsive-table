@@ -8,10 +8,9 @@
 }
 
 @media screen and (max-width: 47.9375em) {
-	.responsiveTable {
+	/* .responsiveTable {
       /* Force table elements to not behave like tables anymore */
       /* Hide table headers (but not display: none;, for accessibility) */
-	}
 
 	.responsiveTable table, .responsiveTable thead, .responsiveTable tbody, .responsiveTable th, .responsiveTable td, .responsiveTable tr {
 		display: block;
