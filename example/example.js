@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import { Table, Thead, Tbody, Tr, Th, Td } from '../dist/SuperResponsiveTable.js'
+import '../dist/SuperResponsiveTableStyle.css'
 
 class App extends React.Component {
   render () {
@@ -9,7 +10,7 @@ class App extends React.Component {
         <Table>
           <Thead>
             <Tr>
-              <Th>Annual Conference</Th>
+              <Th>Conference</Th>
               <Th>Year</Th>
               <Th>Location</Th>
               <Th>President</Th>
