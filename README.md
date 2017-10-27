@@ -53,7 +53,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 ...
 <Table>
   <Thead>
-		<Tr>
+  	<Tr>
 			<Th>Annual Conference</Th>
 			<Th>Year</Th>
 			<Th>Location</Th>
