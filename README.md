@@ -111,12 +111,11 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
 ```
 
+## Development (`src`, `dist` and the build process)
 
-## Development (`src`, `lib` and the build process)
+**NOTE:** The source code for the component is in `src`. A transpiled version (generated with Babel) is available in `dist`, which can be included without the need for any build system.
 
-**NOTE:** The source code for the component is in `src`. A transpiled CommonJS version (generated with Babel) is available in `lib` for use with node.js, browserify and webpack. A UMD bundle is also built to `dist`, which can be included without the need for any build system.
-
-To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `lib`, run `npm run watch` (this is useful if you are working with `npm link`).
+To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `dist`, run `npm run watch` (this is useful if you are working with `npm link`).
 
 ## Contributors
 Super Responsive Tables are made possible by these great community members:
