@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
@@ -37,7 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
-    "browserify-css": "^0.13.0",
+    "browserify-css": "^0.13.1",
     "core-js": "^2.4.1",
     "gh-pages": "^1.0.0",
     "http-server": "^0.10.0",
