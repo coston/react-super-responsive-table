@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
@@ -46,6 +46,8 @@
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-live": "1.7.1",
+    "styled-components": "2.2.3",
     "watchify": "^3.9.0"
   },
   "browserify-css": {
