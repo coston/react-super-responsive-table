@@ -8,16 +8,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Td = exports.Tbody = exports.Th = exports.Tr = exports.Thead = exports.Table = undefined;
 
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
 var _createClass = function () {
   function defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -27,6 +17,16 @@ var _createClass = function () {
     if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
   };
 }();
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
 
 var _react = require('react');
 
@@ -77,16 +77,16 @@ function _defineProperty(obj, key, value) {
 var contextShape = _propTypes2.default.shape({ headers: _propTypes2.default.object });
 var TableContext = (0, _provideContext2.default)('responsiveTable', contextShape);
 var withTableContext = (0, _withContext2.default)('responsiveTable', contextShape);
-var pick = function pick(obj, props) {
-  return Array.prototype.reduce.call(props, function (built, prop) {
-    return Object.prototype.hasOwnProperty.call(obj, prop) ? Object.assign({}, built, _defineProperty({}, prop, obj[prop])) : built;
+var omit = function omit(obj, omitProps) {
+  return Object.keys(obj).filter(function (key) {
+    return omitProps.indexOf(key) === -1;
+  }).reduce(function (returnObj, key) {
+    return _extends({}, returnObj, _defineProperty({}, key, obj[key]));
   }, {});
 };
+
 var allowed = function allowed(props) {
-  return pick(props, ['className', 'id', 'style', 'children', 'onClick', 'onMouseOver', 'title']);
-};
-var dynamicAllowed = function dynamicAllowed(props, allowed) {
-  return pick(props, allowed);
+  return omit(props, ['inHeader', 'columnKey', 'responsiveTable']);
 };
 
 var Table = exports.Table = function (_React$Component) {
@@ -132,7 +132,7 @@ var TrInner = function (_React$Component2) {
 
     if (headers && props.inHeader) {
       props.children.map(function (child, i) {
-        headers[i] = child.props;
+        headers[i] = child.props.children;
       });
     }
     return _this2;
@@ -184,8 +184,7 @@ var TdInner = function (_React$Component3) {
           columnKey = _props.columnKey;
 
       var classes = (this.props.className || '') + ' pivoted';
-      var thClasses = (headers[columnKey].className || '') + ' tdBefore';
-      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', _extends({ className: thClasses }, dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style', 'title'])), headers[columnKey].children), _react2.default.createElement('div', dynamicAllowed(this.props, ['onClick', 'id', 'style']), children !== undefined && children || '&nbsp'));
+      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', { className: 'tdBefore' }, headers[columnKey]), children !== undefined ? children : _react2.default.createElement('div', null, '\xA0'));
     }
   }]);
 
