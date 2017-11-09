@@ -49,7 +49,12 @@ label {
 	margin: 1em 0;
 	text-transform: uppercase;
 }
-
+table {
+	max-width: 800;
+}
+th {
+	text-align: left;
+}
 .hint {
 	margin: 15px 0;
 	font-style: italic;
