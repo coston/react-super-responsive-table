@@ -83,7 +83,7 @@ var pick = function pick(obj, props) {
   }, {});
 };
 var allowed = function allowed(props) {
-  return pick(props, ['className', 'id', 'style', 'children', 'onClick', 'colSpan']);
+  return pick(props, ['className', 'id', 'style', 'children', 'onClick', 'onMouseOver', 'title']);
 };
 var dynamicAllowed = function dynamicAllowed(props, allowed) {
   return pick(props, allowed);
@@ -185,7 +185,7 @@ var TdInner = function (_React$Component3) {
 
       var classes = (this.props.className || '') + ' pivoted';
       var thClasses = (headers[columnKey].className || '') + ' tdBefore';
-      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', _extends({ className: thClasses }, dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style'])), headers[columnKey].children), _react2.default.createElement('div', dynamicAllowed(this.props, ['onClick', 'id', 'style']), children !== undefined && children || '&nbsp'));
+      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', _extends({ className: thClasses }, dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style', 'title'])), headers[columnKey].children), _react2.default.createElement('div', dynamicAllowed(this.props, ['onClick', 'id', 'style']), children !== undefined && children || '&nbsp'));
     }
   }]);
 
@@ -436,7 +436,7 @@ var App = function (_Component) {
               null,
               _react2.default.createElement(
                 _SuperResponsiveTable.Th,
-                { className: 'SUPERHT' },
+                null,
                 'Conference'
               ),
               _react2.default.createElement(
@@ -480,8 +480,18 @@ var App = function (_Component) {
                 ),
                 _react2.default.createElement(
                   _SuperResponsiveTable.Td,
-                  { colSpan: 3 },
+                  null,
                   datum.Year
+                ),
+                _react2.default.createElement(
+                  _SuperResponsiveTable.Td,
+                  null,
+                  datum.Location
+                ),
+                _react2.default.createElement(
+                  _SuperResponsiveTable.Td,
+                  null,
+                  datum.President
                 ),
                 _react2.default.createElement(
                   _SuperResponsiveTable.Td,

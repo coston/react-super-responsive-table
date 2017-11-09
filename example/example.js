@@ -10,7 +10,7 @@ class App extends Component {
         <Table>
           <Thead>
             <Tr>
-              <Th className="SUPERHT">Conference</Th>
+              <Th>Conference</Th>
               <Th>Year</Th>
               <Th>Location</Th>
               <Th>President</Th>
