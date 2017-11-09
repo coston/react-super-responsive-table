@@ -44,7 +44,10 @@ var pick = function pick(obj, props) {
   }, {});
 };
 var allowed = function allowed(props) {
-  return pick(props, ['className', 'id', 'style', 'children', 'onClick']);
+  return pick(props, ['className', 'id', 'style', 'children', 'onClick', 'onMouseOver', 'title']);
+};
+var dynamicAllowed = function dynamicAllowed(props, allowed) {
+  return pick(props, allowed);
 };
 
 var Table = exports.Table = function (_React$Component) {
@@ -98,7 +101,7 @@ var TrInner = function (_React$Component2) {
 
     if (headers && props.inHeader) {
       props.children.map(function (child, i) {
-        headers[i] = child.props.children;
+        headers[i] = child.props;
       });
     }
     return _this2;
@@ -154,18 +157,19 @@ var TdInner = function (_React$Component3) {
           columnKey = _props.columnKey;
 
       var classes = (this.props.className || '') + ' pivoted';
+      var thClasses = (headers[columnKey].className || '') + ' tdBefore';
       return _react2.default.createElement(
         'td',
         { className: classes },
         _react2.default.createElement(
           'div',
-          { className: 'tdBefore' },
-          headers[columnKey]
+          _extends({ className: thClasses }, dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style', 'title'])),
+          headers[columnKey].children
         ),
-        children !== undefined ? children : _react2.default.createElement(
+        _react2.default.createElement(
           'div',
-          null,
-          '\xA0'
+          dynamicAllowed(this.props, ['onClick', 'id', 'style']),
+          children !== undefined && children || '&nbsp'
         )
       );
     }
