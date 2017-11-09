@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
@@ -23,6 +23,7 @@
     "build-example": "browserify -t browserify-css ./example/example.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "watch-example": "watchify -t browserify-css ./example/example.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
     "serve-example": "http-server ./example/ -p 8080",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "start": "npm run build; npm run build-example; npm run serve-example",
     "deploy-example": "npm run build-example; gh-pages -d ./example",
     "test": "no tests yet!",
@@ -41,6 +42,7 @@
     "core-js": "^2.4.1",
     "gh-pages": "^1.0.0",
     "http-server": "^0.10.0",
+    "prettier": "1.8.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
