@@ -4,6 +4,8 @@
 [![Build Status](https://travis-ci.org/ua-oira/react-super-responsive-table.svg)](https://travis-ci.org/ua-oira/react-super-responsive-table)
 [![npm version](https://img.shields.io/npm/v/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg?style=flat-square)](https://www.npmjs.com/package/react-super-responsive-table)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
+
 
 React Super Responsive Table converts your table data to a user-friendly list in mobile view.
 
