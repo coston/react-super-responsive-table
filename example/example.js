@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom'
 import { Table, Thead, Tbody, Tr, Th, Td } from '../dist/SuperResponsiveTable.js'
 import '../dist/SuperResponsiveTableStyle.css'
 
-class App extends React.Component {
+class App extends Component {
   render () {
     return (
       <div>
         <Table>
           <Thead>
             <Tr>
-              <Th>Conference</Th>
+              <Th className="SUPERHT">Conference</Th>
               <Th>Year</Th>
               <Th>Location</Th>
               <Th>President</Th>

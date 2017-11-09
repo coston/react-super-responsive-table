@@ -83,7 +83,10 @@ var pick = function pick(obj, props) {
   }, {});
 };
 var allowed = function allowed(props) {
-  return pick(props, ['className', 'id', 'style', 'children', 'onClick']);
+  return pick(props, ['className', 'id', 'style', 'children', 'onClick', 'colSpan']);
+};
+var dynamicAllowed = function dynamicAllowed(props, allowed) {
+  return pick(props, allowed);
 };
 
 var Table = exports.Table = function (_React$Component) {
@@ -129,7 +132,7 @@ var TrInner = function (_React$Component2) {
 
     if (headers && props.inHeader) {
       props.children.map(function (child, i) {
-        headers[i] = child.props.children;
+        headers[i] = child.props;
       });
     }
     return _this2;
@@ -181,7 +184,8 @@ var TdInner = function (_React$Component3) {
           columnKey = _props.columnKey;
 
       var classes = (this.props.className || '') + ' pivoted';
-      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', { className: 'tdBefore' }, headers[columnKey]), children !== undefined ? children : _react2.default.createElement('div', null, '\xA0'));
+      var thClasses = (headers[columnKey].className || '') + ' tdBefore';
+      return _react2.default.createElement('td', { className: classes }, _react2.default.createElement('div', _extends({ className: thClasses }, dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style'])), headers[columnKey].children), _react2.default.createElement('div', dynamicAllowed(this.props, ['onClick', 'id', 'style']), children !== undefined && children || '&nbsp'));
     }
   }]);
 
@@ -406,8 +410,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+var App = function (_Component) {
+  _inherits(App, _Component);
 
   function App() {
     _classCallCheck(this, App);
@@ -432,7 +436,7 @@ var App = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _SuperResponsiveTable.Th,
-                null,
+                { className: 'SUPERHT' },
                 'Conference'
               ),
               _react2.default.createElement(
@@ -476,18 +480,8 @@ var App = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   _SuperResponsiveTable.Td,
-                  null,
+                  { colSpan: 3 },
                   datum.Year
-                ),
-                _react2.default.createElement(
-                  _SuperResponsiveTable.Td,
-                  null,
-                  datum.Location
-                ),
-                _react2.default.createElement(
-                  _SuperResponsiveTable.Td,
-                  null,
-                  datum.President
                 ),
                 _react2.default.createElement(
                   _SuperResponsiveTable.Td,
@@ -508,7 +502,7 @@ var App = function (_React$Component) {
   }]);
 
   return App;
-}(_react2.default.Component);
+}(_react.Component);
 
 var data = [{
   'Conference': 31,

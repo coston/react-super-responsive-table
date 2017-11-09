@@ -14,7 +14,8 @@ const pick = (obj, props) => Array.prototype.reduce.call(
       : built
   ), {}
 )
-const allowed = (props) => pick(props, ['className', 'id', 'style', 'children', 'onClick'])
+const allowed = (props) => pick(props, ['className', 'id', 'style', 'children', 'onClick', 'onMouseOver', 'title'])
+const dynamicAllowed = (props, allowed) => pick(props, allowed)
 
 export class Table extends React.Component {
   constructor (props) {
@@ -46,7 +47,7 @@ class TrInner extends React.Component {
     const {headers} = props.responsiveTable
     if (headers && props.inHeader) {
       props.children.map((child, i) => {
-        headers[i] = child.props.children
+        headers[i] = child.props
       })
     }
   }
@@ -74,12 +75,15 @@ class TdInner extends React.Component {
 				headers
 			}, children, columnKey} = this.props
 		const classes = (this.props.className || '') + ' pivoted'
+    const thClasses = (headers[columnKey].className || '' ) + ' tdBefore'
     return (
       <td className={classes}>
-        <div className='tdBefore'>{headers[columnKey]}</div>
-        {(children !== undefined)
-					? children
-					: <div>&nbsp;</div>}
+        <div className={thClasses} {...dynamicAllowed(headers[columnKey], ['onClick', 'id', 'style', 'title'])}>
+          {headers[columnKey].children}
+        </div>
+        <div {...dynamicAllowed(this.props, ['onClick', 'id', 'style'])}>
+          {(children !== undefined) && children || '&nbsp'}
+        </div>
       </td>
     )
   }
