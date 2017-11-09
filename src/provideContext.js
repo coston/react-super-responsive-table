@@ -2,20 +2,20 @@ import React from 'react'
 
 const provideContext = (contextKey, contextType) => {
   class ProvideContext extends React.Component {
-    getChildContext () {
+    getChildContext() {
       const { children, ...props } = this.props
       return {
-        [contextKey]: props
+        [contextKey]: props,
       }
     }
 
-    render () {
+    render() {
       return React.Children.only(this.props.children)
     }
   }
 
   ProvideContext.childContextTypes = {
-    [contextKey]: contextType
+    [contextKey]: contextType,
   }
 
   return ProvideContext
