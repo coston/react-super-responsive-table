@@ -38833,6 +38833,8 @@ var isStaticRules = function isStaticRules(rules, attrs) {
   return true;
 };
 
+var isHRMEnabled = typeof module !== 'undefined' && module.hot && process.env.NODE_ENV !== 'production';
+
 /*
  ComponentStyle is all the CSS-specific stuff, not
  the React-specific stuff.
@@ -38844,7 +38846,7 @@ exports.default = function (nameGenerator, flatten, stringifyRules) {
       _classCallCheck(this, ComponentStyle);
 
       this.rules = rules;
-      this.isStatic = isStaticRules(rules, attrs);
+      this.isStatic = !isHRMEnabled && isStaticRules(rules, attrs);
       this.componentId = componentId;
       if (!_StyleSheet2.default.instance.hasInjectedComponent(this.componentId)) {
         var placeholder = process.env.NODE_ENV !== 'production' ? '.' + componentId + ' {}' : '';
@@ -40907,10 +40909,11 @@ module.exports = exports["default"];
 	var pseudoptn = /([^\(])(:+) */g /* pseudo element */
 	var writingptn = /[svh]\w+-[tblr]{2}/ /* match writing mode property values */
 	var gradientptn = /([\w-]+t\()/g /* match *gradient property */
-	var supportsptn = /\(\s*([^]*?)\s*\)/g /* match supports (groups) */
+	var supportsptn = /\(\s*(.*)\s*\)/g /* match supports (groups) */
 	var propertyptn = /([^]*?);/g /* match properties leading semicolon */
 	var selfptn = /-self|flex-/g /* match flex- and -self in align-self: flex-*; */
 	var pseudofmt = /[^]*?(:[rp][el]a[\w-]+)[^]*/ /* extrats :readonly or :placholder from selector */
+	var trimptn = /[ \t]+$/ /* match tail whitspace */
 
 	/* vendors */
 	var webkit = '-webkit-'
@@ -40955,6 +40958,7 @@ module.exports = exports["default"];
 	var IMPORT = 169 /* <at>i */
 	var CHARSET = 163 /* <at>c */
 	var DOCUMENT = 100 /* <at>d */
+	var PAGE = 112 /* <at>p */
 
 	var column = 1 /* current column */
 	var line = 1 /* current line numebr */
@@ -41042,6 +41046,20 @@ module.exports = exports["default"];
 		while (caret < eof) {
 			code = body.charCodeAt(caret)
 
+			// eof varient
+			if (caret === eol) {
+				// last character + noop context, add synthetic padding for noop context to terminate
+				if (comment + quote + parentheses + bracket !== 0) {
+					if (comment !== 0) {
+						code = comment === FOWARDSLASH ? NEWLINE : FOWARDSLASH
+					}
+
+					quote = parentheses = bracket = 0
+					eof++
+					eol++
+				}
+			}
+
 			if (comment + quote + parentheses + bracket === 0) {
 				// eof varient
 				if (caret === eol) {
@@ -41072,9 +41090,14 @@ module.exports = exports["default"];
 					switch (code) {
 						// false flags
 						case OPENBRACES:
+						case CLOSEBRACES:
+						case SEMICOLON:
+						case DOUBLEQUOTE:
+						case SINGLEQUOTE:
+						case OPENPARENTHESES:
+						case CLOSEPARENTHESES:
 						case COMMA: {
 							insert = 0
-							break
 						}
 						// ignore
 						case TAB:
@@ -41085,8 +41108,26 @@ module.exports = exports["default"];
 						}
 						// valid
 						default: {
+							insert = 0
+							length = caret
+							first = code
 							caret--
 							code = SEMICOLON
+
+							while (length < eof) {
+								switch (body.charCodeAt(++length)) {
+									case NEWLINE:
+									case CARRIAGE:
+									case SEMICOLON: {
+										caret++
+										code = first
+									}
+									case COLON:
+									case OPENBRACES: {
+										length = eof
+									}
+								}
+							}
 						}
 					}
 				}
@@ -41138,7 +41179,8 @@ module.exports = exports["default"];
 								switch (second) {
 									case DOCUMENT:
 									case MEDIA:
-									case SUPPORTS: {
+									case SUPPORTS:
+									case DASH: {
 										selector = current
 										break
 									}
@@ -41175,7 +41217,8 @@ module.exports = exports["default"];
 											chars = chars.replace(supportsptn, supports)
 										}
 										case DOCUMENT:
-										case MEDIA: {
+										case MEDIA:
+										case DASH: {
 											child = chars + '{' + child + '}'
 											break
 										}
@@ -41192,6 +41235,10 @@ module.exports = exports["default"];
 										}
 										default: {
 											child = chars + child
+
+											if (id === PAGE) {
+												child = (out += child, '')
+											}
 										}
 									}
 								} else {
@@ -41316,6 +41363,9 @@ module.exports = exports["default"];
 					// terminate line comment
 					if (comment === FOWARDSLASH) {
 						comment = 0
+					} else if (cascade + context === 0) {
+						format = 1
+						chars += '\0'
 					}
 
 					// execute plugins, newline context
@@ -41346,7 +41396,7 @@ module.exports = exports["default"];
 					switch (code) {
 						case TAB:
 						case SPACE: {
-							if (quote + bracket === 0) {
+							if (quote + bracket + comment === 0) {
 								switch (tail) {
 									case COMMA:
 									case COLON:
@@ -41427,22 +41477,12 @@ module.exports = exports["default"];
 						case DOUBLEQUOTE: {
 							if (comment === 0) {
 								quote = quote === code ? 0 : (quote === 0 ? code : quote)
-								// " last character, add synthetic padding
-								if (caret === eol) {
-									eol++
-									eof++
-								}
 							}
 							break
 						}
 						case SINGLEQUOTE: {
 							if (comment === 0) {
 								quote = quote === code ? 0 : (quote === 0 ? code : quote)
-								// ' last character, add synthetic padding
-								if (caret === eol) {
-									eol++
-									eof++
-								}
 							}
 							break
 						}
@@ -41462,12 +41502,6 @@ module.exports = exports["default"];
 						// functions
 						case CLOSEPARENTHESES: {
 							if (quote + comment + bracket === 0) {
-								// ) last character, add synthetic padding
-								if (caret === eol) {
-									eol++
-									eof++
-								}
-
 								parentheses--
 							}
 							break
@@ -41583,6 +41617,7 @@ module.exports = exports["default"];
 									}
 									break
 								}
+								case TAB:
 								case SPACE: {
 									switch (tail) {
 										case NULL:
@@ -41613,7 +41648,7 @@ module.exports = exports["default"];
 						chars += char
 
 						// previous non-whitespace character code
-						if (code !== SPACE) {
+						if (code !== SPACE && code !== TAB) {
 							peak = code
 						}
 					}
@@ -41819,6 +41854,12 @@ module.exports = exports["default"];
 				// column, n
 				return out.charCodeAt(5) === 110 ? webkit + out + out : out
 			}
+			// box-decoration-break, b, o, x
+			case 1009: {
+				if (out.charCodeAt(4) !== 100) {
+					break
+				}
+			}
 			// mask, m, a, s
 			// clip-path, c, l, i
 			case 969:
@@ -41842,6 +41883,23 @@ module.exports = exports["default"];
 			}
 			// flex: f, l, e
 			case 932: {
+				if (out.charCodeAt(4) === DASH) {
+					switch (out.charCodeAt(5)) {
+						// flex-grow, g
+						case 103: {
+							return webkit + 'box-' + out.replace('-grow', '') + webkit + out + ms + out.replace('grow', 'positive') + out
+						}
+						// flex-shrink, s
+						case 115: {
+							return webkit + out + ms + out.replace('shrink', 'negative') + out
+						}
+						// flex-basis, b
+						case 98: {
+							return webkit + out + ms + out.replace('basis', 'preferred-size') + out
+						}
+					}
+				}
+
 				return webkit + out + ms + out + out
 			}
 			// order: o, r, d
