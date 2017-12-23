@@ -47,6 +47,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-live": "1.7.1",
+    "react-window-ui": "^0.0.3",
     "styled-components": "2.3.0",
     "watchify": "^3.9.0"
   },
@@ -62,8 +63,5 @@
   ],
   "directories": {
     "test": "test"
-  },
-  "dependencies": {
-    "react-window-ui": "0.0.3"
   }
 }
