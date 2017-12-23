@@ -1,6 +1,7 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Browser, Terminal } from 'react-window-ui'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import {
   Table,
@@ -8,9 +9,9 @@ import {
   Tbody,
   Tr,
   Th,
-  Td
-} from "../dist/SuperResponsiveTable.js";
-import "../dist/SuperResponsiveTableStyle.css";
+  Td,
+} from '../dist/SuperResponsiveTable.js'
+import '../dist/SuperResponsiveTableStyle.css'
 
 class App extends Component {
   render() {
@@ -25,28 +26,36 @@ class App extends Component {
             Tbody,
             Tr,
             Th,
-            Td
+            Td,
           }}
         >
           <div
             style={{
-              height: "auto",
-              minWidth: "100%",
-              marginBottom: "2em"
+              height: 'auto',
+              maxWidth: '777px',
+              margin: '2em auto'
             }}
           >
-            <LivePreview />
+            <Browser>
+              <LivePreview />
+            </Browser>
+            <div style={{
+              height: 'auto',
+              marginBottom: '2em',
+            }} />
+          <Terminal>
+            <LiveEdit style={{ backgroundColor: 'black' }} />
+            <LiveError />
+          </Terminal>
           </div>
-          <LiveEdit />
-          <LiveError />
+
         </LiveProvider>
-        
       </div>
-    );
+    )
   }
 }
 
-const headerCode = (`
+const headerCode = `
 <div>
     <h2>🔖Try Me</h2>
     <p>Resize to mobile to pivot this super resposive table</p>
@@ -90,12 +99,10 @@ const headerCode = (`
   </Table>
 </div>
 
-`).trim()
+`.trim()
 
 const LiveEdit = styled(LiveEditor)`
-overflow: scroll;
+  overflow: scroll;
 `
 
-
-
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'))
