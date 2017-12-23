@@ -36199,7 +36199,7 @@ var htmlToPlain = function htmlToPlain(html) {
 
 exports.default = htmlToPlain;
 module.exports = exports['default'];
-},{"unescape":176}],100:[function(require,module,exports){
+},{"unescape":177}],100:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -38653,7 +38653,7 @@ var stringifyRules = function stringifyRules(rules, selector, prefix) {
 
 exports.default = stringifyRules;
 module.exports = exports['default'];
-},{"../types":123,"prop-types":83,"stylis":175}],139:[function(require,module,exports){
+},{"../types":123,"prop-types":83,"stylis":176}],139:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40542,145 +40542,17 @@ exports.default = function (css) {
 module.exports = exports['default'];
 },{"../types":158,"prop-types":83}],145:[function(require,module,exports){
 arguments[4][110][0].apply(exports,arguments)
-},{"../types":158,"../utils/flatten":164,"../utils/interleave":167,"dup":110,"prop-types":83}],146:[function(require,module,exports){
+},{"../types":158,"../utils/flatten":165,"../utils/interleave":168,"dup":110,"prop-types":83}],146:[function(require,module,exports){
 arguments[4][111][0].apply(exports,arguments)
-},{"../models/StyleSheet":154,"../types":158,"../vendor/glamor/hash":174,"dup":111,"prop-types":83}],147:[function(require,module,exports){
+},{"../models/StyleSheet":154,"../types":158,"../vendor/glamor/hash":175,"dup":111,"prop-types":83}],147:[function(require,module,exports){
 arguments[4][112][0].apply(exports,arguments)
-},{"../models/StyleSheet":154,"../types":158,"../vendor/glamor/hash":174,"dup":112,"prop-types":83}],148:[function(require,module,exports){
+},{"../models/StyleSheet":154,"../types":158,"../vendor/glamor/hash":175,"dup":112,"prop-types":83}],148:[function(require,module,exports){
 arguments[4][113][0].apply(exports,arguments)
 },{"../types":158,"../utils/domElements":162,"dup":113,"prop-types":83}],149:[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _hoistNonReactStatics = require('hoist-non-react-statics');
-
-var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
-
-var _ThemeProvider = require('../models/ThemeProvider');
-
-var _isStyledComponent2 = require('../utils/isStyledComponent');
-
-var _isStyledComponent3 = _interopRequireDefault(_isStyledComponent2);
-
-var _determineTheme = require('../utils/determineTheme');
-
-var _determineTheme2 = _interopRequireDefault(_determineTheme);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-/* globals ReactClass */
-
-var wrapWithTheme = function wrapWithTheme(Component) {
-  var _WithTheme$contextTyp;
-
-  var componentName = Component.displayName || Component.name || 'Component';
-
-  var isStyledComponent = (0, _isStyledComponent3.default)(Component);
-
-  var WithTheme = function (_React$Component) {
-    _inherits(WithTheme, _React$Component);
-
-    function WithTheme() {
-      var _temp, _this, _ret;
-
-      _classCallCheck(this, WithTheme);
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {}, _this.unsubscribeId = -1, _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    // NOTE: This is so that isStyledComponent passes for the innerRef unwrapping
-
-
-    WithTheme.prototype.componentWillMount = function componentWillMount() {
-      var _this2 = this;
-
-      var defaultProps = this.constructor.defaultProps;
-
-      var styledContext = this.context[_ThemeProvider.CHANNEL_NEXT];
-      var themeProp = (0, _determineTheme2.default)(this.props, undefined, defaultProps);
-      if (styledContext === undefined && themeProp === undefined && process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
-        console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps');
-      } else if (styledContext === undefined && themeProp !== undefined) {
-        this.setState({ theme: themeProp });
-      } else {
-        var subscribe = styledContext.subscribe;
-
-        this.unsubscribeId = subscribe(function (nextTheme) {
-          var theme = (0, _determineTheme2.default)(_this2.props, nextTheme, defaultProps);
-          _this2.setState({ theme: theme });
-        });
-      }
-    };
-
-    WithTheme.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-      var defaultProps = this.constructor.defaultProps;
-
-      this.setState(function (oldState) {
-        var theme = (0, _determineTheme2.default)(nextProps, oldState.theme, defaultProps);
-
-        return { theme: theme };
-      });
-    };
-
-    WithTheme.prototype.componentWillUnmount = function componentWillUnmount() {
-      if (this.unsubscribeId !== -1) {
-        this.context[_ThemeProvider.CHANNEL_NEXT].unsubscribe(this.unsubscribeId);
-      }
-    };
-
-    WithTheme.prototype.render = function render() {
-      // eslint-disable-next-line react/prop-types
-      var innerRef = this.props.innerRef;
-      var theme = this.state.theme;
-
-
-      return _react2.default.createElement(Component, _extends({
-        theme: theme
-      }, this.props, {
-        innerRef: isStyledComponent ? innerRef : undefined,
-        ref: isStyledComponent ? undefined : innerRef
-      }));
-    };
-
-    return WithTheme;
-  }(_react2.default.Component);
-
-  WithTheme.displayName = 'WithTheme(' + componentName + ')';
-  WithTheme.styledComponentId = 'withTheme';
-  WithTheme.contextTypes = (_WithTheme$contextTyp = {}, _WithTheme$contextTyp[_ThemeProvider.CHANNEL] = _propTypes2.default.func, _WithTheme$contextTyp[_ThemeProvider.CHANNEL_NEXT] = _ThemeProvider.CONTEXT_CHANNEL_SHAPE, _WithTheme$contextTyp);
-
-
-  return (0, _hoistNonReactStatics2.default)(WithTheme, Component);
-};
-
-exports.default = wrapWithTheme;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"../models/ThemeProvider":157,"../utils/determineTheme":161,"../utils/isStyledComponent":168,"_process":79,"hoist-non-react-statics":68,"prop-types":83,"react":143}],150:[function(require,module,exports){
+arguments[4][114][0].apply(exports,arguments)
+},{"../models/ThemeProvider":157,"../utils/determineTheme":161,"../utils/isStyledComponent":169,"_process":79,"dup":114,"hoist-non-react-statics":68,"prop-types":83,"react":143}],150:[function(require,module,exports){
 arguments[4][115][0].apply(exports,arguments)
-},{"./constructors/constructWithOptions":144,"./constructors/css":145,"./constructors/injectGlobal":146,"./constructors/keyframes":147,"./constructors/styled":148,"./hoc/withTheme":149,"./models/ComponentStyle":152,"./models/ServerStyleSheet":153,"./models/StyleSheetManager":155,"./models/StyledComponent":156,"./models/ThemeProvider":157,"./utils/flatten":164,"./utils/generateAlphabeticName":165,"./utils/stringifyRules":172,"dup":115}],151:[function(require,module,exports){
+},{"./constructors/constructWithOptions":144,"./constructors/css":145,"./constructors/injectGlobal":146,"./constructors/keyframes":147,"./constructors/styled":148,"./hoc/withTheme":149,"./models/ComponentStyle":152,"./models/ServerStyleSheet":153,"./models/StyleSheetManager":155,"./models/StyledComponent":156,"./models/ThemeProvider":157,"./utils/flatten":165,"./utils/generateAlphabeticName":166,"./utils/stringifyRules":173,"dup":115}],151:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40862,9 +40734,9 @@ exports.default = {
     return new _StyleSheet2.default(tagConstructor, tags, names);
   }
 };
-},{"../utils/extractCompsFromCSS":163,"../utils/nonce":170,"./StyleSheet":154,"prop-types":83}],152:[function(require,module,exports){
+},{"../utils/extractCompsFromCSS":164,"../utils/nonce":171,"./StyleSheet":154,"prop-types":83}],152:[function(require,module,exports){
 arguments[4][117][0].apply(exports,arguments)
-},{"../types":158,"../utils/isStyledComponent":168,"../vendor/glamor/hash":174,"./StyleSheet":154,"_process":79,"dup":117,"prop-types":83}],153:[function(require,module,exports){
+},{"../types":158,"../utils/isStyledComponent":169,"../vendor/glamor/hash":175,"./StyleSheet":154,"_process":79,"dup":117,"prop-types":83}],153:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41025,7 +40897,7 @@ var ServerStyleSheet = function () {
 
 exports.default = ServerStyleSheet;
 module.exports = exports['default'];
-},{"../utils/nonce":170,"./StyleSheet":154,"./StyleSheetManager":155,"prop-types":83,"react":143}],154:[function(require,module,exports){
+},{"../utils/nonce":171,"./StyleSheet":154,"./StyleSheetManager":155,"prop-types":83,"react":143}],154:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41264,6 +41136,10 @@ var _determineTheme = require('../utils/determineTheme');
 
 var _determineTheme2 = _interopRequireDefault(_determineTheme);
 
+var _escape = require('../utils/escape');
+
+var _escape2 = _interopRequireDefault(_escape);
+
 var _ThemeProvider = require('./ThemeProvider');
 
 var _StyleSheet = require('./StyleSheet');
@@ -41290,9 +41166,6 @@ var babelPluginFlowReactPropTypes_proptype_Target = require('../types').babelPlu
 
 var babelPluginFlowReactPropTypes_proptype_RuleSet = require('../types').babelPluginFlowReactPropTypes_proptype_RuleSet || require('prop-types').any;
 
-var escapeRegex = /[[\].#*$><+~=|^:(),"'`]/g;
-var multiDashRegex = /--+/g;
-
 // HACK for generating all static styles without needing to allocate
 // an empty execution context every single time...
 var STATIC_EXECUTION_CONTEXT = {};
@@ -41301,8 +41174,7 @@ exports.default = function (ComponentStyle, constructWithOptions) {
   /* We depend on components having unique IDs */
   var identifiers = {};
   var generateId = function generateId(_displayName, parentComponentId) {
-    var displayName = typeof _displayName !== 'string' ? 'sc' : _displayName.replace(escapeRegex, '-') // Replace all possible CSS selectors
-    .replace(multiDashRegex, '-'); // Replace multiple -- with single -
+    var displayName = typeof _displayName !== 'string' ? 'sc' : (0, _escape2.default)(_displayName);
 
     var nr = (identifiers[displayName] || 0) + 1;
     identifiers[displayName] = nr;
@@ -41489,7 +41361,7 @@ exports.default = function (ComponentStyle, constructWithOptions) {
         attrs = options.attrs;
 
 
-    var styledComponentId = options.displayName && options.componentId ? options.displayName + '-' + options.componentId : componentId;
+    var styledComponentId = options.displayName && options.componentId ? (0, _escape2.default)(options.displayName) + '-' + options.componentId : componentId;
 
     var warnTooManyClasses = void 0;
     if (process.env.NODE_ENV !== 'production') {
@@ -41511,7 +41383,7 @@ exports.default = function (ComponentStyle, constructWithOptions) {
         var previousComponentId = options.componentId,
             optionsToCopy = _objectWithoutProperties(options, ['componentId']);
 
-        var newComponentId = previousComponentId && previousComponentId + '-' + ((0, _isTag2.default)(tag) ? tag : (0, _getComponentName2.default)(tag));
+        var newComponentId = previousComponentId && previousComponentId + '-' + ((0, _isTag2.default)(tag) ? tag : (0, _escape2.default)((0, _getComponentName2.default)(tag)));
 
         var newOptions = _extends({}, optionsToCopy, {
           componentId: newComponentId,
@@ -41560,7 +41432,8 @@ exports.default = function (ComponentStyle, constructWithOptions) {
 
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"../types":158,"../utils/createWarnTooManyClasses":160,"../utils/determineTheme":161,"../utils/getComponentName":166,"../utils/isStyledComponent":168,"../utils/isTag":169,"../utils/validAttr":173,"./ServerStyleSheet":153,"./StyleSheet":154,"./ThemeProvider":157,"_process":79,"prop-types":83,"react":143}],157:[function(require,module,exports){
+},{"../types":158,"../utils/createWarnTooManyClasses":160,"../utils/determineTheme":161,"../utils/escape":163,"../utils/getComponentName":167,"../utils/isStyledComponent":169,"../utils/isTag":170,"../utils/validAttr":174,"./ServerStyleSheet":153,"./StyleSheet":154,"./ThemeProvider":157,"_process":79,"prop-types":83,"react":143}],157:[function(require,module,exports){
+(function (process){
 'use strict';
 
 exports.__esModule = true;
@@ -41667,7 +41540,9 @@ var ThemeProvider = function (_Component) {
       subscribe: this.broadcast.subscribe,
       unsubscribe: this.broadcast.unsubscribe
     }, _extends2[CHANNEL] = function (subscriber) {
-      warnChannelDeprecated();
+      if (process.env.NODE_ENV !== 'production') {
+        warnChannelDeprecated();
+      }
 
       // Patch the old `subscribe` provide via `CHANNEL` for older clients.
       var unsubscribeId = _this3.broadcast.subscribe(subscriber);
@@ -41725,7 +41600,8 @@ ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$ch
 ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$contex);
 
 exports.default = ThemeProvider;
-},{"../utils/create-broadcast":159,"../utils/once":171,"is-function":70,"is-plain-object":71,"prop-types":83,"react":143}],158:[function(require,module,exports){
+}).call(this,require('_process'))
+},{"../utils/create-broadcast":159,"../utils/once":172,"_process":79,"is-function":70,"is-plain-object":71,"prop-types":83,"react":143}],158:[function(require,module,exports){
 arguments[4][123][0].apply(exports,arguments)
 },{"dup":123,"prop-types":83}],159:[function(require,module,exports){
 arguments[4][124][0].apply(exports,arguments)
@@ -41736,6 +41612,8 @@ arguments[4][126][0].apply(exports,arguments)
 },{"dup":126}],162:[function(require,module,exports){
 arguments[4][127][0].apply(exports,arguments)
 },{"dup":127}],163:[function(require,module,exports){
+arguments[4][128][0].apply(exports,arguments)
+},{"dup":128}],164:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41759,7 +41637,7 @@ exports.default = function (maybeCSS) {
 };
 
 module.exports = exports['default'];
-},{}],164:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41811,23 +41689,23 @@ var flatten = function flatten(chunks, executionContext) {
 };
 
 exports.default = flatten;
-},{"../types":158,"fbjs/lib/hyphenateStyleName":60,"is-plain-object":71,"prop-types":83}],165:[function(require,module,exports){
+},{"../types":158,"fbjs/lib/hyphenateStyleName":60,"is-plain-object":71,"prop-types":83}],166:[function(require,module,exports){
 arguments[4][131][0].apply(exports,arguments)
-},{"dup":131}],166:[function(require,module,exports){
+},{"dup":131}],167:[function(require,module,exports){
 arguments[4][132][0].apply(exports,arguments)
-},{"dup":132}],167:[function(require,module,exports){
+},{"dup":132}],168:[function(require,module,exports){
 arguments[4][133][0].apply(exports,arguments)
-},{"../types":158,"dup":133,"prop-types":83}],168:[function(require,module,exports){
+},{"../types":158,"dup":133,"prop-types":83}],169:[function(require,module,exports){
 arguments[4][134][0].apply(exports,arguments)
-},{"../types":158,"dup":134,"prop-types":83}],169:[function(require,module,exports){
+},{"../types":158,"dup":134,"prop-types":83}],170:[function(require,module,exports){
 arguments[4][135][0].apply(exports,arguments)
-},{"../types":158,"dup":135,"prop-types":83}],170:[function(require,module,exports){
+},{"../types":158,"dup":135,"prop-types":83}],171:[function(require,module,exports){
 arguments[4][136][0].apply(exports,arguments)
-},{"dup":136}],171:[function(require,module,exports){
+},{"dup":136}],172:[function(require,module,exports){
 arguments[4][137][0].apply(exports,arguments)
-},{"dup":137}],172:[function(require,module,exports){
+},{"dup":137}],173:[function(require,module,exports){
 arguments[4][138][0].apply(exports,arguments)
-},{"../types":158,"dup":138,"prop-types":83,"stylis":175}],173:[function(require,module,exports){
+},{"../types":158,"dup":138,"prop-types":83,"stylis":176}],174:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42428,9 +42306,9 @@ exports.default = function (name) {
 };
 
 module.exports = exports['default'];
-},{}],174:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 arguments[4][140][0].apply(exports,arguments)
-},{"dup":140}],175:[function(require,module,exports){
+},{"dup":140}],176:[function(require,module,exports){
 /*
  *          __        ___
  *    _____/ /___  __/ (_)____
@@ -44040,7 +43918,7 @@ arguments[4][140][0].apply(exports,arguments)
 	return stylis
 }));
 
-},{}],176:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 'use strict';
 
 var cache;
