@@ -42,12 +42,12 @@
     "core-js": "^2.4.1",
     "gh-pages": "^1.0.0",
     "http-server": "^0.10.0",
-    "prettier": "1.9.1",
+    "prettier": "1.9.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-live": "1.7.1",
-    "styled-components": "2.2.4",
+    "styled-components": "2.3.0",
     "watchify": "^3.9.0"
   },
   "browserify-css": {

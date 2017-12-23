@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/ua-oira/react-super-responsive-table.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/ua-oira/react-super-responsive-table.svg)](https://travis-ci.org/ua-oira/react-super-responsive-table)
-[![npm version](https://img.shields.io/npm/v/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
+[![npm package version](https://badge.fury.io/js/react-obfuscate.svg)](https://www.npmjs.com/package/react-obfuscate)
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
