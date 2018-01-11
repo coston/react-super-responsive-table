@@ -47,7 +47,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-live": "1.7.1",
-    "react-window-ui": "^0.0.3",
+    "react-window-ui": "^0.0.4",
     "styled-components": "2.4.0",
     "watchify": "^3.9.0"
   },
