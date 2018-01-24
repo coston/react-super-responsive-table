@@ -6,11 +6,10 @@
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
-
 React Super Responsive Table converts your table data to a user-friendly list in mobile view.
 
-
 ## Documentation
+
 * [Demo & Examples](#demo--examples)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -18,13 +17,11 @@ React Super Responsive Table converts your table data to a user-friendly list in
 * [Contributors](#contributors)
 * [License](#license)
 
-
 ## Demo & Examples
 
 ![demo gif](https://user-images.githubusercontent.com/7424180/34885948-324b1e6a-f787-11e7-93a7-aacac5e7e315.gif)
 
 Live demo: [ua-oira.github.io/react-super-responsive-table](http://ua-oira.github.io/react-super-responsive-table/)
-
 
 To build the examples locally, run:
 
@@ -35,7 +32,6 @@ npm start
 
 Then open [`localhost:8000`](http://localhost:8000) in a browser.
 
-
 ## Installation
 
 The easiest way to use react-super-responsive-table is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
@@ -45,7 +41,6 @@ You can also use the standalone build by including `dist/react-super-responsive-
 ```
 npm install react-super-responsive-table --save
 ```
-
 
 ## Usage
 
@@ -112,7 +107,6 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 	</Tbody>
 </Table>
 ...
-
 ```
 
 ## Development (`src`, `dist` and the build process)
@@ -122,13 +116,16 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 To build, watch and serve the examples (which will also watch the component source), run `npm start`. If you just want to watch changes to `src` and rebuild `dist`, run `npm run watch` (this is useful if you are working with `npm link`).
 
 ## Contributors
+
 Super Responsive Tables are made possible by these great community members:
-- [jasonphillips](https://github.com/jasonphillips)
-- [coston](https://github.com/coston)
-- [jorrit](https://github.com/jorrit)
-- [Droow](https://github.com/droow)
+
+* [jasonphillips](https://github.com/jasonphillips)
+* [coston](https://github.com/coston)
+* [jorrit](https://github.com/jorrit)
+* [Droow](https://github.com/droow)
 
 ## Contributing
+
 Please help turn the tables on unresponsive data! Submit any issues and/or make a pull request!
 
 ## License
