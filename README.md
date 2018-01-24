@@ -53,14 +53,14 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
 ...
 <Table>
-  <Thead>
-  	<Tr>
-		<Th>Annual Conference</Th>
-		<Th>Year</Th>
-		<Th>Location</Th>
-		<Th>President</Th>
-		<Th>Program Chair</Th>
-		<Th>Conference Theme</Th>
+	<Thead>
+		<Tr>
+			<Th>Annual Conference</Th>
+			<Th>Year</Th>
+			<Th>Location</Th>
+			<Th>President</Th>
+			<Th>Program Chair</Th>
+			<Th>Conference Theme</Th>
 		</Tr>
 	</Thead>
 	<Tbody>
@@ -70,7 +70,6 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 			<Td>Alabama Community College System (ACCS)</Td>
 			<Td>Mr. Toner Evans, Samford University</Td>
 			<Td>Ms. Kelly Birchfield, Auburn University Montgomery</Td>
-			<Td />
 		</Tr>
 		<Tr>
 			<Td>30</Td>
