@@ -33,22 +33,23 @@ class App extends Component {
             style={{
               height: 'auto',
               maxWidth: '777px',
-              margin: '2em auto'
+              margin: '2em auto',
             }}
           >
             <Browser>
               <LivePreview />
             </Browser>
-            <div style={{
-              height: 'auto',
-              marginBottom: '2em',
-            }} />
-          <Terminal>
-            <LiveEdit style={{ backgroundColor: 'black' }} />
-            <LiveError />
-          </Terminal>
+            <div
+              style={{
+                height: 'auto',
+                marginBottom: '2em',
+              }}
+            />
+            <Terminal>
+              <LiveEdit style={{ backgroundColor: 'black' }} />
+              <LiveError />
+            </Terminal>
           </div>
-
         </LiveProvider>
       </div>
     )
