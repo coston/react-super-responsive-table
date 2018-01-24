@@ -21,7 +21,7 @@ React Super Responsive Table converts your table data to a user-friendly list in
 
 ![demo gif](https://user-images.githubusercontent.com/7424180/34885948-324b1e6a-f787-11e7-93a7-aacac5e7e315.gif)
 
-Live demo: [ua-oira.github.io/react-super-responsive-table](http://ua-oira.github.io/react-super-responsive-table/)
+Live demo: [https://react-super-responsive-table.netlify.com](https://react-super-responsive-table.netlify.com)
 
 To build the examples locally, run:
 
