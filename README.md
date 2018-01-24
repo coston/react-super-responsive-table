@@ -132,7 +132,7 @@ Please help turn the tables on unresponsive data! Submit any issues and/or make 
 
 MIT License
 
-Copyright (c) The University of Alabama
+Copyright (c) 2018 The University of Alabama
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
