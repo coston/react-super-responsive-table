@@ -48,7 +48,7 @@
     "react-dom": "^16.2.0",
     "react-live": "1.7.1",
     "react-window-ui": "^0.0.5",
-    "styled-components": "2.4.0",
+    "styled-components": "3.1.0-3",
     "watchify": "^3.9.0"
   },
   "browserify-css": {
