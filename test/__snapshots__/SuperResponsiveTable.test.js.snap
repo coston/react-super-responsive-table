@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Table 1`] = `
+<ProvideContext
+  headers={Object {}}
+>
+  <table
+    className=" responsiveTable"
+  >
+    <Thead>
+      <WithContext(TrInner)>
+        <Th>
+          Annual Conference
+        </Th>
+        <Th>
+          Year
+        </Th>
+        <Th>
+          Location
+        </Th>
+        <Th>
+          President
+        </Th>
+        <Th>
+          Program Chair
+        </Th>
+        <Th>
+          Conference Theme
+        </Th>
+      </WithContext(TrInner)>
+    </Thead>
+    <Tbody>
+      <WithContext(TrInner)>
+        <WithContext(TdInner)>
+          31
+        </WithContext(TdInner)>
+        <WithContext(TdInner)>
+          2017
+        </WithContext(TdInner)>
+        <WithContext(TdInner)>
+          Alabama Community College System (ACCS)
+        </WithContext(TdInner)>
+        <WithContext(TdInner)>
+          Mr. Toner Evans, Samford University
+        </WithContext(TdInner)>
+        <WithContext(TdInner)>
+          Ms. Kelly Birchfield, Auburn University Montgomery
+        </WithContext(TdInner)>
+      </WithContext(TrInner)>
+    </Tbody>
+  </table>
+</ProvideContext>
+`;
