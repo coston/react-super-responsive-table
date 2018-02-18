@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import { Table, Thead, Tbody, Tr, Th, Td } from '../dist/SuperResponsiveTable'
 
 test('Render Table', () => {
   const wrapper = shallow(
