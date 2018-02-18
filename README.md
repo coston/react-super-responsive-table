@@ -1,6 +1,5 @@
 # React Super Responsive Table
 
-[![Coverage Status](https://coveralls.io/repos/github/ua-oira/react-super-responsive-table/badge.svg?branch=master)](https://coveralls.io/github/ua-oira/react-super-responsive-table?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ua-oira/react-super-responsive-table.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/ua-oira/react-super-responsive-table.svg)](https://travis-ci.org/ua-oira/react-super-responsive-table)
 [![npm package version](https://badge.fury.io/js/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
