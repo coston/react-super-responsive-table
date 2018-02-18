@@ -26,7 +26,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "start": "npm run build; npm run build-example; npm run serve-example",
     "deploy-example": "npm run build-example; gh-pages -d ./example",
-    "preversion": "npm run clean && npm run build",
+    "preversion": "npm run test && npm run format && npm run clean && npm run build && npm run build-example",
     "postpublish": "git push && git push --tag",
     "test": "jest",
     "test:watch": "jest --watch",
