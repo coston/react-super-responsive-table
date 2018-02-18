@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.1.11",
+  "version": "4.2.0",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "author": "The University Of Alabama",
@@ -26,9 +26,24 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "start": "npm run build; npm run build-example; npm run serve-example",
     "deploy-example": "npm run build-example; gh-pages -d ./example",
-    "test": "no tests yet!",
     "preversion": "npm run clean && npm run build",
-    "postpublish": "git push && git push --tag"
+    "postpublish": "git push && git push --tag",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -40,13 +55,19 @@
     "browserify": "^15.1.0",
     "browserify-css": "^0.14.0",
     "core-js": "^2.5.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "gh-pages": "^1.1.0",
     "http-server": "^0.11.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.3.0",
     "prettier": "1.10.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-live": "1.9.2",
+    "react-test-renderer": "^16.2.0",
     "react-window-ui": "^0.0.5",
     "styled-components": "3.1.6",
     "watchify": "^3.9.0"
