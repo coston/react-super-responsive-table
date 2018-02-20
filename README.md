@@ -1,4 +1,4 @@
-# React Super Responsive Table
+# react-super-responsive-table
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/ua-oira/react-super-responsive-table.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/ua-oira/react-super-responsive-table.svg)](https://travis-ci.org/ua-oira/react-super-responsive-table)
