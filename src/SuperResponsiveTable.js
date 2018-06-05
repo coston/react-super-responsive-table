@@ -73,7 +73,11 @@ class TdInner extends React.Component {
     if (this.props.colSpan) {
       return <td {...allowed(this.props)} />
     }
-    const { responsiveTable: { headers }, children, columnKey } = this.props
+    const {
+      responsiveTable: { headers },
+      children,
+      columnKey,
+    } = this.props
     const classes = (this.props.className || '') + ' pivoted'
     return (
       <td className={classes}>
