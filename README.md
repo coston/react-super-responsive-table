@@ -44,14 +44,13 @@ npm install react-super-responsive-table --save
 
 ## Usage
 
-To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'.. Then, copy or import the superResponsiveTableStyles.css file into your project. Write your html table with capitol letters, and voilà!
+To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'. Then, copy or import the superResponsiveTableStyles.css file into your project. Write your html table with capitol letters, and voilà!
 
 ```jsx
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
-...
 <Table>
 	<Thead>
 		<Tr>
@@ -105,7 +104,6 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 		</Tr>
 	</Tbody>
 </Table>
-...
 ```
 
 ## Development (`src`, `dist` and the build process)
