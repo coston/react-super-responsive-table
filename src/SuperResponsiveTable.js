@@ -43,7 +43,7 @@ class TrInner extends React.Component {
     super(props)
     const { headers } = props.responsiveTable
     if (headers && props.inHeader) {
-      props.children.map((child, i) => {
+      React.Children.map(props.children, (child, i) => {
         headers[i] = child.props.children
       })
     }
