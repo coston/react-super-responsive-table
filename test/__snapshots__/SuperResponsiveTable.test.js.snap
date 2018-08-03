@@ -51,3 +51,45 @@ exports[`Render Table 1`] = `
   </table>
 </ProvideContext>
 `;
+
+exports[`Render table with an only one column 1`] = `
+<ProvideContext
+  headers={Object {}}
+>
+  <table
+    className=" responsiveTable"
+  >
+    <Thead>
+      <WithContext(TrInner)>
+        <Th>
+          Annual Conference
+        </Th>
+      </WithContext(TrInner)>
+    </Thead>
+    <Tbody>
+      <WithContext(TrInner)>
+        <WithContext(TdInner)>
+          31
+        </WithContext(TdInner)>
+      </WithContext(TrInner)>
+    </Tbody>
+  </table>
+</ProvideContext>
+`;
+
+exports[`Render table without any column 1`] = `
+<ProvideContext
+  headers={Object {}}
+>
+  <table
+    className=" responsiveTable"
+  >
+    <Thead>
+      <WithContext(TrInner) />
+    </Thead>
+    <Tbody>
+      <WithContext(TrInner) />
+    </Tbody>
+  </table>
+</ProvideContext>
+`;
