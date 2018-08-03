@@ -100,7 +100,7 @@ var TrInner = function (_React$Component2) {
     var headers = props.responsiveTable.headers;
 
     if (headers && props.inHeader) {
-      props.children.map(function (child, i) {
+      _react2.default.Children.map(props.children, function (child, i) {
         headers[i] = child.props.children;
       });
     }
