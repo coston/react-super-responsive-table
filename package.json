@@ -36,6 +36,7 @@
     "setupFiles": [
       "./test/jestsetup.js"
     ],
+    "testURL": "http://localhost/",
     "collectCoverage": true,
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
@@ -58,10 +59,9 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
-    "gh-pages": "^1.1.0",
     "http-server": "^0.11.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.4.3",
+    "jest": "^23.4.2",
     "prettier": "1.13.4",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
