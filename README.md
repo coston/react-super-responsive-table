@@ -120,6 +120,7 @@ Super Responsive Tables are made possible by these great community members:
 * [coston](https://github.com/coston)
 * [jorrit](https://github.com/jorrit)
 * [Droow](https://github.com/droow)
+* [NShahri](https://github.com/NShahri)
 
 ## Contributing
 
