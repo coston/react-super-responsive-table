@@ -27,3 +27,38 @@ test('Render Table', () => {
   )
   expect(wrapper).toMatchSnapshot()
 })
+
+
+test('Render table with an only one column', () => {
+  const wrapper = shallow(
+    <Table>
+      <Thead>
+      <Tr>
+        <Th>Annual Conference</Th>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>31</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  )
+  expect(wrapper).toMatchSnapshot()
+})
+
+test('Render table without any column', () => {
+  const wrapper = shallow(
+    <Table>
+      <Thead>
+      <Tr>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+      </Tr>
+      </Tbody>
+    </Table>
+  )
+  expect(wrapper).toMatchSnapshot()
+})
