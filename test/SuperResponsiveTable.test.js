@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
+import renderer from 'react-test-renderer';
 
 test('Render Table', () => {
   const wrapper = shallow(
@@ -62,3 +63,22 @@ test('Render table without any column', () => {
   )
   expect(wrapper).toMatchSnapshot()
 })
+
+test('Render table with only header and empty row', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>Test Column</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
