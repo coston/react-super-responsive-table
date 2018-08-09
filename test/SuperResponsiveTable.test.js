@@ -82,3 +82,96 @@ test('Render table with only header and empty row', () => {
   expect(tree).toMatchSnapshot();
 })
 
+test('Render table with conditional column', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        {false && <Td>Test Header Column</Td>}
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        {false && <Td>Test Body Column</Td>}
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
+test('Render table with conditional and unconditional column', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        {false && <Td>C2</Td>}
+        <Td>C3</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>V1</Td>
+        {false && <Td>V2</Td>}
+        <Td>V3</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
+test('Render table with more columns in body', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        {false && <Td>C2</Td>}
+        <Td>C3</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>V1</Td>
+        {false && <Td>V2</Td>}
+        <Td>V3</Td>
+        <Td>V4</Td>
+        <Td>V5</Td>
+        <Td>V6</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
+test('Render table with more columns in header', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        {false && <Td>C2</Td>}
+        <Td>C3</Td>
+        <Td>C4</Td>
+        <Td>C5</Td>
+        <Td>C6</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>V1</Td>
+        {false && <Td>V2</Td>}
+        <Td>V3</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
