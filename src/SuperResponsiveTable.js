@@ -1,18 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import provideContext from './provideContext'
-import withContext from './withContext'
+import { Provider, Consumer } from './tableContext'
 
-const contextShape = PropTypes.shape({ headers: PropTypes.object })
-const TableContext = provideContext('responsiveTable', contextShape)
-const withTableContext = withContext('responsiveTable', contextShape)
 const omit = (obj, omitProps) =>
   Object.keys(obj)
     .filter(key => omitProps.indexOf(key) === -1)
     .reduce((returnObj, key) => ({ ...returnObj, [key]: obj[key] }), {})
 
-const allowed = props =>
-  omit(props, ['inHeader', 'columnKey', 'responsiveTable'])
+const allowed = props => omit(props, ['inHeader', 'columnKey', 'headers'])
 
 export class Table extends React.Component {
   constructor(props) {
@@ -25,9 +19,9 @@ export class Table extends React.Component {
     const { headers } = this.state
     const classes = (this.props.className || '') + ' responsiveTable'
     return (
-      <TableContext headers={headers}>
+      <Provider value={headers}>
         <table {...allowed(this.props)} className={classes} />
-      </TableContext>
+      </Provider>
     )
   }
 }
@@ -41,7 +35,7 @@ export const Thead = props => (
 class TrInner extends React.Component {
   constructor(props) {
     super(props)
-    const { headers } = props.responsiveTable
+    const { headers } = props
     if (headers && props.inHeader) {
       React.Children.map(props.children, (child, i) => {
         headers[i] = child.props.children
@@ -64,7 +58,10 @@ class TrInner extends React.Component {
   }
 }
 
-export const Tr = withTableContext(TrInner)
+export const Tr = props => (
+  <Consumer>{headers => <TrInner {...props} headers={headers} />}</Consumer>
+)
+
 export const Th = props => <th {...allowed(props)} />
 export const Tbody = props => <tbody {...allowed(props)} />
 
@@ -73,11 +70,7 @@ class TdInner extends React.Component {
     if (this.props.colSpan) {
       return <td {...allowed(this.props)} />
     }
-    const {
-      responsiveTable: { headers },
-      children,
-      columnKey,
-    } = this.props
+    const { headers, children, columnKey } = this.props
     const classes = (this.props.className || '') + ' pivoted'
     return (
       <td className={classes}>
@@ -88,4 +81,6 @@ class TdInner extends React.Component {
   }
 }
 
-export const Td = withTableContext(TdInner)
+export const Td = props => (
+  <Consumer>{headers => <TdInner {...props} headers={headers} />}</Consumer>
+)

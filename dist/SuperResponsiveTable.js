@@ -13,17 +13,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _provideContext = require('./provideContext');
-
-var _provideContext2 = _interopRequireDefault(_provideContext);
-
-var _withContext = require('./withContext');
-
-var _withContext2 = _interopRequireDefault(_withContext);
+var _tableContext = require('./tableContext');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35,9 +25,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var contextShape = _propTypes2.default.shape({ headers: _propTypes2.default.object });
-var TableContext = (0, _provideContext2.default)('responsiveTable', contextShape);
-var withTableContext = (0, _withContext2.default)('responsiveTable', contextShape);
 var omit = function omit(obj, omitProps) {
   return Object.keys(obj).filter(function (key) {
     return omitProps.indexOf(key) === -1;
@@ -47,7 +34,7 @@ var omit = function omit(obj, omitProps) {
 };
 
 var allowed = function allowed(props) {
-  return omit(props, ['inHeader', 'columnKey', 'responsiveTable']);
+  return omit(props, ['inHeader', 'columnKey', 'headers']);
 };
 
 var Table = exports.Table = function (_React$Component) {
@@ -71,8 +58,8 @@ var Table = exports.Table = function (_React$Component) {
 
       var classes = (this.props.className || '') + ' responsiveTable';
       return _react2.default.createElement(
-        TableContext,
-        { headers: headers },
+        _tableContext.Provider,
+        { value: headers },
         _react2.default.createElement('table', _extends({}, allowed(this.props), { className: classes }))
       );
     }
@@ -97,7 +84,7 @@ var TrInner = function (_React$Component2) {
 
     var _this2 = _possibleConstructorReturn(this, (TrInner.__proto__ || Object.getPrototypeOf(TrInner)).call(this, props));
 
-    var headers = props.responsiveTable.headers;
+    var headers = props.headers;
 
     if (headers && props.inHeader) {
       _react2.default.Children.map(props.children, function (child, i) {
@@ -128,7 +115,16 @@ var TrInner = function (_React$Component2) {
   return TrInner;
 }(_react2.default.Component);
 
-var Tr = exports.Tr = withTableContext(TrInner);
+var Tr = exports.Tr = function Tr(props) {
+  return _react2.default.createElement(
+    _tableContext.Consumer,
+    null,
+    function (headers) {
+      return _react2.default.createElement(TrInner, _extends({}, props, { headers: headers }));
+    }
+  );
+};
+
 var Th = exports.Th = function Th(props) {
   return _react2.default.createElement('th', allowed(props));
 };
@@ -152,7 +148,7 @@ var TdInner = function (_React$Component3) {
         return _react2.default.createElement('td', allowed(this.props));
       }
       var _props = this.props,
-          headers = _props.responsiveTable.headers,
+          headers = _props.headers,
           children = _props.children,
           columnKey = _props.columnKey;
 
@@ -177,4 +173,12 @@ var TdInner = function (_React$Component3) {
   return TdInner;
 }(_react2.default.Component);
 
-var Td = exports.Td = withTableContext(TdInner);
+var Td = exports.Td = function Td(props) {
+  return _react2.default.createElement(
+    _tableContext.Consumer,
+    null,
+    function (headers) {
+      return _react2.default.createElement(TdInner, _extends({}, props, { headers: headers }));
+    }
+  );
+};

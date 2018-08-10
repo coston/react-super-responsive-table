@@ -84,5 +84,8 @@
   ],
   "directories": {
     "test": "test"
+  },
+  "dependencies": {
+    "create-react-context": "^0.2.2"
   }
 }
