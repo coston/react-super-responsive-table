@@ -106,6 +106,25 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 </Table>
 ```
 
+## Using Dynamic Headers
+Headers are statefully stored on first render of the table, since the library doesn't use props for them and just checks the children of the thead to build its internal list of headers upon construction. To use dynamic headers, use a key prop to ensure the components are all internally updated when you're making this kind of change.
+```js
+<Table key={i}>
+      <Thead>
+      <Tr>
+        <Th>{headers[0]}</Th>
+        <Th>{headers[1]}</Th>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>item 1</Td>
+        <Td>item 2</Td>
+      </Tr>
+      </Tbody>
+  </Table>
+```
+
 ## Development (`src`, `dist` and the build process)
 
 **NOTE:** The source code for the component is in `src`. A transpiled version (generated with Babel) is available in `dist`, which can be included without the need for any build system.
