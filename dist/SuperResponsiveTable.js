@@ -88,7 +88,9 @@ var TrInner = function (_React$Component2) {
 
     if (headers && props.inHeader) {
       _react2.default.Children.map(props.children, function (child, i) {
-        headers[i] = child.props.children;
+        if (child) {
+          headers[i] = child.props.children;
+        }
       });
     }
     return _this2;
@@ -103,7 +105,7 @@ var TrInner = function (_React$Component2) {
         'tr',
         allowed(this.props),
         children && _react2.default.Children.map(children, function (child, i) {
-          return _react2.default.cloneElement(child, {
+          return child && _react2.default.cloneElement(child, {
             key: i,
             columnKey: i
           });
