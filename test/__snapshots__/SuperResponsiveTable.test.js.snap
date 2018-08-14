@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Table 1`] = `
-<ProvideContext
-  headers={Object {}}
+<ContextProvider
+  value={Object {}}
 >
   <table
     className=" responsiveTable"
   >
     <Thead>
-      <WithContext(TrInner)>
+      <Tr>
         <Th>
           Annual Conference
         </Th>
@@ -27,69 +27,317 @@ exports[`Render Table 1`] = `
         <Th>
           Conference Theme
         </Th>
-      </WithContext(TrInner)>
+      </Tr>
     </Thead>
     <Tbody>
-      <WithContext(TrInner)>
-        <WithContext(TdInner)>
+      <Tr>
+        <Td>
           31
-        </WithContext(TdInner)>
-        <WithContext(TdInner)>
+        </Td>
+        <Td>
           2017
-        </WithContext(TdInner)>
-        <WithContext(TdInner)>
+        </Td>
+        <Td>
           Alabama Community College System (ACCS)
-        </WithContext(TdInner)>
-        <WithContext(TdInner)>
+        </Td>
+        <Td>
           Mr. Toner Evans, Samford University
-        </WithContext(TdInner)>
-        <WithContext(TdInner)>
+        </Td>
+        <Td>
           Ms. Kelly Birchfield, Auburn University Montgomery
-        </WithContext(TdInner)>
-      </WithContext(TrInner)>
+        </Td>
+      </Tr>
     </Tbody>
   </table>
-</ProvideContext>
+</ContextProvider>
 `;
 
 exports[`Render table with an only one column 1`] = `
-<ProvideContext
-  headers={Object {}}
+<ContextProvider
+  value={Object {}}
 >
   <table
     className=" responsiveTable"
   >
     <Thead>
-      <WithContext(TrInner)>
+      <Tr>
         <Th>
           Annual Conference
         </Th>
-      </WithContext(TrInner)>
+      </Tr>
     </Thead>
     <Tbody>
-      <WithContext(TrInner)>
-        <WithContext(TdInner)>
+      <Tr>
+        <Td>
           31
-        </WithContext(TdInner)>
-      </WithContext(TrInner)>
+        </Td>
+      </Tr>
     </Tbody>
   </table>
-</ProvideContext>
+</ContextProvider>
 `;
 
 exports[`Render table without any column 1`] = `
-<ProvideContext
-  headers={Object {}}
+<ContextProvider
+  value={Object {}}
 >
   <table
     className=" responsiveTable"
   >
     <Thead>
-      <WithContext(TrInner) />
+      <Tr />
     </Thead>
     <Tbody>
-      <WithContext(TrInner) />
+      <Tr />
     </Tbody>
   </table>
-</ProvideContext>
+</ContextProvider>
+`;
+
+exports[`Table updates correctly upon change of key prop: headersA 1`] = `
+<Parent
+  headers={
+    Array [
+      "alpha",
+      "beta",
+    ]
+  }
+  i={1}
+>
+  <Table
+    key="1"
+  >
+    <table
+      className=" responsiveTable"
+    >
+      <Thead>
+        <thead>
+          <Tr
+            inHeader={true}
+          >
+            <TrInner
+              headers={
+                Object {
+                  "0": "alpha",
+                  "1": "beta",
+                }
+              }
+              inHeader={true}
+            >
+              <tr>
+                <Th
+                  columnKey={0}
+                  key="0/.0"
+                >
+                  <th>
+                    alpha
+                  </th>
+                </Th>
+                <Th
+                  columnKey={1}
+                  key="1/.1"
+                >
+                  <th>
+                    beta
+                  </th>
+                </Th>
+              </tr>
+            </TrInner>
+          </Tr>
+        </thead>
+      </Thead>
+      <Tbody>
+        <tbody>
+          <Tr>
+            <TrInner
+              headers={
+                Object {
+                  "0": "alpha",
+                  "1": "beta",
+                }
+              }
+            >
+              <tr>
+                <Td
+                  columnKey={0}
+                  key="0/.0"
+                >
+                  <TdInner
+                    columnKey={0}
+                    headers={
+                      Object {
+                        "0": "alpha",
+                        "1": "beta",
+                      }
+                    }
+                  >
+                    <td
+                      className=" pivoted"
+                    >
+                      <div
+                        className="tdBefore"
+                      >
+                        alpha
+                      </div>
+                      item 1
+                    </td>
+                  </TdInner>
+                </Td>
+                <Td
+                  columnKey={1}
+                  key="1/.1"
+                >
+                  <TdInner
+                    columnKey={1}
+                    headers={
+                      Object {
+                        "0": "alpha",
+                        "1": "beta",
+                      }
+                    }
+                  >
+                    <td
+                      className=" pivoted"
+                    >
+                      <div
+                        className="tdBefore"
+                      >
+                        beta
+                      </div>
+                      item 2
+                    </td>
+                  </TdInner>
+                </Td>
+              </tr>
+            </TrInner>
+          </Tr>
+        </tbody>
+      </Tbody>
+    </table>
+  </Table>
+</Parent>
+`;
+
+exports[`Table updates correctly upon change of key prop: headersB 1`] = `
+<Parent
+  headers={
+    Array [
+      "one",
+      "two",
+    ]
+  }
+  i={2}
+>
+  <Table
+    key="2"
+  >
+    <table
+      className=" responsiveTable"
+    >
+      <Thead>
+        <thead>
+          <Tr
+            inHeader={true}
+          >
+            <TrInner
+              headers={
+                Object {
+                  "0": "one",
+                  "1": "two",
+                }
+              }
+              inHeader={true}
+            >
+              <tr>
+                <Th
+                  columnKey={0}
+                  key="0/.0"
+                >
+                  <th>
+                    one
+                  </th>
+                </Th>
+                <Th
+                  columnKey={1}
+                  key="1/.1"
+                >
+                  <th>
+                    two
+                  </th>
+                </Th>
+              </tr>
+            </TrInner>
+          </Tr>
+        </thead>
+      </Thead>
+      <Tbody>
+        <tbody>
+          <Tr>
+            <TrInner
+              headers={
+                Object {
+                  "0": "one",
+                  "1": "two",
+                }
+              }
+            >
+              <tr>
+                <Td
+                  columnKey={0}
+                  key="0/.0"
+                >
+                  <TdInner
+                    columnKey={0}
+                    headers={
+                      Object {
+                        "0": "one",
+                        "1": "two",
+                      }
+                    }
+                  >
+                    <td
+                      className=" pivoted"
+                    >
+                      <div
+                        className="tdBefore"
+                      >
+                        one
+                      </div>
+                      item 1
+                    </td>
+                  </TdInner>
+                </Td>
+                <Td
+                  columnKey={1}
+                  key="1/.1"
+                >
+                  <TdInner
+                    columnKey={1}
+                    headers={
+                      Object {
+                        "0": "one",
+                        "1": "two",
+                      }
+                    }
+                  >
+                    <td
+                      className=" pivoted"
+                    >
+                      <div
+                        className="tdBefore"
+                      >
+                        two
+                      </div>
+                      item 2
+                    </td>
+                  </TdInner>
+                </Td>
+              </tr>
+            </TrInner>
+          </Tr>
+        </tbody>
+      </Tbody>
+    </table>
+  </Table>
+</Parent>
 `;

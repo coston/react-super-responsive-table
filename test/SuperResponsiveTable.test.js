@@ -62,3 +62,34 @@ test('Render table without any column', () => {
   )
   expect(wrapper).toMatchSnapshot()
 })
+
+test('Table updates correctly upon change of key prop', () => {
+  // stateful container above
+  const Parent = ({ headers, i }) => (
+    <Table key={i}>
+      <Thead>
+      <Tr>
+        <Th>{headers[0]}</Th>
+        <Th>{headers[1]}</Th>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>item 1</Td>
+        <Td>item 2</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  )
+
+  const headersA = ['alpha', 'beta']
+  const headersB = ['one', 'two']
+
+  // mount with initial headers
+  const wrapper = mount(<Parent headers={headersA} i={1} />)
+  expect(wrapper).toMatchSnapshot('headersA')
+
+  // modify the headers by passing new prop, adjust key
+  wrapper.setProps({ headers: headersB, i: 2 })
+  expect(wrapper).toMatchSnapshot('headersB')
+})
