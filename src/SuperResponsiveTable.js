@@ -38,7 +38,7 @@ class TrInner extends React.Component {
     const { headers } = props
     if (headers && props.inHeader) {
       React.Children.map(props.children, (child, i) => {
-        if(child) {
+        if (child) {
           headers[i] = child.props.children
         }
       })
@@ -49,11 +49,14 @@ class TrInner extends React.Component {
     return (
       <tr {...allowed(this.props)}>
         {children &&
-          React.Children.map(children, (child, i) =>
-            child && React.cloneElement(child, {
-              key: i,
-              columnKey: i,
-            })
+          React.Children.map(
+            children,
+            (child, i) =>
+              child &&
+              React.cloneElement(child, {
+                key: i,
+                columnKey: i,
+              })
           )}
       </tr>
     )
