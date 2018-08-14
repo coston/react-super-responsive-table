@@ -4,7 +4,9 @@ node_js:
   - lts/*
 script:
   - npm install
+  - npm run test
   - npm run build
+  - npm run build-example
 before_install:
   - npm install -g npm
   - npm install -g greenkeeper-lockfile@1
