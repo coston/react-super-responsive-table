@@ -216,9 +216,9 @@ function _interopRequireDefault(obj) {
 // use the polyfill only if Context API not available (react<16)
 var createContext = _react2.default.createContext || _createReactContext2.default;
 
-var _React$createContext = _react2.default.createContext({}),
-    Provider = _React$createContext.Provider,
-    Consumer = _React$createContext.Consumer;
+var _createContext = createContext({}),
+    Provider = _createContext.Provider,
+    Consumer = _createContext.Consumer;
 
 exports.Provider = Provider;
 exports.Consumer = Consumer;
