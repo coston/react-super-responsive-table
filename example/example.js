@@ -36,7 +36,7 @@ class App extends Component {
               margin: '2em auto',
             }}
           >
-            <Browser>
+            <Browser resize height="22em">
               <LivePreview />
             </Browser>
             <div
@@ -45,7 +45,7 @@ class App extends Component {
                 marginBottom: '2em',
               }}
             />
-            <Terminal>
+            <Terminal resize>
               <LiveEdit style={{ backgroundColor: 'black' }} />
               <LiveError />
             </Terminal>
@@ -59,7 +59,7 @@ class App extends Component {
 const headerCode = `
 <div>
     <h2>🔖Try Me</h2>
-    <p>Resize to mobile to pivot this super resposive table</p>
+    <p>Resize my width to pivot this super resposive table</p>
     <Table>
     <Thead>
       <Tr>

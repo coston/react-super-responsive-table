@@ -68,7 +68,7 @@
     "react-dom": "^16.2.0",
     "react-live": "1.10.1",
     "react-test-renderer": "^16.3.2",
-    "react-window-ui": "^1.0.3",
+    "react-window-ui": "^1.1.0",
     "styled-components": "3.3.2",
     "watchify": "^3.11.0"
   },
