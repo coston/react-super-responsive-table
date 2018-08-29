@@ -36,7 +36,7 @@ class App extends Component {
               margin: '2em auto',
             }}
           >
-            <Browser resize height="22em">
+            <Browser height="22em">
               <LivePreview />
             </Browser>
             <div

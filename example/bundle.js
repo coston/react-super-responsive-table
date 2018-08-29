@@ -300,7 +300,7 @@ var App = function (_Component) {
             },
             _react2.default.createElement(
               _reactWindowUi.Browser,
-              { resize: true, height: '22em' },
+              { height: '22em' },
               _react2.default.createElement(_reactLive.LivePreview, null)
             ),
             _react2.default.createElement('div', {
