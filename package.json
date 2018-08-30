@@ -56,7 +56,7 @@
     "browserify-css": "^0.14.0",
     "core-js": "^2.5.5",
     "coveralls": "^3.0.1",
-    "enzyme": "^3.3.0",
+    "enzyme": "^3.5.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
     "http-server": "^0.11.1",
