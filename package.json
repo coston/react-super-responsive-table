@@ -13,9 +13,6 @@
     "url": "https://github.com/ua-oira/react-super-responsive-table/issues"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
   "scripts": {
     "dev": "mdx-go docs && npm run watch",
     "docs": "mdx-go build docs -d public",
