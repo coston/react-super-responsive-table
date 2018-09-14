@@ -17,7 +17,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "dev": "npm run watch && mdx-go docs",
+    "dev": "mdx-go docs && npm run watch",
     "docs": "mdx-go build docs -d public",
     "build": "babel -d dist src --copy-files",
     "clean": "rm -rf dist && mkdir dist",
