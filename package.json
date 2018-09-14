@@ -57,6 +57,7 @@
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
+    "mdx-go": "^1.1.9",
     "prettier": "1.14.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -75,7 +76,6 @@
     "test": "test"
   },
   "dependencies": {
-    "create-react-context": "^0.2.3",
-    "mdx-go": "^1.1.9"
+    "create-react-context": "^0.2.3"
   }
 }
