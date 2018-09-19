@@ -55,7 +55,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "mdx-go": "^1.1.9",
-    "prettier": "1.14.2",
+    "prettier": "1.14.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.2.2",
