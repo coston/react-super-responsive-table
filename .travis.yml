@@ -3,9 +3,7 @@ node_js:
   - lts/*
 script:
   - npm install
-  - npm run test
-  - npm run build
-  - npm run build-example
+  - npm run preversion
 before_install:
 # package-lock.json was introduced in npm@5
 - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
