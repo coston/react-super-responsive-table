@@ -3,6 +3,11 @@
   "version": "4.3.2",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
+  "files": [
+    "dist/SuperResponsiveTable.js",
+    "dist/SuperResponsiveTableStyle.css",
+    "dist/tableContext.js"
+  ],
   "author": "The University Of Alabama",
   "homepage": "https://github.com/ua-oira/react-super-responsive-table",
   "repository": {
@@ -53,16 +58,16 @@
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.5.0",
-    "mdx-go": "^1.1.9",
+    "jest": "^23.6.0",
+    "mdx-go": "^1.1.11",
     "prettier": "1.14.2",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
+    "react": "^16.5.2",
     "react-dom": "^16.2.2",
     "react-live": "1.11.0",
-    "react-test-renderer": "^16.4.2",
-    "react-window-ui": "^1.1.0",
-    "styled-components": "3.4.5"
+    "react-test-renderer": "^16.5.2",
+    "react-window-ui": "^1.1.1",
+    "styled-components": "3.4.9"
   },
   "keywords": [
     "react",
