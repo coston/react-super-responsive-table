@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.3.3",
+  "version": "4.3.4",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "files": [
@@ -54,20 +54,20 @@
     "babel-preset-react": "^6.24.1",
     "core-js": "^2.5.7",
     "coveralls": "^3.0.2",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "mdx-go": "^1.1.11",
-    "prettier": "1.14.2",
+    "prettier": "1.14.3",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.2.2",
-    "react-live": "1.11.0",
-    "react-test-renderer": "^16.5.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-live": "1.12.0",
+    "react-test-renderer": "^16.6.0",
     "react-window-ui": "^1.1.1",
-    "styled-components": "3.4.9"
+    "styled-components": "4.0.3"
   },
   "keywords": [
     "react",
