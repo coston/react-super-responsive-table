@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.3.4",
+  "version": "4.3.5",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "files": [
