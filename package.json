@@ -64,7 +64,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-live": "1.12.0",
+    "react-live": "2.0.0",
     "react-test-renderer": "^16.6.3",
     "react-window-ui": "^1.1.1",
     "styled-components": "4.1.2"
