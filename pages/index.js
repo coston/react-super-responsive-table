@@ -173,7 +173,7 @@ class App extends React.Component {
           <p>
             <ol>
             <li>
-                > <code>
+                <code>
                   npm i react-super-responsive-table
                 </code>
               </li>
