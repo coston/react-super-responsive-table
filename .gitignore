@@ -29,3 +29,5 @@ public
 *.sublime-*
 .idea/
 *.DS_Store
+.next
+out
