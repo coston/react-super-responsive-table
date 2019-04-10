@@ -149,8 +149,8 @@ class App extends React.Component {
               <div>
                 <h2>Try Me</h2>
                 <p>
-                  Resize your browser window width to pivot this super responsive
-                  table
+                  Resize your browser window width to pivot this super
+                  responsive table
                 </p>
                 <LivePreview />
               </div>
@@ -158,7 +158,7 @@ class App extends React.Component {
             <h2>Live Code</h2>
             <div style={{ border: "5px dashed black" }}>
               <LiveEditor
-              theme={theme}
+                theme={theme}
                 style={{
                   background: "black",
                   overflow: "scroll"
@@ -172,10 +172,8 @@ class App extends React.Component {
 
           <p>
             <ol>
-            <li>
-                <code>
-                  npm i react-super-responsive-table
-                </code>
+              <li>
+                <code>npm i react-super-responsive-table</code>
               </li>
               <li>
                 <code>
@@ -233,42 +231,42 @@ const theme /*: PrismTheme */ = {
 };
 
 const headerCode = `
-    <Table>
-    <Thead>
-      <Tr>
-        <Th>Event</Th>
-        <Th>Date</Th>
-        <Th>Location</Th>
-        <Th>Organizer</Th>
-        <Th>Theme</Th>
-        <Th>Agent</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>Tablescon</Td>
-        <Td>9 April 2019</Td>
-        <Td>East Annex</Td>
-        <Td>Super Friends</Td>
-        <Td>Data Tables</Td>
-        <Td>Coston Perkins</Td>
-      </Tr>
-      <Tr>
-        <Td>Capstone Data</Td>
-        <Td>19 May 2019</Td>
-        <Td>205 Gorgas</Td>
-        <Td>Data Underground</Td>
-        <Td>Data Scence</Td>
-        <Td>Jason Phillips</Td>
-      </Tr>
-      <Tr>
-        <Td>Tuscaloosa D3</Td>
-        <Td>29 June 2019</Td>
-        <Td>Github</Td>
-        <Td>The Contributors Consortium</Td>
-        <Td>Data Viz</Td>
-        <Td>Coston Perkins</Td>
-      </Tr>
-    </Tbody>
-  </Table>
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Event</Th>
+      <Th>Date</Th>
+      <Th>Location</Th>
+      <Th>Organizer</Th>
+      <Th>Theme</Th>
+      <Th>Agent</Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Td>Tablescon</Td>
+      <Td>9 April 2019</Td>
+      <Td>East Annex</Td>
+      <Td>Super Friends</Td>
+      <Td>Data Tables</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+    <Tr>
+      <Td>Capstone Data</Td>
+      <Td>19 May 2019</Td>
+      <Td>205 Gorgas</Td>
+      <Td>Data Underground</Td>
+      <Td>Data Scence</Td>
+      <Td>Jason Phillips</Td>
+    </Tr>
+    <Tr>
+      <Td>Tuscaloosa D3</Td>
+      <Td>29 June 2019</Td>
+      <Td>Github</Td>
+      <Td>The Contributors Consortium</Td>
+      <Td>Data Viz</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+  </Tbody>
+</Table>
 `.trim();
