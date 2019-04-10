@@ -19,7 +19,7 @@ var theme /*: PrismTheme */ = {
       }
     },
     {
-      types: ["tag", "operator", "number"],
+      types: ["tag", "operator"],
       style: {
         color: "#fff"
       }
@@ -33,7 +33,7 @@ var theme /*: PrismTheme */ = {
     {
       types: ["tag-id", "selector", "atrule-id"],
       style: {
-        color: "#eeebff"
+        color: "#FFA3B3"
       }
     },
     {
