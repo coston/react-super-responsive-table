@@ -182,7 +182,7 @@ class App extends React.Component {
                 </code>
               </li>
               <li>
-                <code>import './superResponsiveTableStyles.css'</code>, or copy
+                <code>import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'</code>, or copy
                 the styles into your project
               </li>
               <li>Write an html table with capitol letters</li>
