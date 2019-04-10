@@ -42,7 +42,9 @@ class App extends React.Component {
                 font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
                 background:rgba(255,255,255,0.4);
                 color: black;
-                padding: 1px;
+            }
+            ul li, ol li {
+              line-height:140%; 
             }
             table {
                 border-collapse: collapse;
@@ -170,9 +172,14 @@ class App extends React.Component {
 
           <p>
             <ol>
+            <li>
+                > <code>
+                  npm i react-super-responsive-table
+                </code>
+              </li>
               <li>
                 <code>
-                  import {(Table, Thead, Tbody, Tr, Th, Td)} from
+                  import {`{Table, Thead, Tbody, Tr, Th, Td}`} from
                   'react-super-responsive-table'
                 </code>
               </li>
@@ -180,7 +187,7 @@ class App extends React.Component {
                 <code>import './superResponsiveTableStyles.css'</code>, or copy
                 the styles into your project
               </li>
-              <li>Write your html table with capitol letters</li>
+              <li>Write an html table with capitol letters</li>
             </ol>
           </p>
 
