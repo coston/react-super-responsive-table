@@ -1,26 +1,22 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Consumer = exports.Provider = undefined;
+exports.Consumer = exports.Provider = void 0;
 
-var _react = require('react');
+var _react = _interopRequireDefault(require("react"));
 
-var _react2 = _interopRequireDefault(_react);
+var _createReactContext = _interopRequireDefault(require("create-react-context"));
 
-var _createReactContext = require('create-react-context');
-
-var _createReactContext2 = _interopRequireDefault(_createReactContext);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // use the polyfill only if Context API not available (react<16)
-var createContext = _react2.default.createContext || _createReactContext2.default;
+var createContext = _react["default"].createContext || _createReactContext["default"];
 
 var _createContext = createContext({}),
     Provider = _createContext.Provider,
     Consumer = _createContext.Consumer;
 
-exports.Provider = Provider;
 exports.Consumer = Consumer;
+exports.Provider = Provider;
