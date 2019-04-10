@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { Browser, Terminal } from "react-window-ui";
-import theme from './editor-theme'
 
 import {
   Table,
@@ -205,6 +204,26 @@ const Code = props => (
     {props.children}
   </code>
 );
+
+const theme /*: PrismTheme */ = {
+  plain: {
+    color: "#FFA3B3"
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      style: {
+        color: "#6c6783"
+      }
+    },
+    {
+      types: ["tag", "operator"],
+      style: {
+        color: "#fff"
+      }
+    }
+  ]
+};
 
 const headerCode = `
     <Table>
