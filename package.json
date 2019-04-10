@@ -23,6 +23,7 @@
     "build-site": "next build",
     "build": "babel -d dist src --copy-files",
     "clean": "rm -rf dist && mkdir dist",
+    "export": "npm run build-site && next export",
     "watch": "babel -w -d dist src --copy-files",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "start": "next start",
