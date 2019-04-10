@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { Browser, Terminal } from "react-window-ui";
+import theme from './editor-theme'
 
 import {
   Table,
@@ -12,7 +13,6 @@ import {
   Td
 } from "../src/SuperResponsiveTable.js";
 import "../src/SuperResponsiveTableStyle.css";
-import "./demo-styles.css";
 
 class App extends React.Component {
   render() {
@@ -23,27 +23,56 @@ class App extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <style>{`
-      html {
-        min-height: 100%;
-        background: pink;
-      }
-      a {
-          color: #600074;
-      }
-      h1 {
-          font-size: 2.5em;
-      }
-      h2 {
-          border-bottom: 3px solid #000;
-      }
-      code {
-          font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-          background:rgba(255,255,255,0.5);
-          color: black;
-          padding: 1px;
-      }
+            html {
+                min-height: 100%;
+                background: #FFA3B3;
+            }
+            a {
+                color: black;
+            }
+            a:hover {
+                    background:rgba(255,255,255,0.7);
+                }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                border-bottom: 3px solid #000;
+            }
+            code {
+                font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+                background:rgba(255,255,255,0.4);
+                color: black;
+                padding: 1px;
+            }
+            table {
+                border-collapse: collapse;
+                background:rgba(255,255,255,0.4);
+            }
+
+            th,
+            td {
+                border: 1px solid #000;
+                padding: 0.75rem;
+                text-align: left;
+            }
+
+            th {
+                font-weight: bold;
+                white-space: nowrap;
+                background: #000;
+                color: #fff;
+            }
+
+            tr:first-of-type th:not(:last-child) {
+                border-right-color: transparent;
+            }
+
+            tr:first-child th:first-child,
+            tr:not(:first-child):not(:last-child) th {
+                border-bottom-color: transparent !important;
+            }
     `}</style>
-              
 
         <div
           style={{
@@ -51,11 +80,11 @@ class App extends React.Component {
               "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
             marginLeft: "auto",
             marginRight: "auto",
-            maxWidth: "760px",
+            maxWidth: "900px",
             padding: "1em"
           }}
         >
-        <h1>⌗ react-super-responsive-table</h1>
+          <h1>⌗ react-super-responsive-table</h1>
           <p>
             <a
               style={{ borderBottom: "none", marginRight: "5px" }}
@@ -117,15 +146,18 @@ class App extends React.Component {
               }}
             >
               <div>
-              <h2>🔖Try Me</h2>
-    <p>Resize your browser window width to pivot this super resposive table</p>
+                <h2>Try Me</h2>
+                <p>
+                  Resize your browser window width to pivot this super responsive
+                  table
+                </p>
                 <LivePreview />
               </div>
             </div>
-            <h2>The Code</h2>
-            <div style={{border: '5px dashed black'}}> 
-            
+            <h2>Live Code</h2>
+            <div style={{ border: "5px dashed black" }}>
               <LiveEditor
+              theme={theme}
                 style={{
                   background: "black",
                   overflow: "scroll"
@@ -139,14 +171,21 @@ class App extends React.Component {
 
           <p>
             <ol>
-                <li><code>import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'</code></li>
-                <li><code>import './superResponsiveTableStyles.css'</code>, or copy the styles into your project</li>
-                <li>Write your html table with capitol letters</li>
+              <li>
+                <code>
+                  import {(Table, Thead, Tbody, Tr, Th, Td)} from
+                  'react-super-responsive-table'
+                </code>
+              </li>
+              <li>
+                <code>import './superResponsiveTableStyles.css'</code>, or copy
+                the styles into your project
+              </li>
+              <li>Write your html table with capitol letters</li>
             </ol>
           </p>
 
-
-        <h2>Github</h2>
+          <h2>Github</h2>
           <p>
             <a href="https://github.com/ua-oira/react-super-responsive-table">
               View project on GitHub
@@ -181,28 +220,28 @@ const headerCode = `
     </Thead>
     <Tbody>
       <Tr>
-        <Td>Crimson.js</Td>
-        <Td>4/9/2018</Td>
+        <Td>Tablescon</Td>
+        <Td>9 April 2019</Td>
         <Td>East Annex</Td>
-        <Td>Crimson.js</Td>
-        <Td>Javascript</Td>
+        <Td>Super Friends</Td>
+        <Td>Data Tables</Td>
         <Td>Coston Perkins</Td>
       </Tr>
       <Tr>
         <Td>Capstone Data</Td>
-        <Td>5/19/2018</Td>
+        <Td>19 May 2019</Td>
         <Td>205 Gorgas</Td>
-        <Td>OIRA</Td>
+        <Td>Data Underground</Td>
         <Td>Data Scence</Td>
         <Td>Jason Phillips</Td>
       </Tr>
       <Tr>
         <Td>Tuscaloosa D3</Td>
-        <Td>5/31/2018</Td>
-        <Td>Monarch Cafe</Td>
-        <Td>Crimson.js</Td>
+        <Td>29 June 2019</Td>
+        <Td>Github</Td>
+        <Td>The Contributors Consortium</Td>
         <Td>Data Viz</Td>
-        <Td>Michael Fox</Td>
+        <Td>Coston Perkins</Td>
       </Tr>
     </Tbody>
   </Table>
