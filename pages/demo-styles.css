@@ -1,0 +1,30 @@
+
+  table {
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 1px solid #000;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  
+  th {
+    background: #000;
+    color: #fff;
+  }
+  
+  tr:first-of-type th:not(:last-child) {
+    border-right-color: transparent;
+  }
+  
+  tr:first-child th:first-child,
+  tr:not(:first-child):not(:last-child) th {
+    border-bottom-color: transparent !important;
+  }
