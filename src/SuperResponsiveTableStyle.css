@@ -37,7 +37,6 @@
   .responsiveTable td.pivoted {
     /* Behave like a "row" */
     border: none !important;
-    border-bottom: 1px solid #000;
     position: relative;
     padding-left: 50% !important;
     text-align: left !important;
