@@ -42,6 +42,7 @@ class App extends React.Component {
                 font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
                 background:rgba(255,255,255,0.4);
                 color: black;
+                word-wrap: break-word;
             }
             ul li, ol li {
               line-height:140%; 
@@ -170,7 +171,7 @@ class App extends React.Component {
           <br />
           <h2 id="Usage">Usage</h2>
 
-          <p>
+          <div>
             <ol>
               <li>
                 <code>npm i react-super-responsive-table</code>
@@ -187,7 +188,7 @@ class App extends React.Component {
               </li>
               <li>Write an html table with capitol letters</li>
             </ol>
-          </p>
+          </div>
 
           <h2>Github</h2>
           <p>
