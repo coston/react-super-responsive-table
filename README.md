@@ -19,7 +19,8 @@ React Super Responsive Table converts your table data to a user-friendly list in
 
 ## Demo & Examples
 
-![demo gif](https://user-images.githubusercontent.com/7424180/34885948-324b1e6a-f787-11e7-93a7-aacac5e7e315.gif)
+![Demo Gif](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
+
 
 Live demo: [https://react-super-responsive-table.netlify.com](https://react-super-responsive-table.netlify.com)
 
