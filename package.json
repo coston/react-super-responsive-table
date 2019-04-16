@@ -65,7 +65,7 @@
     "react-dom": "^16.8.6",
     "react-live": "^2.0.1",
     "react-test-renderer": "^16.8.6",
-    "react-window-ui": "^1.1.1",
+    "react-window-ui": "^2.0.0",
     "styled-components": "4.2.0",
     "@zeit/next-css": "^1.0.1"
   },
