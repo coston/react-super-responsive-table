@@ -59,7 +59,7 @@
     "enzyme-to-json": "^3.3.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
-    "next": "^7.0.2",
+    "next": "^8.1.0",
     "prettier": "1.17.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
