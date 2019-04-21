@@ -414,7 +414,7 @@ exports[`Renders colSpan 1`] = `
 </table>
 `;
 
-exports[`Renders empty cell 1`] = `
+exports[`Renders div in empty cell 1`] = `
 <table
   className=" responsiveTable"
 >
