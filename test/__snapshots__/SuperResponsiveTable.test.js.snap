@@ -209,14 +209,6 @@ exports[`Render table with more columns in body 1`] = `
         <div
           className="tdBefore"
         />
-        V5
-      </td>
-      <td
-        className=" pivoted"
-      >
-        <div
-          className="tdBefore"
-        />
         V6
       </td>
     </tr>
@@ -348,6 +340,155 @@ exports[`Render table without any column 1`] = `
     </Tbody>
   </table>
 </ContextProvider>
+`;
+
+exports[`Renders colSpan 1`] = `
+<table
+  className=" responsiveTable"
+>
+  <thead>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        C1
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        C2
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        C3
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        <div>
+           
+        </div>
+      </td>
+      <td
+        colSpan="2"
+      >
+        V4
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        V6
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Renders empty cell 1`] = `
+<table
+  className=" responsiveTable"
+>
+  <thead>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        C1
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        C2
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        C3
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        <div>
+           
+        </div>
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        V4
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        V6
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`Table updates correctly upon change of key prop: headersA 1`] = `

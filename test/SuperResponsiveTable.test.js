@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
-import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer'
 
 test('Render Table', () => {
   const wrapper = shallow(
@@ -140,7 +140,6 @@ test('Render table with more columns in body', () => {
         {false && <Td>V2</Td>}
         <Td>V3</Td>
         <Td>V4</Td>
-        <Td>V5</Td>
         <Td>V6</Td>
       </Tr>
       </Tbody>
@@ -206,3 +205,50 @@ test('Table updates correctly upon change of key prop', () => {
   wrapper.setProps({ headers: headersB, i: 2 })
   expect(wrapper).toMatchSnapshot('headersB')
 })
+
+test('Renders colSpan', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        <Td>C2</Td>
+        <Td>C3</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td></Td>
+        <Td colSpan="2">V4</Td>
+        <Td>V6</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
+test('Renders div in empty cell', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        <Td>C2</Td>
+        <Td>C3</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td></Td>
+        <Td>V4</Td>
+        <Td>V6</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
