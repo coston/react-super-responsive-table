@@ -93,14 +93,14 @@ Headers are statefully stored on first render of the table, since the library do
 
 ## Options
 
-| Component | Replaces |
-| --------- | -------- |
-| `Table`   | `table`  |
-| `Thead`   | `thead`  |
-| `Tbody`   | `tbody`  |
-| `Tr`      | `tr`     |
-| `Th`      | `th`     |
-| `Td`      | `td`     |
+| Component | 
+| --------- | 
+| `Table`   | 
+| `Thead`   | 
+| `Tbody`   | 
+| `Tr`      | 
+| `Th`      | 
+| `Td`      | 
 
 ## Contributors
 
