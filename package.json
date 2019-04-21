@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "4.3.7",
+  "version": "4.3.8",
   "description": "React Super Responsive Table",
   "main": "dist/SuperResponsiveTable.js",
   "files": [
@@ -52,6 +52,7 @@
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@zeit/next-css": "^1.0.1",
     "babel-jest": "^24.7.1",
     "coveralls": "^3.0.3",
     "enzyme": "^3.9.0",
@@ -66,8 +67,7 @@
     "react-live": "^2.0.1",
     "react-test-renderer": "^16.8.6",
     "react-window-ui": "^2.1.0",
-    "styled-components": "4.2.0",
-    "@zeit/next-css": "^1.0.1"
+    "styled-components": "4.2.0"
   },
   "keywords": [
     "react",
