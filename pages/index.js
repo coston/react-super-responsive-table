@@ -169,13 +169,11 @@ class App extends React.Component {
             </div>
           </LiveProvider>
           <br />
+          <h2>Installation</h2>
+          <p><code>npm i react-super-responsive-table</code></p>
           <h2 id="Usage">Usage</h2>
-
           <div>
             <ol>
-              <li>
-                <code>npm i react-super-responsive-table</code>
-              </li>
               <li>
                 <code>
                   import {`{Table, Thead, Tbody, Tr, Th, Td}`} from
@@ -183,10 +181,9 @@ class App extends React.Component {
                 </code>
               </li>
               <li>
-                <code>import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'</code>, or copy
-                the styles into your project
+                <code>import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'</code>
               </li>
-              <li>Write an html table with capitol letters</li>
+              <li>Write your html table with the imported components</li>
             </ol>
           </div>
 

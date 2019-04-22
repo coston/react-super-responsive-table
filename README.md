@@ -12,7 +12,6 @@ react-super-responsive-table converts your table data to a user-friendly list in
 - [Installation](#installation)
 - [Usage](#usage)
 - [Using Dynamic Headers](#using-dynamic-headers)
-- [Options](#Options)
 - [Contributors](#Contributors)
 - [Contributing](#contributing)
 - [License](#license)
@@ -31,9 +30,11 @@ npm install react-super-responsive-table --save
 
 ## Usage
 
-To use, import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'. Then, copy or import the superResponsiveTableStyles.css file into your project. Write your html table with capitol letters, and voilà!
+1. `import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'`
+2. Copy or import `react-super-responsive-table/dist/superResponsiveTableStyles.css` into your project
+3. Write your html table with the imported components.
 
-```js
+```jsx
 import React from "react"
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table"
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css"
@@ -74,7 +75,7 @@ export default function TableExample(props) {
 
 Headers are statefully stored on first render of the table, since the library doesn't use props for them and just checks the children of the thead to build its internal list of headers upon construction. To use dynamic headers, use a key prop to ensure the components are all internally updated when you're making this kind of change.
 
-```js
+```jsx
 <Table key={i}>
   <Thead>
     <Tr>
@@ -90,17 +91,6 @@ Headers are statefully stored on first render of the table, since the library do
   </Tbody>
 </Table>
 ```
-
-## Options
-
-| Component | 
-| --------- | 
-| `Table`   | 
-| `Thead`   | 
-| `Tbody`   | 
-| `Tr`      | 
-| `Th`      | 
-| `Td`      | 
 
 ## Contributors
 
