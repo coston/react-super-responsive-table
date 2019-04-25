@@ -46,7 +46,7 @@ export default function TableExample(props) {
         <Tr>
           <Th>Event</Th>
           <Th>Date</Th>
-          <Th>Location</Th>>
+          <Th>Location</Th>
         </Tr>
       </Thead>
       <Tbody>
