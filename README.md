@@ -101,6 +101,7 @@ Super Responsive Tables are made possible by these great community members:
 - [jorrit](https://github.com/jorrit)
 - [Droow](https://github.com/droow)
 - [NShahri](https://github.com/NShahri)
+- [PicchiKevin](https://github.com/PicchiKevin)
 
 ## Contributing
 
