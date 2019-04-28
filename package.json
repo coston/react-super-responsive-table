@@ -1,7 +1,7 @@
 {
   "name": "react-super-responsive-table",
   "version": "4.3.10",
-  "description": "React Super Responsive Table",
+  "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view",
   "main": "dist/SuperResponsiveTable.js",
   "files": [
     "dist/SuperResponsiveTable.js",
