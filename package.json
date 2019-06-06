@@ -67,7 +67,7 @@
     "react-live": "^2.0.1",
     "react-test-renderer": "^16.8.6",
     "react-window-ui": "^2.1.0",
-    "styled-components": "4.2.1"
+    "styled-components": "4.3.1"
   },
   "keywords": [
     "react",
