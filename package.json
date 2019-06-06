@@ -78,6 +78,6 @@
     "test": "test"
   },
   "dependencies": {
-    "create-react-context": "^0.2.3"
+    "create-react-context": "^0.3.0"
   }
 }
