@@ -38,8 +38,10 @@
     /* Behave like a "row" */
     border: none !important;
     position: relative;
-    padding-left: 50% !important;
+    padding-left: calc(50% + 10px) !important;
     text-align: left !important;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
   }
 
   .responsiveTable td .tdBefore {
@@ -49,9 +51,9 @@
 
     /* Top/left values mimic padding */
     left: 1rem;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
+    width: calc(50% - 20px);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
     text-align: left !important;
     font-weight: 600;
   }
