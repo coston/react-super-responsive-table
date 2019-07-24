@@ -21,7 +21,8 @@
   "scripts": {
     "start": "next",
     "build-site": "next build",
-    "build": "babel -d dist src --copy-files",
+    "build": "babel -d dist src --copy-files && npm run build-css-es",
+    "build-css-es": "node build-css-es && echo DONE",
     "clean": "rimraf dist && mkdir dist",
     "export": "npm run build-site && next export",
     "watch": "babel -w -d dist src --copy-files",
