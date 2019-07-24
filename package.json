@@ -22,16 +22,16 @@
     "start": "next",
     "build-site": "next build",
     "build": "babel -d dist src --copy-files",
-    "clean": "rm -rf dist && mkdir dist",
+    "clean": "rimraf dist && mkdir dist",
     "export": "npm run build-site && next export",
     "watch": "babel -w -d dist src --copy-files",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "preversion": "npm run test && npm run format && npm run clean && npm run build && npm run build-site",
     "postpublish": "git push && git push --tag",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && npx shx cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
     "setupFiles": [
@@ -67,6 +67,8 @@
     "react-live": "^2.1.2",
     "react-test-renderer": "^16.8.6",
     "react-window-ui": "^2.1.0",
+    "rimraf": "^2.6.3",
+    "shx": "^0.3.2",
     "styled-components": "4.3.2"
   },
   "peerDependencies": {
