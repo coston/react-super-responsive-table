@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
   "main": "dist/SuperResponsiveTable.js",
   "files": [
@@ -47,31 +47,31 @@
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
     "@babel/plugin-transform-spread": "^7.2.2",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@zeit/next-css": "^1.0.1",
-    "babel-jest": "^24.8.0",
-    "coveralls": "^3.0.4",
+    "babel-jest": "^24.9.0",
+    "coveralls": "^3.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
+    "enzyme-to-json": "^3.4.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
-    "next": "^9.0.0",
+    "jest": "^24.9.0",
+    "next": "^9.0.5",
     "prettier": "1.18.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-live": "^2.1.2",
-    "react-test-renderer": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-live": "^2.2.0",
+    "react-test-renderer": "^16.9.0",
     "react-window-ui": "^2.1.0",
     "styled-components": "4.3.2"
   },
   "peerDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "keywords": [
     "react",
