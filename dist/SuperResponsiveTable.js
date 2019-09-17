@@ -50,37 +50,37 @@ var allowed = function allowed(props) {
 };
 
 var Table =
-  /*#__PURE__*/
-  function (_React$Component) {
-    _inherits(Table, _React$Component);
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Table, _React$Component);
 
-    function Table(props) {
-      var _this;
+  function Table(props) {
+    var _this;
 
-      _classCallCheck(this, Table);
+    _classCallCheck(this, Table);
 
-      _this = _possibleConstructorReturn(this, _getPrototypeOf(Table).call(this, props));
-      _this.state = {
-        headers: {}
-      };
-      return _this;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Table).call(this, props));
+    _this.state = {
+      headers: {}
+    };
+    return _this;
+  }
+
+  _createClass(Table, [{
+    key: "render",
+    value: function render() {
+      var headers = this.state.headers;
+      var classes = (this.props.className || '') + ' responsiveTable';
+      return _react["default"].createElement(_tableContext.Provider, {
+        value: headers
+      }, _react["default"].createElement("table", _extends({}, allowed(this.props), {
+        className: classes
+      })));
     }
+  }]);
 
-    _createClass(Table, [{
-      key: "render",
-      value: function render() {
-        var headers = this.state.headers;
-        var classes = (this.props.className || '') + ' responsiveTable';
-        return _react["default"].createElement(_tableContext.Provider, {
-          value: headers
-        }, _react["default"].createElement("table", _extends({}, allowed(this.props), {
-          className: classes
-        })));
-      }
-    }]);
-
-    return Table;
-  }(_react["default"].Component);
+  return Table;
+}(_react["default"].Component);
 
 exports.Table = Table;
 
@@ -93,44 +93,44 @@ var Thead = function Thead(props) {
 exports.Thead = Thead;
 
 var TrInner =
-  /*#__PURE__*/
-  function (_React$Component2) {
-    _inherits(TrInner, _React$Component2);
+/*#__PURE__*/
+function (_React$Component2) {
+  _inherits(TrInner, _React$Component2);
 
-    function TrInner(props) {
-      var _this2;
+  function TrInner(props) {
+    var _this2;
 
-      _classCallCheck(this, TrInner);
+    _classCallCheck(this, TrInner);
 
-      _this2 = _possibleConstructorReturn(this, _getPrototypeOf(TrInner).call(this, props));
-      var headers = props.headers;
+    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(TrInner).call(this, props));
+    var headers = props.headers;
 
-      if (headers && props.inHeader) {
-        _react["default"].Children.map(props.children, function (child, i) {
-          if (child) {
-            headers[i] = child.props.children;
-          }
-        });
-      }
-
-      return _this2;
+    if (headers && props.inHeader) {
+      _react["default"].Children.map(props.children, function (child, i) {
+        if (child) {
+          headers[i] = child.props.children;
+        }
+      });
     }
 
-    _createClass(TrInner, [{
-      key: "render",
-      value: function render() {
-        var children = this.props.children;
-        return _react["default"].createElement("tr", allowed(this.props), children && _react["default"].Children.map(children, function (child, i) {
-          return child && _react["default"].cloneElement(child, {
-            key: i,
-            columnKey: i
-          });
-        }));
-      }
-    }]);
+    return _this2;
+  }
 
-    return TrInner;
-  }(_react["default"].Component);
+  _createClass(TrInner, [{
+    key: "render",
+    value: function render() {
+      var children = this.props.children;
+      return _react["default"].createElement("tr", allowed(this.props), children && _react["default"].Children.map(children, function (child, i) {
+        return child && _react["default"].cloneElement(child, {
+          key: i,
+          columnKey: i
+        });
+      }));
+    }
+  }]);
+
+  return TrInner;
+}(_react["default"].Component);
 
 var Tr = function Tr(props) {
   return _react["default"].createElement(_tableContext.Consumer, null, function (headers) {
@@ -155,38 +155,38 @@ var Tbody = function Tbody(props) {
 exports.Tbody = Tbody;
 
 var TdInner =
-  /*#__PURE__*/
-  function (_React$Component3) {
-    _inherits(TdInner, _React$Component3);
+/*#__PURE__*/
+function (_React$Component3) {
+  _inherits(TdInner, _React$Component3);
 
-    function TdInner() {
-      _classCallCheck(this, TdInner);
+  function TdInner() {
+    _classCallCheck(this, TdInner);
 
-      return _possibleConstructorReturn(this, _getPrototypeOf(TdInner).apply(this, arguments));
-    }
+    return _possibleConstructorReturn(this, _getPrototypeOf(TdInner).apply(this, arguments));
+  }
 
-    _createClass(TdInner, [{
-      key: "render",
-      value: function render() {
-        if (this.props.colSpan) {
-          return _react["default"].createElement("td", allowed(this.props));
-        }
+  _createClass(TdInner, [{
+    key: "render",
+    value: function render() {
+      if (this.props.colSpan) {
+        return _react["default"].createElement("td", allowed(this.props));
+      }
 
-        var _this$props = this.props,
+      var _this$props = this.props,
           headers = _this$props.headers,
           children = _this$props.children,
           columnKey = _this$props.columnKey;
-        var classes = (this.props.className || '') + ' pivoted';
-        return _react["default"].createElement("td", {
-          className: classes
-        }, _react["default"].createElement("div", {
-          className: "tdBefore"
-        }, headers[columnKey]), children || _react["default"].createElement("div", null, "\xA0"));
-      }
-    }]);
+      var classes = (this.props.className || '') + ' pivoted';
+      return _react["default"].createElement("td", {
+        className: classes
+      }, _react["default"].createElement("div", {
+        className: "tdBefore"
+      }, headers[columnKey]), children || _react["default"].createElement("div", null, "\xA0"));
+    }
+  }]);
 
-    return TdInner;
-  }(_react["default"].Component);
+  return TdInner;
+}(_react["default"].Component);
 
 var Td = function Td(props) {
   return _react["default"].createElement(_tableContext.Consumer, null, function (headers) {
