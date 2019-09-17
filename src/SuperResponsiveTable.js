@@ -80,7 +80,7 @@ class TdInner extends React.Component {
     return (
       <td className={classes}>
         <div className="tdBefore">{headers[columnKey]}</div>
-        {children !== undefined ? children : <div>&nbsp;</div>}
+        {children || <div>&nbsp;</div>}
       </td>
     )
   }

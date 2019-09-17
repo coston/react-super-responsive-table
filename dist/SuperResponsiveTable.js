@@ -181,7 +181,7 @@ function (_React$Component3) {
         className: classes
       }, _react["default"].createElement("div", {
         className: "tdBefore"
-      }, headers[columnKey]), children !== undefined ? children : _react["default"].createElement("div", null, "\xA0"));
+      }, headers[columnKey]), children || _react["default"].createElement("div", null, "\xA0"));
     }
   }]);
 
