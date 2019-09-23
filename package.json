@@ -68,7 +68,7 @@
     "react-test-renderer": "^16.9.0",
     "react-window-ui": "^2.1.0",
     "rimraf": "^3.0.0",
-    "styled-components": "4.3.2"
+    "styled-components": "4.4.0"
   },
   "peerDependencies": {
     "react": "^16.9.0",
