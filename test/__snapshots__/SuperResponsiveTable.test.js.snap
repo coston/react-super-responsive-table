@@ -509,7 +509,6 @@ exports[`Renders rowSpan 1`] = `
       </td>
       <td
         className=" pivoted"
-        rowSpan="2"
       >
         <div
           className="tdBefore"
@@ -531,6 +530,39 @@ exports[`Renders rowSpan 1`] = `
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        V3
+      </td>
+      <td
+        className=" pivoted"
+        rowSpan="2"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        V4
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        V6
+      </td>
+    </tr>
     <tr>
       <td
         className=" pivoted"

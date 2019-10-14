@@ -235,11 +235,16 @@ test('Renders rowSpan', () => {
       <Thead>
       <Tr>
         <Td>C1</Td>
-        <Td rowSpan="2">C2</Td>
+        <Td>C2</Td>
         <Td>C3</Td>
       </Tr>
       </Thead>
       <Tbody>
+      <Tr>
+        <Td>V3</Td>
+        <Td rowSpan="2">V4</Td>
+        <Td>V6</Td>
+      </Tr>
       <Tr>
         <Td>V4</Td>
         <Td>V6</Td>
