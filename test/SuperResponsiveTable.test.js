@@ -229,6 +229,28 @@ test('Renders colSpan', () => {
   expect(tree).toMatchSnapshot();
 })
 
+test('Renders rowSpan', () => {
+  let component = renderer.create(
+    <Table>
+      <Thead>
+      <Tr>
+        <Td>C1</Td>
+        <Td rowSpan="2">C2</Td>
+        <Td>C3</Td>
+      </Tr>
+      </Thead>
+      <Tbody>
+      <Tr>
+        <Td>V4</Td>
+        <Td>V6</Td>
+      </Tr>
+      </Tbody>
+    </Table>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+})
+
 test('Renders div in empty cell', () => {
   let component = renderer.create(
     <Table>
