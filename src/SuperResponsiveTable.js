@@ -78,7 +78,7 @@ class TdInner extends React.Component {
     const { headers, children, columnKey } = this.props
     const classes = (this.props.className || '') + ' pivoted'
     return (
-      <td className={classes}>
+      <td {...allowed(this.props)} className={classes}>
         <div className="tdBefore">{headers[columnKey]}</div>
         {children || <div>&nbsp;</div>}
       </td>

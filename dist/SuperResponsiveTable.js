@@ -178,6 +178,7 @@ function (_React$Component3) {
           columnKey = _this$props.columnKey;
       var classes = (this.props.className || '') + ' pivoted';
       return _react["default"].createElement("td", {
+        ...allowed(this.props),
         className: classes
       }, _react["default"].createElement("div", {
         className: "tdBefore"

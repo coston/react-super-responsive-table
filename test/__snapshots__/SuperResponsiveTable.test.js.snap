@@ -491,6 +491,104 @@ exports[`Renders div in empty cell 1`] = `
 </table>
 `;
 
+exports[`Renders rowSpan 1`] = `
+<table
+  className=" responsiveTable"
+>
+  <thead>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        C1
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        C2
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        C3
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        V3
+      </td>
+      <td
+        className=" pivoted"
+        rowSpan="2"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        V4
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C3
+        </div>
+        V6
+      </td>
+    </tr>
+    <tr>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C1
+        </div>
+        V4
+      </td>
+      <td
+        className=" pivoted"
+      >
+        <div
+          className="tdBefore"
+        >
+          C2
+        </div>
+        V6
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Table updates correctly upon change of key prop: headersA 1`] = `
 <Parent
   headers={
