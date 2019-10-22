@@ -177,10 +177,9 @@ function (_React$Component3) {
           children = _this$props.children,
           columnKey = _this$props.columnKey;
       var classes = (this.props.className || '') + ' pivoted';
-      return _react["default"].createElement("td", {
-        ...allowed(this.props),
+      return _react["default"].createElement("td", _extends({}, allowed(this.props), {
         className: classes
-      }, _react["default"].createElement("div", {
+      }), _react["default"].createElement("div", {
         className: "tdBefore"
       }, headers[columnKey]), children || _react["default"].createElement("div", null, "\xA0"));
     }
