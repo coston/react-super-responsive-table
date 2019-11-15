@@ -12,7 +12,7 @@ react-super-responsive-table converts your table data to a user-friendly list in
 - [Installation](#installation)
 - [Usage](#usage)
 - [Using Dynamic Headers](#using-dynamic-headers)
-- [Using Auto Table Wrapper] (#using-auto-table-wrapper)
+- [Using Auto Table Wrapper](#using-auto-table-wrapper)
 - [Contributors](#Contributors)
 - [Contributing](#contributing)
 - [License](#license)
