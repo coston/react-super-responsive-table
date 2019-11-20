@@ -20,14 +20,18 @@ export class Table extends React.Component {
     const classes = (this.props.className || '') + ' responsiveTable'
     return (
       <Provider value={headers}>
-        <table {...allowed(this.props)} className={classes} />
+        <table
+          data-testid="table"
+          {...allowed(this.props)}
+          className={classes}
+        />
       </Provider>
     )
   }
 }
 
 export const Thead = props => (
-  <thead {...allowed(props)}>
+  <thead data-testid="thead" {...allowed(props)}>
     {React.cloneElement(props.children, { inHeader: true })}
   </thead>
 )
@@ -47,7 +51,7 @@ class TrInner extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <tr {...allowed(this.props)}>
+      <tr data-testid="tr" {...allowed(this.props)}>
         {children &&
           React.Children.map(
             children,
@@ -67,19 +71,21 @@ export const Tr = props => (
   <Consumer>{headers => <TrInner {...props} headers={headers} />}</Consumer>
 )
 
-export const Th = props => <th {...allowed(props)} />
-export const Tbody = props => <tbody {...allowed(props)} />
+export const Th = props => <th data-testid="th" {...allowed(props)} />
+export const Tbody = props => <tbody data-testid="tbody" {...allowed(props)} />
 
 class TdInner extends React.Component {
   render() {
     if (this.props.colSpan) {
-      return <td {...allowed(this.props)} />
+      return <td data-testid="td" {...allowed(this.props)} />
     }
     const { headers, children, columnKey } = this.props
     const classes = (this.props.className || '') + ' pivoted'
     return (
-      <td {...allowed(this.props)} className={classes}>
-        <div className="tdBefore">{headers[columnKey]}</div>
+      <td data-testid="td" {...allowed(this.props)} className={classes}>
+        <div data-testid="td-before" className="tdBefore">
+          {headers[columnKey]}
+        </div>
         {children || <div>&nbsp;</div>}
       </td>
     )
