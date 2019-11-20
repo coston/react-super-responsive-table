@@ -12,6 +12,7 @@ react-super-responsive-table converts your table data to a user-friendly list in
 - [Installation](#installation)
 - [Usage](#usage)
 - [Using Dynamic Headers](#using-dynamic-headers)
+- [Using Auto Table Wrapper](#using-auto-table-wrapper)
 - [Contributors](#Contributors)
 - [Contributing](#contributing)
 - [License](#license)
@@ -90,6 +91,49 @@ Headers are statefully stored on first render of the table, since the library do
     </Tr>
   </Tbody>
 </Table>
+```
+
+## Using Auto Table Wrapper
+
+To use the `AutoTableWrapper` Component just wrap it around any normal html table or even elements that contain tables.
+
+```
+import React from 'react'
+import { AutoTableWrapper } from 'react-super-responsive-table/SuperAutoResponsiveTable'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
+
+export default function TableExample(props) {
+  return (
+    <AutoTableWrapper>
+      <table>
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tablescon</td>
+            <td>9 April 2019</td>
+            <td>East Annex</td>
+          </tr>
+          <tr>
+            <td>Capstone Data</td>
+            <td>19 May 2019</td>
+            <td>205 Gorgas</td>
+          </tr>
+          <tr>
+            <td>Tuscaloosa D3</td>
+            <td>29 June 2019</td>
+            <td>Github</td>
+          </tr>
+        </tbody>
+      </table>
+    </AutoTableWrapper>
+  )
+}
 ```
 
 ## Contributors
