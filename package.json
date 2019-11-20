@@ -39,9 +39,6 @@
     ],
     "testURL": "http://localhost/",
     "collectCoverage": true,
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }
@@ -52,12 +49,11 @@
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
     "@zeit/next-css": "^1.0.1",
     "babel-jest": "^24.9.0",
     "coveralls": "^3.0.6",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "next": "^9.0.5",
