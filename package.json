@@ -50,7 +50,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@testing-library/jest-dom": "^5.0.0",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^10.0.0",
     "@zeit/next-css": "^1.0.1",
     "babel-jest": "^24.9.0",
     "coveralls": "^3.0.6",
