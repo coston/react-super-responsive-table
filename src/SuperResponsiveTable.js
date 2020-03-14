@@ -38,7 +38,17 @@ export class Table extends React.Component {
 
   componentDidMount() {
     if (this.props.withBaseStyles) {
-      injectBaseStyles()
+      injectBaseStyles(this.props.withBaseStyles)
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.withBaseStyles &&
+      prevProps.withBaseStyles.breakpoint !==
+        this.props.withBaseStyles.breakpoint
+    ) {
+      injectBaseStyles(this.props.withBaseStyles)
     }
   }
 

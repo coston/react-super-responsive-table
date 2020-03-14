@@ -1,9 +1,18 @@
-const baseStyles = `
+const css = (strings, ...expressions) => {
+  let str = ''
+  strings.forEach((string, i) => {
+    str += string + (expressions[i] || '')
+  })
+
+  return str
+}
+
+const generateBaseStyles = ({ breakpoint = '40em' }) => css`
 .super-responsive-table__th_pseudo {
   display: none;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: ${breakpoint}) {
   .super-responsive-table__table,
   .super-responsive-table__thead,
   .super-responsive-table__tbody,
@@ -35,10 +44,23 @@ const baseStyles = `
 }
 `
 
-export const injectBaseStyles = () => {
-  const styleTag = document.createElement('style')
-  styleTag.setAttribute('data-super-responsive-table', '')
-  styleTag.innerHTML = baseStyles
+const getStyleTag = () => {
+  const existingStyleTag = document.head.querySelector(
+    'style[data-super-responsive-table]'
+  )
 
-  document.head.appendChild(styleTag)
+  if (existingStyleTag) {
+    return existingStyleTag
+  }
+
+  const newStyleTag = document.createElement('style')
+  newStyleTag.setAttribute('data-super-responsive-table', '')
+  document.head.appendChild(newStyleTag)
+
+  return newStyleTag
+}
+
+export const injectBaseStyles = props => {
+  const styleTag = getStyleTag()
+  styleTag.innerHTML = generateBaseStyles(props)
 }
