@@ -170,6 +170,34 @@ describe('SuperResponsiveTable', () => {
       expect(baseStyleUtils.injectBaseStyles).toHaveBeenCalledTimes(2)
     })
   })
+
+  it('appends custom classes to table elements', () => {
+    const { getTable, getThead, getTr, getTh, getTbody, getTd } = setup(
+      <Table className="my-table">
+        <Thead className="my-thead">
+          <Tr className="my-tr">
+            <Th className="my-th">Header 1</Th>
+            <Th>Header 2</Th>
+            <Th>Header 3</Th>
+          </Tr>
+        </Thead>
+        <Tbody className="my-tbody">
+          <Tr>
+            <Td className="my-td">Row 1</Td>
+            <Td>Row 2</Td>
+            <Td>Row 3</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    )
+
+    expect(getTable).toHaveClass('my-table')
+    expect(getThead).toHaveClass('my-thead')
+    expect(getTr[0]).toHaveClass('my-tr')
+    expect(getTh[0]).toHaveClass('my-th')
+    expect(getTbody).toHaveClass('my-tbody')
+    expect(getTd[0]).toHaveClass('my-td')
+  })
 })
 
 // TODO
