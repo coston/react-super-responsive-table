@@ -5,8 +5,8 @@ import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
 
 describe('SuperResponsiveTable', () => {
   // START OF COMPONENT SETUP
-  const setup = overrides => {
-    const { getAllByTestId, getByTestId, getAllByText } = render(
+  const setup = (ui, options) => {
+    const defaultUi = (
       <Table>
         <Thead>
           <Tr>
@@ -24,9 +24,11 @@ describe('SuperResponsiveTable', () => {
         </Tbody>
       </Table>
     )
+    const renderResult = render(ui || defaultUi, options)
+    const { getAllByTestId, getByTestId } = renderResult
 
     return {
-      getAllByText,
+      ...renderResult,
       getTable: getByTestId('table'),
       getThead: getByTestId('thead'),
       getTr: getAllByTestId('tr'),
