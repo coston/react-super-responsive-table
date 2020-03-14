@@ -1,9 +1,22 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
+import * as baseStyleUtils from '../src/baseStyleUtils'
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TBaseStyles,
+} from '../src/SuperResponsiveTable'
 
 describe('SuperResponsiveTable', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   // START OF COMPONENT SETUP
   const setup = (ui, options) => {
     const defaultUi = (
@@ -80,6 +93,82 @@ describe('SuperResponsiveTable', () => {
     const { getTdBefore } = setup()
 
     expect(getTdBefore.length).toBe(3)
+  })
+
+  it('does not call injectBaseStyles on mount', () => {
+    jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+    setup()
+
+    expect(baseStyleUtils.injectBaseStyles).not.toHaveBeenCalled()
+  })
+
+  describe('withBaseStyles is truthy', () => {
+    it('calls injectBaseStyles on mount', () => {
+      jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+      setup(
+        <Table withBaseStyles>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      expect(baseStyleUtils.injectBaseStyles).toHaveBeenCalledTimes(1)
+    })
+
+    it('calls injectBaseStyles again if props have changed', () => {
+      jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+      const { rerender } = setup(
+        <Table withBaseStyles={{ breakpoint: '40em' }}>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      rerender(
+        <Table withBaseStyles={{ breakpoint: '45em' }}>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      expect(baseStyleUtils.injectBaseStyles).toHaveBeenCalledTimes(2)
+    })
   })
 })
 
