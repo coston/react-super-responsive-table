@@ -1,30 +1,30 @@
 const baseStyles = `
-.responsiveTable td .tdBefore {
+.super-responsive-table__th_pseudo {
   display: none;
 }
 
 @media screen and (max-width: 40em) {
-  .responsiveTable table,
-  .responsiveTable thead,
-  .responsiveTable tbody,
-  .responsiveTable th,
-  .responsiveTable td,
-  .responsiveTable tr {
+  .super-responsive-table__table,
+  .super-responsive-table__thead,
+  .super-responsive-table__tbody,
+  .super-responsive-table__th,
+  .super-responsive-table__td,
+  .super-responsive-table__tr {
     display: block;
   }
 
-  .responsiveTable thead tr {
+  .super-responsive-table__thead {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  .responsiveTable td.pivoted {
+  .super-responsive-table__td_pivoted {
     position: relative;
     margin-left: 50%;
   }
 
-  .responsiveTable td .tdBefore {
+  .super-responsive-table__th_pseudo {
     box-sizing: border-box;
     display: block;
     position: absolute;
