@@ -1,12 +1,14 @@
 import React from 'react'
 import { Provider, Consumer } from './tableContext'
+import { injectBaseStyles } from './baseStyleUtils'
 
 const omit = (obj, omitProps) =>
   Object.keys(obj)
     .filter(key => omitProps.indexOf(key) === -1)
     .reduce((returnObj, key) => ({ ...returnObj, [key]: obj[key] }), {})
 
-const allowed = props => omit(props, ['inHeader', 'columnKey', 'headers'])
+const allowed = props =>
+  omit(props, ['inHeader', 'columnKey', 'headers', 'withBaseStyles'])
 
 export class Table extends React.Component {
   constructor(props) {
@@ -15,6 +17,13 @@ export class Table extends React.Component {
       headers: {},
     }
   }
+
+  componentDidMount() {
+    if (this.props.withBaseStyles) {
+      injectBaseStyles()
+    }
+  }
+
   render() {
     const { headers } = this.state
     const classes = (this.props.className || '') + ' responsiveTable'
