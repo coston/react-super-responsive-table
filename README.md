@@ -18,7 +18,7 @@ react-super-responsive-table converts your table data to a user-friendly list in
 
 ## Demo
 
-![Demo Gif](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
+![Demo Gif](https://user-images.githubusercontent.com/7394331/76696169-59d4de00-66c3-11ea-843f-85aa9e227d79.gif)
 
 Live demo: [https://react-super-responsive-table.netlify.com](https://react-super-responsive-table.netlify.com)
 
@@ -31,17 +31,16 @@ npm install react-super-responsive-table --save
 ## Usage
 
 1. `import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'`
-2. Copy or import `react-super-responsive-table/dist/superResponsiveTableStyles.css` into your project
+2. To enable the base table styles, set the `withBaseStyles` prop on the `Table` component. You may optionally use it to define a custom breakpoint: `<Table withBaseStyles={{ breakpoint: '45em' }} />`.
 3. Write your html table with the imported components.
 
 ```jsx
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
-import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
 export default function TableExample(props) {
   return (
-    <Table>
+    <Table withBaseStyles>
       <Thead>
         <Tr>
           <Th>Event</Th>
