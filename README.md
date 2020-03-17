@@ -91,6 +91,27 @@ Headers are statefully stored on first render of the table, since the library do
 </Table>
 ```
 
+## Styling
+
+All the underlying table elements have [BEM class names](https://en.bem.info/methodology/naming-convention/) that you can use to target each element for styling.
+
+```html
+<table class="super-responsive-table__table">
+  <thead class="super-responsive-table__thead">
+    <tr class="super-responsive-table__tr">
+      <th class="super-responsive-table__th" />
+    </tr>
+  </thead>
+  <tbody class="super-responsive-table__tbody">
+    <tr class="super-responsive-table__tr">
+      <td class="super-responsive-table__td" />
+    </tr>
+  </tbody>
+</table>
+```
+
+Once the table has pivoted into its side-by-side layout, the `<th>` and `<td>` elements will also be appended the `super-responsive-table__th_pivoted` and `super-responsive-table__td_pivoted` modifier class names respectively.
+
 ## Contributors
 
 Super Responsive Tables are made possible by these great community members:
