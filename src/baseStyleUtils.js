@@ -35,7 +35,6 @@ const generateBaseStyles = ({ breakpoint = '40em' }) => css`
 
   .super-responsive-table__th_pivoted {
     box-sizing: border-box;
-    display: block;
     position: absolute;
     top: 0;
     left: -100%;

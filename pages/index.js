@@ -240,8 +240,9 @@ const headerCode = `
       }
 
       .super-responsive-table__th_pivoted {
-        padding: 0.75rem;
-        font-weight: bold;
+        background: none;
+        border: none;
+        color: #000;
       }
     }
   \`}</style>
