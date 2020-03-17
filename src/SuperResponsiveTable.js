@@ -159,7 +159,7 @@ class TdInner extends React.Component {
         {...allowed(this.props)}
       >
         <div
-          className={classes({ bem: 'th_pseudo', others: 'tdBefore' })}
+          className={classes({ bem: 'th_pivoted', others: 'tdBefore' })}
           data-testid="td-before"
         >
           {headers[columnKey]}

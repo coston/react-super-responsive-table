@@ -239,7 +239,7 @@ const headerCode = `
         border: none;
       }
 
-      .super-responsive-table__th_pseudo {
+      .super-responsive-table__th_pivoted {
         padding: 0.75rem;
         font-weight: bold;
       }

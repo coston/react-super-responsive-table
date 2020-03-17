@@ -8,7 +8,7 @@ const css = (strings, ...expressions) => {
 }
 
 const generateBaseStyles = ({ breakpoint = '40em' }) => css`
-.super-responsive-table__th_pseudo {
+.super-responsive-table__th_pivoted {
   display: none;
 }
 
@@ -33,7 +33,7 @@ const generateBaseStyles = ({ breakpoint = '40em' }) => css`
     margin-left: 50%;
   }
 
-  .super-responsive-table__th_pseudo {
+  .super-responsive-table__th_pivoted {
     box-sizing: border-box;
     display: block;
     position: absolute;
