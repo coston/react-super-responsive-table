@@ -125,10 +125,11 @@ Super Responsive Tables are made possible by these great community members:
 - [PicchiKevin](https://github.com/PicchiKevin)
 - [alexandra1331](https://github.com/alexandra1331)
 - [dragos-rosca](https://github.com/dragos-rosca)
+- [galacemiguel](https://github.com/galacemiguel)
 
 ## Contributing
 
-Please help turn the tables on unresponsive data! Submit an issue and/or make a pull request!
+Please help turn the tables on unresponsive data! Submit an issue and/or make a pull request. Check the [projects board](https://github.com/ua-oira/react-super-responsive-table/projects) for tasks to do.
 
 ## License
 
