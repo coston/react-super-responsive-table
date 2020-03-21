@@ -12,14 +12,13 @@ react-super-responsive-table converts your table data to a user-friendly list in
 - [Installation](#installation)
 - [Usage](#usage)
 - [Using Dynamic Headers](#using-dynamic-headers)
-- [Styling](#styling)
 - [Contributors](#Contributors)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Demo
 
-![Demo Gif](https://user-images.githubusercontent.com/7394331/76912688-b74d7280-68ef-11ea-8ef5-65595e9fe440.gif)
+![Demo Gif](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
 
 Live demo: [https://react-super-responsive-table.netlify.com](https://react-super-responsive-table.netlify.com)
 
@@ -32,16 +31,17 @@ npm install react-super-responsive-table --save
 ## Usage
 
 1. `import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'`
-2. To enable the base table styles, set the `withBaseStyles` prop on the `Table` component. You may optionally use it to define a custom breakpoint: `<Table withBaseStyles={{ breakpoint: '45em' }} />`.
+2. Copy or import `react-super-responsive-table/dist/superResponsiveTableStyles.css` into your project
 3. Write your html table with the imported components.
 
 ```jsx
 import React from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 
 export default function TableExample(props) {
   return (
-    <Table withBaseStyles>
+    <Table>
       <Thead>
         <Tr>
           <Th>Event</Th>
@@ -91,27 +91,6 @@ Headers are statefully stored on first render of the table, since the library do
   </Tbody>
 </Table>
 ```
-
-## Styling
-
-All the underlying table elements have [BEM class names](https://en.bem.info/methodology/naming-convention/) that you can use to target each element for styling.
-
-```html
-<table class="super-responsive-table__table">
-  <thead class="super-responsive-table__thead">
-    <tr class="super-responsive-table__tr">
-      <th class="super-responsive-table__th" />
-    </tr>
-  </thead>
-  <tbody class="super-responsive-table__tbody">
-    <tr class="super-responsive-table__tr">
-      <td class="super-responsive-table__td" />
-    </tr>
-  </tbody>
-</table>
-```
-
-Once the table has pivoted into its side-by-side layout, the `<th>` and `<td>` elements will also be appended the `super-responsive-table__th_pivoted` and `super-responsive-table__td_pivoted` modifier class names respectively.
 
 ## Contributors
 
