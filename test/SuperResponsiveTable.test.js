@@ -1,12 +1,25 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
+import * as baseStyleUtils from '../src/baseStyleUtils'
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TBaseStyles,
+} from '../src/SuperResponsiveTable'
 
 describe('SuperResponsiveTable', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   // START OF COMPONENT SETUP
-  const setup = overrides => {
-    const { getAllByTestId, getByTestId, getAllByText } = render(
+  const setup = (ui, options) => {
+    const defaultUi = (
       <Table>
         <Thead>
           <Tr>
@@ -24,9 +37,11 @@ describe('SuperResponsiveTable', () => {
         </Tbody>
       </Table>
     )
+    const renderResult = render(ui || defaultUi, options)
+    const { getAllByTestId, getByTestId } = renderResult
 
     return {
-      getAllByText,
+      ...renderResult,
       getTable: getByTestId('table'),
       getThead: getByTestId('thead'),
       getTr: getAllByTestId('tr'),
@@ -78,6 +93,110 @@ describe('SuperResponsiveTable', () => {
     const { getTdBefore } = setup()
 
     expect(getTdBefore.length).toBe(3)
+  })
+
+  it('does not call injectBaseStyles on mount', () => {
+    jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+    setup()
+
+    expect(baseStyleUtils.injectBaseStyles).not.toHaveBeenCalled()
+  })
+
+  describe('withBaseStyles is truthy', () => {
+    it('calls injectBaseStyles on mount', () => {
+      jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+      setup(
+        <Table withBaseStyles>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      expect(baseStyleUtils.injectBaseStyles).toHaveBeenCalledTimes(1)
+    })
+
+    it('calls injectBaseStyles again if props have changed', () => {
+      jest.spyOn(baseStyleUtils, 'injectBaseStyles')
+      const { rerender } = setup(
+        <Table withBaseStyles={{ breakpoint: '40em' }}>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      rerender(
+        <Table withBaseStyles={{ breakpoint: '45em' }}>
+          <Thead>
+            <Tr>
+              <Th>Header 1</Th>
+              <Th>Header 2</Th>
+              <Th>Header 3</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Row 1</Td>
+              <Td>Row 2</Td>
+              <Td>Row 3</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      )
+
+      expect(baseStyleUtils.injectBaseStyles).toHaveBeenCalledTimes(2)
+    })
+  })
+
+  it('appends custom classes to table elements', () => {
+    const { getTable, getThead, getTr, getTh, getTbody, getTd } = setup(
+      <Table className="my-table">
+        <Thead className="my-thead">
+          <Tr className="my-tr">
+            <Th className="my-th">Header 1</Th>
+            <Th>Header 2</Th>
+            <Th>Header 3</Th>
+          </Tr>
+        </Thead>
+        <Tbody className="my-tbody">
+          <Tr>
+            <Td className="my-td">Row 1</Td>
+            <Td>Row 2</Td>
+            <Td>Row 3</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    )
+
+    expect(getTable).toHaveClass('my-table')
+    expect(getThead).toHaveClass('my-thead')
+    expect(getTr[0]).toHaveClass('my-tr')
+    expect(getTh[0]).toHaveClass('my-th')
+    expect(getTbody).toHaveClass('my-tbody')
+    expect(getTd[0]).toHaveClass('my-td')
   })
 })
 
