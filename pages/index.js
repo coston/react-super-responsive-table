@@ -11,6 +11,7 @@ import {
   Th,
   Td
 } from "../src/SuperResponsiveTable.js";
+import "../src/SuperResponsiveTableStyle.css";
 
 class App extends React.Component {
   render() {
@@ -45,6 +46,33 @@ class App extends React.Component {
             }
             ul li, ol li {
               line-height:140%; 
+            }
+            table {
+                border-collapse: collapse;
+                background:rgba(255,255,255,0.4);
+            }
+
+            th,
+            td {
+                border: 1px solid #000;
+                padding: 0.75rem;
+                text-align: left;
+            }
+
+            th {
+                font-weight: bold;
+                white-space: nowrap;
+                background: #000;
+                color: #fff;
+            }
+
+            tr:first-of-type th:not(:last-child) {
+                border-right-color: transparent;
+            }
+
+            tr:first-child th:first-child,
+            tr:not(:first-child):not(:last-child) th {
+                border-bottom-color: transparent !important;
             }
     `}</style>
 
@@ -104,7 +132,6 @@ class App extends React.Component {
           <LiveProvider
             code={headerCode}
             scope={{
-              style: 'style',
               Table,
               Thead,
               Tbody,
@@ -154,16 +181,9 @@ class App extends React.Component {
                 </code>
               </li>
               <li>
-                To enable the base table styles, set the{' '}
-                <code>withBaseStyles</code> prop on the <code>Table</code>{' '}
-                component. You may optionally use it to define a custom
-                breakpoint:{' '}
-                <code>
-                  {"<Table withBaseStyles={{ breakpoint: '45em' }} />"}
-                </code>
-                .
+                <code>import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'</code>
               </li>
-              <li>Write your html table with the imported components.</li>
+              <li>Write your html table with the imported components</li>
             </ol>
           </div>
 
@@ -209,80 +229,42 @@ const theme /*: PrismTheme */ = {
 };
 
 const headerCode = `
-<>
-  <style>{\`
-    .super-responsive-table__table {
-      width: 100%;
-      border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    .super-responsive-table__th,
-    .super-responsive-table__td {
-      padding: 0.75rem;
-      border: 1px solid #000;
-    }
-
-    .super-responsive-table__th {
-      background: #000;
-      color: #fff;
-      text-align: left;
-      font-weight: bold;
-    }
-
-    @media screen and (max-width: 40em) {
-      .super-responsive-table__tr {
-        border: 1px solid #000;
-      }
-
-      .super-responsive-table__td {
-        border: none;
-      }
-
-      .super-responsive-table__th_pivoted {
-        background: none;
-        border: none;
-        color: #000;
-      }
-    }
-  \`}</style>
-  <Table withBaseStyles={{ breakpoint: "40em" }}>
-    <Thead>
-      <Tr>
-        <Th>Event</Th>
-        <Th>Date</Th>
-        <Th>Location</Th>
-        <Th>Organizer</Th>
-        <Th>Theme</Th>
-        <Th>Agent</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>Tablescon</Td>
-        <Td>9 April 2019</Td>
-        <Td>East Annex</Td>
-        <Td>Super Friends</Td>
-        <Td>Data Tables</Td>
-        <Td>Coston Perkins</Td>
-      </Tr>
-      <Tr>
-        <Td>Capstone Data</Td>
-        <Td>19 May 2019</Td>
-        <Td>205 Gorgas</Td>
-        <Td>Data Underground</Td>
-        <Td>Data Scence</Td>
-        <Td>Jason Phillips</Td>
-      </Tr>
-      <Tr>
-        <Td>Tuscaloosa D3</Td>
-        <Td>29 June 2019</Td>
-        <Td>Github</Td>
-        <Td>The Contributors Consortium</Td>
-        <Td>Data Viz</Td>
-        <Td>Coston Perkins</Td>
-      </Tr>
-    </Tbody>
-  </Table>
-</>
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Event</Th>
+      <Th>Date</Th>
+      <Th>Location</Th>
+      <Th>Organizer</Th>
+      <Th>Theme</Th>
+      <Th>Agent</Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Td>Tablescon</Td>
+      <Td>9 April 2019</Td>
+      <Td>East Annex</Td>
+      <Td>Super Friends</Td>
+      <Td>Data Tables</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+    <Tr>
+      <Td>Capstone Data</Td>
+      <Td>19 May 2019</Td>
+      <Td>205 Gorgas</Td>
+      <Td>Data Underground</Td>
+      <Td>Data Scence</Td>
+      <Td>Jason Phillips</Td>
+    </Tr>
+    <Tr>
+      <Td>Tuscaloosa D3</Td>
+      <Td>29 June 2019</Td>
+      <Td>Github</Td>
+      <Td>The Contributors Consortium</Td>
+      <Td>Data Viz</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+  </Tbody>
+</Table>
 `.trim();
