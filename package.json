@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.9.0",
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
