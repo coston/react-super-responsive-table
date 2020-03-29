@@ -1,17 +1,10 @@
-import React from "react";
-import Head from "next/head";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import { Browser, Terminal } from "react-window-ui";
+/* eslint-disable */
+import React from 'react';
+import Head from 'next/head';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td
-} from "../src/SuperResponsiveTable.js";
-import "../src/SuperResponsiveTableStyle.css";
+import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
+import '../src/SuperResponsiveTableStyle.css';
 
 class App extends React.Component {
   render() {
@@ -79,17 +72,17 @@ class App extends React.Component {
         <div
           style={{
             fontFamily:
-              "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "900px",
-            padding: "1em"
+              '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: '900px',
+            padding: '1em',
           }}
         >
           <h1>⌗ react-super-responsive-table</h1>
           <p>
             <a
-              style={{ borderBottom: "none", marginRight: "5px" }}
+              style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
               href="https://coveralls.io/github/ua-oira/react-super-responsive-table?branch=master"
             >
@@ -99,7 +92,7 @@ class App extends React.Component {
               />
             </a>
             <a
-              style={{ borderBottom: "none", marginRight: "5px" }}
+              style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
               href="https://travis-ci.org/ua-oira/react-super-responsive-table"
             >
@@ -109,7 +102,7 @@ class App extends React.Component {
               />
             </a>
             <a
-              style={{ borderBottom: "none", marginRight: "5px" }}
+              style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
               href="https://www.npmjs.com/package/react-super-responsive-table"
             >
@@ -119,7 +112,7 @@ class App extends React.Component {
               />
             </a>
             <a
-              style={{ borderBottom: "none", marginRight: "5px" }}
+              style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
               href="https://www.npmjs.com/package/react-super-responsive-table"
             >
@@ -137,14 +130,14 @@ class App extends React.Component {
               Tbody,
               Tr,
               Th,
-              Td
+              Td,
             }}
           >
             <div
               style={{
-                height: "auto",
-                minWidth: "100%",
-                marginBottom: "2em"
+                height: 'auto',
+                minWidth: '100%',
+                marginBottom: '2em',
               }}
             >
               <div>
@@ -157,12 +150,12 @@ class App extends React.Component {
               </div>
             </div>
             <h2>Live Code</h2>
-            <div style={{ border: "5px dashed black" }}>
+            <div style={{ border: '5px dashed black' }}>
               <LiveEditor
                 theme={theme}
                 style={{
-                  background: "black",
-                  overflow: "scroll"
+                  background: 'black',
+                  overflow: 'scroll',
                 }}
               />
               <LiveError />
@@ -170,7 +163,9 @@ class App extends React.Component {
           </LiveProvider>
           <br />
           <h2>Installation</h2>
-          <p><code>npm i react-super-responsive-table</code></p>
+          <p>
+            <code>npm i react-super-responsive-table</code>
+          </p>
           <h2 id="Usage">Usage</h2>
           <div>
             <ol>
@@ -181,7 +176,10 @@ class App extends React.Component {
                 </code>
               </li>
               <li>
-                <code>import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'</code>
+                <code>
+                  import
+                  'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
+                </code>
               </li>
               <li>Write your html table with the imported components</li>
             </ol>
@@ -202,30 +200,30 @@ class App extends React.Component {
 
 export default App;
 
-const Code = props => (
-  <code style={{ background: "black", color: "white", padding: "1px 5px" }}>
+const Code = (props) => (
+  <code style={{ background: 'black', color: 'white', padding: '1px 5px' }}>
     {props.children}
   </code>
 );
 
 const theme /*: PrismTheme */ = {
   plain: {
-    color: "#FFA3B3"
+    color: '#FFA3B3',
   },
   styles: [
     {
-      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      types: ['comment', 'prolog', 'doctype', 'cdata', 'punctuation'],
       style: {
-        color: "#6c6783"
-      }
+        color: '#6c6783',
+      },
     },
     {
-      types: ["tag", "operator"],
+      types: ['tag', 'operator'],
       style: {
-        color: "#fff"
-      }
-    }
-  ]
+        color: '#fff',
+      },
+    },
+  ],
 };
 
 const headerCode = `

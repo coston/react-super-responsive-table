@@ -2,11 +2,9 @@
   "name": "react-super-responsive-table",
   "version": "5.1.1",
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
-  "main": "dist/SuperResponsiveTable.js",
+  "main": "dist/index.js",
   "files": [
-    "dist/SuperResponsiveTable.js",
-    "dist/SuperResponsiveTableStyle.css",
-    "dist/tableContext.js"
+    "dist/**"
   ],
   "author": "Coston Perkins (https://coston.io)",
   "homepage": "https://github.com/coston/react-super-responsive-table",
