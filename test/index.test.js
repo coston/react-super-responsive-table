@@ -1,11 +1,12 @@
-import React from 'react'
-import { render } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import { Table, Thead, Tbody, Tr, Th, Td } from '../src/SuperResponsiveTable'
+import React from 'react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
+import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 
 describe('SuperResponsiveTable', () => {
   // START OF COMPONENT SETUP
-  const setup = overrides => {
+  const setup = () => {
     const { getAllByTestId, getByTestId, getAllByText } = render(
       <Table>
         <Thead>
@@ -23,7 +24,7 @@ describe('SuperResponsiveTable', () => {
           </Tr>
         </Tbody>
       </Table>
-    )
+    );
 
     return {
       getAllByText,
@@ -34,52 +35,52 @@ describe('SuperResponsiveTable', () => {
       getTbody: getByTestId('tbody'),
       getTd: getAllByTestId('td'),
       getTdBefore: getAllByTestId('td-before'),
-    }
-  }
+    };
+  };
   // END OF COMPONENT SETUP
 
   it('render the table element', () => {
-    const { getTable } = setup()
+    const { getTable } = setup();
 
-    expect(getTable).toBeInTheDocument()
-  })
+    expect(getTable).toBeInTheDocument();
+  });
 
   it('renders every thead', () => {
-    const { getThead } = setup()
+    const { getThead } = setup();
 
-    expect(getThead).toBeInTheDocument()
-  })
+    expect(getThead).toBeInTheDocument();
+  });
 
   it('renders every th', () => {
-    const { getTh } = setup()
+    const { getTh } = setup();
 
-    expect(getTh.length).toBe(3)
-  })
+    expect(getTh.length).toBe(3);
+  });
 
   it('renders every tr', () => {
-    const { getTr } = setup()
+    const { getTr } = setup();
 
-    expect(getTr.length).toBe(2)
-  })
+    expect(getTr.length).toBe(2);
+  });
 
   it('renders every tbody', () => {
-    const { getTbody } = setup()
+    const { getTbody } = setup();
 
-    expect(getTbody).toBeInTheDocument()
-  })
+    expect(getTbody).toBeInTheDocument();
+  });
 
   it('renders every td', () => {
-    const { getTd } = setup()
+    const { getTd } = setup();
 
-    expect(getTd.length).toBe(3)
-  })
+    expect(getTd.length).toBe(3);
+  });
 
   it('renders every td inner text', () => {
-    const { getTdBefore } = setup()
+    const { getTdBefore } = setup();
 
-    expect(getTdBefore.length).toBe(3)
-  })
-})
+    expect(getTdBefore.length).toBe(3);
+  });
+});
 
 // TODO
 

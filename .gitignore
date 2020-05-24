@@ -31,3 +31,4 @@ public
 *.DS_Store
 .next
 out
+dist
