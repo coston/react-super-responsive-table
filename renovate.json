@@ -1,0 +1,32 @@
+{
+  "extends": ["config:base"],
+  "schedule": ["every Saturday"],
+  "labels": ["renovate"],
+  "stabilityDays": 7,
+  "statusCheckVerify": true,
+  "rangeStrategy": "auto",
+  "prCreation": "not-pending",
+  "masterIssue": true,
+  "automerge": true,
+  "packageRules": [
+    {
+      "packagePatterns": ["^react"],
+      "groupName": ["React packages"]
+    },
+    {
+      "packagePatterns": ["^@babel"],
+      "groupName": ["Babel packages"]
+    },
+    {
+      "packagePatterns": [
+        "^eslint",
+        "^@commitlint",
+        "^commitizen",
+        "^cz",
+        "^lint",
+        "^prettier"
+      ],
+      "groupName": ["Linter packages"]
+    }
+  ]
+}
