@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "schedule": ["every Saturday"],
+  "schedule": ["on saturday"],
   "labels": ["renovate"],
   "stabilityDays": 7,
   "statusCheckVerify": true,
