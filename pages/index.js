@@ -12,7 +12,7 @@ class App extends React.Component {
       <div>
         <Head>
           <title>⌗ react-super-responsive-table</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />f
         </Head>
         <style>{`
             html {
@@ -84,20 +84,20 @@ class App extends React.Component {
             <a
               style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
-              href="https://coveralls.io/github/ua-oira/react-super-responsive-table?branch=master"
+              href="https://coveralls.io/github/coston/react-super-responsive-table?branch=master"
             >
               <img
-                src="https://coveralls.io/repos/github/ua-oira/react-super-responsive-table/badge.svg?branch=master"
+                src="https://coveralls.io/repos/github/coston/react-super-responsive-table/badge.svg?branch=master"
                 alt="Coverage Status"
               />
             </a>
             <a
               style={{ borderBottom: 'none', marginRight: '5px' }}
               target="_blank"
-              href="https://travis-ci.org/ua-oira/react-super-responsive-table"
+              href="https://travis-ci.org/coston/react-super-responsive-table"
             >
               <img
-                src="https://travis-ci.org/ua-oira/react-super-responsive-table.svg?branch=master"
+                src="https://travis-ci.org/coston/react-super-responsive-table.svg?branch=master"
                 alt="Travis"
               />
             </a>
