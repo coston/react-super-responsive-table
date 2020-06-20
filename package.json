@@ -75,7 +75,7 @@
     "react-dom": "16.13.1",
     "react-live": "2.2.2",
     "react-test-renderer": "16.13.1",
-    "react-window-ui": "2.1.0",
+    "react-window-ui": "2.2.0",
     "rimraf": "3.0.2",
     "styled-components": "5.1.1"
   },
