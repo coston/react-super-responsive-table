@@ -51,7 +51,7 @@
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@testing-library/jest-dom": "5.9.0",
-    "@testing-library/react": "10.2.1",
+    "@testing-library/react": "10.4.3",
     "@zeit/next-css": "1.0.1",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.1.0",
