@@ -15,7 +15,7 @@ const TdInner = (props) => {
       <div data-testid="td-before" className="tdBefore">
         {headers[columnKey]}
       </div>
-      {children || <div>&nbsp;</div>}
+      {children ?? <div>&nbsp;</div>}
     </td>
   );
 };

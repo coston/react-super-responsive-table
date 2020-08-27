@@ -7,6 +7,7 @@ import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 describe('SuperResponsiveTable', () => {
   // START OF COMPONENT SETUP
   const setup = () => {
+    const [val1, val2, val3] = [0, '', false];
     const { getAllByTestId, getByTestId, getAllByText } = render(
       <Table>
         <Thead>
@@ -21,6 +22,11 @@ describe('SuperResponsiveTable', () => {
             <Td>Row 1</Td>
             <Td>Row 2</Td>
             <Td>Row 3</Td>
+          </Tr>
+          <Tr>
+            <Td>{val1}</Td>
+            <Td>{val2}</Td>
+            <Td>{val3}</Td>
           </Tr>
         </Tbody>
       </Table>
@@ -60,7 +66,7 @@ describe('SuperResponsiveTable', () => {
   it('renders every tr', () => {
     const { getTr } = setup();
 
-    expect(getTr.length).toBe(2);
+    expect(getTr.length).toBe(3);
   });
 
   it('renders every tbody', () => {
@@ -72,13 +78,19 @@ describe('SuperResponsiveTable', () => {
   it('renders every td', () => {
     const { getTd } = setup();
 
-    expect(getTd.length).toBe(3);
+    expect(getTd.length).toBe(6);
   });
 
   it('renders every td inner text', () => {
     const { getTdBefore } = setup();
 
-    expect(getTdBefore.length).toBe(3);
+    expect(getTdBefore.length).toBe(6);
+  });
+
+  it('renders nullish value', () => {
+    const { getTd } = setup();
+
+    expect(getTd[3].childNodes[1].textContent).toBe('0');
   });
 });
 
