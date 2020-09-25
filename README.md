@@ -1,7 +1,6 @@
 # react-super-responsive-table
 
 [![Coverage Status](https://coveralls.io/repos/github/coston/react-super-responsive-table/badge.svg?branch=master)](https://coveralls.io/github/coston/react-super-responsive-table?branch=master)
-[![npm package version](https://badge.fury.io/js/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
