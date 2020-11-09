@@ -29,7 +29,7 @@ npm install react-super-responsive-table --save
 ## Usage
 
 1. `import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'`
-2. Copy or import `react-super-responsive-table/dist/SuperResponsiveTableStyles.css` into your project
+2. Copy or import `react-super-responsive-table/dist/SuperResponsiveTableStyle.css` into your project
 3. Write your html table with the imported components.
 
 ```jsx
