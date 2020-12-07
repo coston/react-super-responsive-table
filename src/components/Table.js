@@ -15,7 +15,7 @@ class Table extends React.Component {
 
   render() {
     const { headers } = this.state;
-    const { className } = this.props;
+    const { className, forwardedRef } = this.props;
     const classes = `${className || ''} responsiveTable`;
 
     return (
@@ -24,6 +24,7 @@ class Table extends React.Component {
           data-testid="table"
           {...allowed(this.props)}
           className={classes}
+          ref={forwardedRef}
         />
       </Provider>
     );
@@ -32,10 +33,21 @@ class Table extends React.Component {
 
 Table.propTypes = {
   className: T.string,
+  forwardedRef: T.oneOfType([
+    T.func,
+    T.shape({ current: T.instanceOf(global.Element) }),
+  ]),
 };
 
 Table.defaultProps = {
   className: undefined,
+  forwardedRef: undefined,
 };
 
-export default Table;
+const TableForwardRef = React.forwardRef((props, ref) => (
+  <Table {...props} forwardedRef={ref} />
+));
+
+TableForwardRef.displayName = Table.name;
+
+export default TableForwardRef;
