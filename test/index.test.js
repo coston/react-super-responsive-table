@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 
-describe('SuperResponsiveTable', () => {
+describe('SuperResponsiveTable CommonCase', () => {
   // START OF COMPONENT SETUP
   const setup = () => {
     const [val1, val2, val3] = [0, '', false];
@@ -94,24 +94,48 @@ describe('SuperResponsiveTable', () => {
   });
 });
 
-// TODO
+describe('SuperResponsiveTable UniqueCase', () => {
+  // START OF COMPONENT SETUP
+  const setup = (components) => {
+    const { getAllByTestId, getByTestId, getAllByText } = render(components);
+    return {
+      getAllByText,
+      getTable: getByTestId('table'),
+      getThead: getByTestId('thead'),
+      getTr: getAllByTestId('tr'),
+      getTh: getAllByTestId('th'),
+      getTbody: getByTestId('tbody'),
+      getTd: getAllByTestId('td'),
+      getTdBefore: getAllByTestId('td-before'),
+    };
+  };
+  // END OF COMPONENT SETUP
 
-// test('Render table with an only one column', () => {
-//     const wrapper = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Th>Annual Conference</Th>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>31</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
+  it('Render table with an only one column', () => {
+    const { getTr, getTh, getTd } = setup(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Annual Conference</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>31</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(getTr.length).toBe(2);
+    expect(getTh.length).toBe(1);
+    expect(getTd.length).toBe(1);
+    expect(getTh[0].childNodes[0].textContent).toBe('Annual Conference');
+    expect(getTd[0].childNodes[1].textContent).toBe('31');
+  });
+});
+
+// TODO
 
 //   test('Render table without any column', () => {
 //     const wrapper = render(
