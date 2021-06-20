@@ -37,6 +37,7 @@
       "./test/jestsetup.js"
     ],
     "testURL": "http://localhost/",
+    "testEnvironment": "jsdom",
     "collectCoverage": true,
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
