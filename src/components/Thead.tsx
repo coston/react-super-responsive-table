@@ -1,9 +1,8 @@
 import React from 'react';
-import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-const Thead = (props) => {
+const Thead = (props: any) => {
   const { children } = props;
 
   return (
@@ -13,12 +12,5 @@ const Thead = (props) => {
   );
 };
 
-Thead.propTypes = {
-  children: T.node,
-};
-
-Thead.defaultProps = {
-  children: undefined,
-};
 
 export default Thead;

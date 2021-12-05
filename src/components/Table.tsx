@@ -7,11 +7,11 @@ import allowed from '../utils/allowed';
 
 
 const Table = ({ className, forwardedRef }: {className?: string, forwardedRef?: Ref<HTMLTableElement>}) => {
-  const [headers] = useState({})
+const [headers, setHeaders] = useState([]);
   const classes = `${className || ''} responsiveTable`;
 
 
-  return ( <Provider value={headers}>
+  return ( <Provider value={[headers, setHeaders]}>
     <table
       data-testid="table"
       {...allowed({ className, forwardedRef })}

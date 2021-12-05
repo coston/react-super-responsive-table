@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from '../../src';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 
 class App extends React.Component {
   render() {
