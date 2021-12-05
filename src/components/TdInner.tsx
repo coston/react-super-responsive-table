@@ -1,9 +1,8 @@
 import React from 'react';
-import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-const TdInner = (props) => {
+const TdInner = (props: any) => {
   const { headers, children, columnKey, className, colSpan } = props;
 
   const classes = `${className || ''} pivoted`;
@@ -20,20 +19,5 @@ const TdInner = (props) => {
   );
 };
 
-TdInner.propTypes = {
-  children: T.node,
-  headers: T.shape({}),
-  columnKey: T.number,
-  className: T.string,
-  colSpan: T.oneOfType([T.number, T.string]),
-};
-
-TdInner.defaultProps = {
-  children: undefined,
-  headers: undefined,
-  columnKey: undefined,
-  className: undefined,
-  colSpan: undefined,
-};
 
 export default TdInner;

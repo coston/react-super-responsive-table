@@ -2,10 +2,12 @@
   "name": "react-super-responsive-table",
   "version": "5.2.0",
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
-  "main": "dist/index.js",
   "files": [
-    "dist/**"
+    "/lib"
   ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "author": "Coston Perkins (https://coston.io)",
   "homepage": "https://github.com/coston/react-super-responsive-table",
   "repository": {
@@ -17,96 +19,19 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "next",
-    "build-site": "next build",
-    "build": "babel -d dist src --copy-files",
-    "clean": "rimraf dist && mkdir dist",
-    "export": "yarn build-site && next export",
-    "watch": "babel -w -d dist src --copy-files",
-    "lint": "eslint --ext=js --ext=jsx ./src",
-    "lint:fix": "eslint --ext=js --ext=jsx ./src --fix",
-    "preversion": "yarn test && yarn lint:fix && yarn clean && yarn build && yarn build-site",
-    "postpublish": "git push && git push --tag",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
-  },
-  "jest": {
-    "setupFiles": [
-      "./test/jestsetup.js"
-    ],
-    "testURL": "http://localhost/",
-    "testEnvironment": "jsdom",
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "identity-obj-proxy"
-    }
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
   },
   "devDependencies": {
-    "@babel/cli": "7.14.5",
-    "@babel/core": "7.14.6",
-    "@babel/plugin-transform-spread": "7.14.6",
-    "@babel/preset-env": "7.14.7",
-    "@babel/preset-react": "7.14.5",
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
-    "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/react": "12.0.0",
-    "@zeit/next-css": "1.0.1",
-    "babel-eslint": "10.1.0",
-    "babel-jest": "27.0.6",
-    "coveralls": "3.1.1",
-    "eslint": "7.30.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.24.0",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "husky": "4.3.8",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "27.0.6",
-    "lint-staged": "10.5.4",
-    "next": "10.0.5",
-    "prettier": "2.3.2",
-    "prop-types": "15.7.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-live": "2.2.3",
-    "react-test-renderer": "17.0.2",
-    "react-window-ui": "2.2.0",
-    "rimraf": "3.0.2",
-    "styled-components": "5.3.0"
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.2"
   },
   "peerDependencies": {
-    "prop-types": ">= 15",
-    "react": "^16.9.0 || ^17.0.0",
-    "react-dom": "^16.9.0 || ^17.0.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "keywords": [
-    "react",
-    "react-component",
-    "table"
-  ],
-  "directories": {
-    "test": "test"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   }
 }

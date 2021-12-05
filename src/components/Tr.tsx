@@ -3,7 +3,7 @@ import React from 'react';
 import { Consumer } from '../utils/tableContext';
 import TrInner from './TrInner';
 
-const Tr = (props) => (
+const Tr = (props: any) => (
   <Consumer>{(headers) => <TrInner {...props} headers={headers} />}</Consumer>
 );
 

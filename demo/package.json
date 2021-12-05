@@ -1,0 +1,28 @@
+{
+  "name": "react-super-responsive-table-demo",
+  "version": "1.0.0",
+  "author": "Coston Perkins (https://coston.io)",
+  "homepage": "https://github.com/coston/react-super-responsive-table",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coston/react-super-responsive-table.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coston/react-super-responsive-table/issues"
+  },
+  "description": "Demo page for react-super-responsive-table",
+  "main": "pages/index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-live": "^2.3.0"
+  }
+}
