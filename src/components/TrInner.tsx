@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import allowed from '../utils/allowed';
 
 const TrInner = (props: any) => {
   const { headers, setHeaders, inHeader, children } = props;
 
-  if (headers && inHeader) {
-    React.Children.map(props.children, (child, i) => {
-      if (child) {
-        setHeaders((preveState: any) => (Object.assign([], preveState, {[i]: child.props.children})))
 
-      }
-    });
-  }
+  useEffect(() => {
+    if (headers && inHeader) {
+      React.Children.map(props.children, (child, i) => {
+        if (child) {
+          setHeaders((preveState: any[]) => (Object.assign([], preveState, {[i]: child.props.children})))
+
+        }
+      });
+    }
+  },[])
 
 
   return (

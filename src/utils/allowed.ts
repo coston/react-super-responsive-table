@@ -4,6 +4,6 @@ const omit = (obj: any, omitProps: any) =>
     .reduce((returnObj, key) => ({ ...returnObj, [key]: obj[key] }), {});
 
 const allowed = (props: any) =>
-  omit(props, ['inHeader', 'columnKey', 'headers', 'forwardedRef']);
+  omit(props, ['inHeader', 'columnKey', 'headers', 'forwardedRef', 'setHeaders']);
 
 export default allowed;

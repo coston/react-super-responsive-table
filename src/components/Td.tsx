@@ -1,9 +1,10 @@
 import React from 'react';
-import { Consumer } from '../utils/tableContext';
+import {HeadersContext} from '../utils/HeadersContext';
 import TdInner from './TdInner';
 
 const Td = (props: any) => (
-  <Consumer>{(headers) => <TdInner {...props} headers={headers} />}</Consumer>
+  // @ts-ignore
+  <HeadersContext.Consumer>{({headers}) => <TdInner {...props} headers={headers} />}</HeadersContext.Consumer>
 );
 
 export default Td;

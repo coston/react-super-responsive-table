@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import { Table, Thead, Tbody, Tr, Th, Td, Ham } from 'react-super-responsive-table';
 
 class App extends React.Component {
   render() {
@@ -24,6 +24,7 @@ class App extends React.Component {
           }}
         >
           <h1>⌗ react-super-responsive-table</h1>
+          <Ham/>
           <p>
             <a
               style={{ borderBottom: 'none', marginRight: '5px' }}

@@ -1,26 +1,31 @@
-import React, { Ref, useState } from 'react';
+import React, { Ref,useState } from "react";
 
-import { Provider } from '../utils/tableContext';
+import { HeadersContext} from "../utils/HeadersContext";
 
-import allowed from '../utils/allowed';
+import allowed from "../utils/allowed";
 
+const Table = ({
+  className,
+  forwardedRef,
+}: {
+  className?: string;
+  forwardedRef?: Ref<HTMLTableElement>;
+}) => {
+   const classes = `${className || ""} responsiveTable`;
+  const [headers, setHeaders] = useState([])
 
-
-const Table = ({ className, forwardedRef }: {className?: string, forwardedRef?: Ref<HTMLTableElement>}) => {
-const [headers, setHeaders] = useState([]);
-  const classes = `${className || ''} responsiveTable`;
-
-
-  return ( <Provider value={[headers, setHeaders]}>
-    <table
-      data-testid="table"
-      {...allowed({ className, forwardedRef })}
-      className={classes}
-      ref={forwardedRef}
-    />
-  </Provider>)
-}
-
+   return (
+    // @ts-ignore
+    <HeadersContext.Provider value={{headers, setHeaders}}>
+      <table
+        data-testid="table"
+        {...allowed({ className, forwardedRef })}
+        className={classes}
+        ref={forwardedRef}
+      />
+    </HeadersContext.Provider>
+  );
+};
 
 const TableForwardRef = React.forwardRef<HTMLTableElement>((props, ref) => (
   <Table {...props} forwardedRef={ref} />
