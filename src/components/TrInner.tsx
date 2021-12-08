@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import allowed from '../utils/allowed';
 
 const TrInner = (props: any) => {
   const { headers, setHeaders, inHeader, children } = props;
 
 
-  useEffect(() => {
     if (headers && inHeader) {
       React.Children.map(props.children, (child, i) => {
         if (child) {
@@ -14,7 +13,6 @@ const TrInner = (props: any) => {
         }
       });
     }
-  },[])
 
 
   return (

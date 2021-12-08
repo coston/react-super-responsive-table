@@ -14,9 +14,10 @@ const Table = ({
    const classes = `${className || ""} responsiveTable`;
   const [headers, setHeaders] = useState([])
 
+  console.log(headers)
    return (
     // @ts-ignore
-    <HeadersContext.Provider value={{headers, setHeaders}}>
+    <HeadersContext.Provider value={[headers, setHeaders]}>
       <table
         data-testid="table"
         {...allowed({ className, forwardedRef })}

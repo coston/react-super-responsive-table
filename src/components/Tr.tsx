@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import {HeadersContext} from '../utils/HeadersContext';
-import TrInner from './TrInner';
+import { HeadersContext } from "../utils/HeadersContext";
+import TrInner from "./TrInner";
 
 const Tr = (props: any) => (
-  // @ts-ignore
-  <HeadersContext.Consumer>{({headers}) => <TrInner {...props} headers={headers} setHeaders={headers} />}</HeadersContext.Consumer>
+  <HeadersContext.Consumer>
+    {([headers, setHeaders]) => (
+      <TrInner {...props} headers={headers} setHeaders={setHeaders} />
+    )}
+  </HeadersContext.Consumer>
 );
 
 export default Tr;

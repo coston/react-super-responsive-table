@@ -19,5 +19,4 @@ const TdInner = (props: any) => {
   );
 };
 
-
 export default TdInner;
