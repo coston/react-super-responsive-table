@@ -9,7 +9,7 @@ import Tr from './components/Tr';
 
 
 const Ham = () => {
-    console.log("OOOKDSFSDF")
+    console.log("wow")
 return (<p>TEST ok</p>)
 };
 

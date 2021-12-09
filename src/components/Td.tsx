@@ -1,10 +1,10 @@
 import React from 'react';
+import allowed from '../utils/allowed';
 import {HeadersContext} from '../utils/HeadersContext';
 import TdInner from './TdInner';
 
 const Td = (props: any) => (
-  // @ts-ignore
-  <HeadersContext.Consumer>{([headers]) => <TdInner {...props} headers={headers} />}</HeadersContext.Consumer>
+  <HeadersContext.Consumer>{([headers]) => <TdInner {...allowed(props)} headers={headers} />}</HeadersContext.Consumer>
 );
 
 export default Td;

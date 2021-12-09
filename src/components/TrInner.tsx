@@ -1,19 +1,23 @@
 import React from 'react';
+import T from 'prop-types';
+
 import allowed from '../utils/allowed';
 
 const TrInner = (props: any) => {
-  const { headers, setHeaders, inHeader, children } = props;
+  const { headers, children, inHeader, setHeaders } = props;
+ console.log("TrInner", {headers})
+  if (headers && inHeader) {
+    let newHeaders = headers;
+    React.Children.map(props.children, (child, i) => {
+      if (child) {
+        newHeaders[i] = child.props.children;
+      }
+    });
 
+    setHeaders(newHeaders);
+  }
 
-    if (headers && inHeader) {
-      React.Children.map(props.children, (child, i) => {
-        if (child) {
-          setHeaders((preveState: any[]) => (Object.assign([], preveState, {[i]: child.props.children})))
-
-        }
-      });
-    }
-
+  console.log({children})
 
   return (
     <tr data-testid="tr" {...allowed(props)}>
@@ -30,6 +34,19 @@ const TrInner = (props: any) => {
         )}
     </tr>
   );
+};
+
+TrInner.propTypes = {
+  children: T.node,
+  headers: T.arrayOf(T.any),
+  inHeader: T.bool,
+  setHeaders: T.func.isRequired,
+};
+
+TrInner.defaultProps = {
+  children: undefined,
+  headers: undefined,
+  inHeader: undefined,
 };
 
 export default TrInner;
