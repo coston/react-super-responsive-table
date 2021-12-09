@@ -1,5 +1,4 @@
 import React from 'react';
-import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 import { TableRow } from '../models.interface';
@@ -36,19 +35,6 @@ const TrInner = (props: TableRow) => {
         )}
     </tr>
   );
-};
-
-TrInner.propTypes = {
-  children: T.node,
-  headers: T.arrayOf(T.any),
-  inHeader: T.bool,
-  setHeaders: T.func.isRequired,
-};
-
-TrInner.defaultProps = {
-  children: undefined,
-  headers: undefined,
-  inHeader: undefined,
 };
 
 export default TrInner;
