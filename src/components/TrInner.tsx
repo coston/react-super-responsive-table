@@ -2,14 +2,16 @@ import React from 'react';
 import T from 'prop-types';
 
 import allowed from '../utils/allowed';
+import { TableRow } from '../models.interface';
 
-const TrInner = (props: any) => {
+const TrInner = (props: TableRow) => {
   const { headers, children, inHeader, setHeaders } = props;
  console.log("TrInner", {headers})
   if (headers && inHeader) {
     let newHeaders = headers;
     React.Children.map(props.children, (child, i) => {
       if (child) {
+        // @ts-ignore
         newHeaders[i] = child.props.children;
       }
     });

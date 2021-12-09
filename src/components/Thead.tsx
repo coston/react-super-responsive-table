@@ -1,8 +1,9 @@
 import React from 'react';
+import { TableSection } from '../models.interface';
 
 import allowed from '../utils/allowed';
 
-const Thead = (props: any) => {
+const Thead = (props: TableSection ) => {
   const { children } = props;
 
   return (
