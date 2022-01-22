@@ -74,7 +74,7 @@
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-live": "2.3.0",
+    "react-live": "2.4.1",
     "react-test-renderer": "17.0.2",
     "react-window-ui": "2.2.0",
     "rimraf": "3.0.2",
