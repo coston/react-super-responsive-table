@@ -69,7 +69,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "27.5.1",
     "lint-staged": "11.2.6",
-    "next": "12.1.5",
+    "next": "12.1.6",
     "prettier": "2.6.2",
     "prop-types": "15.8.1",
     "react": "18.1.0",
