@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-const Thead = (props) => {
+function Thead(props) {
   const { children } = props;
 
   return (
@@ -11,7 +11,7 @@ const Thead = (props) => {
       {React.cloneElement(children, { inHeader: true })}
     </thead>
   );
-};
+}
 
 Thead.propTypes = {
   children: T.node,
