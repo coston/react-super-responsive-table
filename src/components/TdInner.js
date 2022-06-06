@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-const TdInner = (props) => {
+function TdInner(props) {
   const { headers, children, columnKey, className, colSpan } = props;
 
   const classes = `${className || ''} pivoted`;
@@ -18,7 +18,7 @@ const TdInner = (props) => {
       {children ?? <div>&nbsp;</div>}
     </td>
   );
-};
+}
 
 TdInner.propTypes = {
   children: T.node,
