@@ -70,7 +70,7 @@
     "jest": "28.1.2",
     "jest-environment-jsdom": "28.1.2",
     "lint-staged": "13.0.3",
-    "next": "12.1.6",
+    "next": "12.2.2",
     "prettier": "2.7.1",
     "prop-types": "15.8.1",
     "react": "18.2.0",
