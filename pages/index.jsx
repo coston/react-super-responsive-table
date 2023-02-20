@@ -1,35 +1,8 @@
-/* eslint-disable */
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PkgDemo from 'react-pkg-demo';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
-
-class App extends React.Component {
-  render() {
-    return (
-      <PkgDemo
-        color={'#ffa3b3'}
-        packageName={'react-super-responsive-table'}
-        icon={'⌗'}
-        markdown={textContent}
-        prompt={
-          'Resize your browser window width to pivot this super responsive table!'
-        }
-        scope={{
-          Table,
-          Thead,
-          Tbody,
-          Tr,
-          Th,
-          Td,
-        }}
-        code={tableCode}
-      />
-    );
-  }
-}
-
-export default App;
+import { Table, Thead, Tbody, Tr, Th, Td } from '../dist/index';
 
 const textContent = `
 ## Installation
@@ -85,3 +58,26 @@ const tableCode = `
   </Tbody>
 </Table>
   `.trim();
+
+function App() {
+  return (
+    <PkgDemo
+      color="#ffa3b3"
+      packageName="react-super-responsive-table"
+      icon="⌗"
+      markdown={textContent}
+      prompt="Resize your browser window width to pivot this super responsive table!"
+      scope={{
+        Table,
+        Thead,
+        Tbody,
+        Tr,
+        Th,
+        Td,
+      }}
+      code={tableCode}
+    />
+  );
+}
+
+export default App;
