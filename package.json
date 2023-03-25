@@ -80,7 +80,7 @@
     "react-test-renderer": "18.2.0",
     "react-window-ui": "2.2.0",
     "rimraf": "4.4.0",
-    "styled-components": "5.3.8"
+    "styled-components": "5.3.9"
   },
   "peerDependencies": {
     "prop-types": ">= 15",
