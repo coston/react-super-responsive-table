@@ -15,7 +15,9 @@ function TdInner(props) {
       <div data-testid="td-before" className="tdBefore">
         {headers[columnKey]}
       </div>
-      {children ?? <div>&nbsp;</div>}
+      <div data-testid="td-after" className="tdAfter">
+        {children ?? <div>&nbsp;</div>}
+      </div>
     </td>
   );
 }

@@ -37,8 +37,8 @@
   .responsiveTable td.pivoted {
     /* Behave like a "row" */
     border: none !important;
+    display: block;
     position: relative;
-    padding-left: calc(50% + 10px) !important;
     text-align: left !important;
     white-space: pre-wrap;
     overflow-wrap: break-word;
@@ -46,8 +46,7 @@
 
   .responsiveTable td .tdBefore {
     /* Now like a table header */
-    position: absolute;
-    display: block;
+    display: inline-flex;
 
     /* Top/left values mimic padding */
     left: 1rem;
@@ -56,5 +55,10 @@
     overflow-wrap: break-word;
     text-align: left !important;
     font-weight: 600;
+  }
+
+  .responsiveTable td .tdAfter {
+    display: inline-flex;
+    padding-left: 10px;
   }
 }
