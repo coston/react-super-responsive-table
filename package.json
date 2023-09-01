@@ -1,6 +1,6 @@
 {
   "name": "react-super-responsive-table",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
   "main": "dist/index.js",
   "files": [
@@ -15,8 +15,8 @@
   "bugs": {
     "url": "https://github.com/coston/react-super-responsive-table/issues"
   },
-  "engines" : {
-    "node" : ">=12"
+  "engines": {
+    "node": ">=12"
   },
   "license": "MIT",
   "scripts": {
