@@ -32,7 +32,14 @@ function TdInner({
   return (
     <td
       data-testid="td"
-      {...allowed({ headers, children, columnKey, className, colSpan })}
+      {...allowed({
+        headers,
+        children,
+        columnKey,
+        className,
+        colSpan,
+        ...otherProps,
+      })}
       className={classes}
     >
       <div data-testid="td-before" className="tdBefore">
