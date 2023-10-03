@@ -9,6 +9,7 @@ function TdInner({
   columnKey,
   className = '',
   colSpan,
+  ...otherProps
 }) {
   const classes = `${className} pivoted`;
 
@@ -16,7 +17,14 @@ function TdInner({
     return (
       <td
         data-testid="td"
-        {...allowed({ headers, children, columnKey, className, colSpan })}
+        {...allowed({
+          headers,
+          children,
+          columnKey,
+          className,
+          colSpan,
+          ...otherProps,
+        })}
       />
     );
   }

@@ -3,7 +3,12 @@ import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-function TrInner({ children, headers: initialHeaders = {}, inHeader }) {
+function TrInner({
+  children,
+  headers: initialHeaders = {},
+  inHeader,
+  ...otherProps
+}) {
   const [localHeaders, setLocalHeaders] = useState(initialHeaders);
 
   useEffect(() => {
@@ -23,7 +28,7 @@ function TrInner({ children, headers: initialHeaders = {}, inHeader }) {
   return (
     <tr
       data-testid="tr"
-      {...allowed({ children, headers: localHeaders, inHeader })}
+      {...allowed({ children, headers: localHeaders, inHeader, ...otherProps })}
     >
       {children &&
         React.Children.map(children, (child, i) =>
