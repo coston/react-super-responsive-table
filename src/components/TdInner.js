@@ -3,15 +3,30 @@ import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-function TdInner(props) {
-  const { headers, children, columnKey, className, colSpan } = props;
+function TdInner({
+  headers = {},
+  children,
+  columnKey,
+  className = '',
+  colSpan,
+}) {
+  const classes = `${className} pivoted`;
 
-  const classes = `${className || ''} pivoted`;
   if (colSpan) {
-    return <td data-testid="td" {...allowed(props)} />;
+    return (
+      <td
+        data-testid="td"
+        {...allowed({ headers, children, columnKey, className, colSpan })}
+      />
+    );
   }
+
   return (
-    <td data-testid="td" {...allowed(props)} className={classes}>
+    <td
+      data-testid="td"
+      {...allowed({ headers, children, columnKey, className, colSpan })}
+      className={classes}
+    >
       <div data-testid="td-before" className="tdBefore">
         {headers[columnKey]}
       </div>
@@ -26,14 +41,6 @@ TdInner.propTypes = {
   columnKey: T.number,
   className: T.string,
   colSpan: T.oneOfType([T.number, T.string]),
-};
-
-TdInner.defaultProps = {
-  children: undefined,
-  headers: undefined,
-  columnKey: undefined,
-  className: undefined,
-  colSpan: undefined,
 };
 
 export default TdInner;

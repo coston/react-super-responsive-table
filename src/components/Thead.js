@@ -3,11 +3,9 @@ import T from 'prop-types';
 
 import allowed from '../utils/allowed';
 
-function Thead(props) {
-  const { children } = props;
-
+function Thead({ children }) {
   return (
-    <thead data-testid="thead" {...allowed(props)}>
+    <thead data-testid="thead" {...allowed({ children })}>
       {React.cloneElement(children, { inHeader: true })}
     </thead>
   );
@@ -15,10 +13,6 @@ function Thead(props) {
 
 Thead.propTypes = {
   children: T.node,
-};
-
-Thead.defaultProps = {
-  children: undefined,
 };
 
 export default Thead;
