@@ -53,7 +53,7 @@
     "@babel/plugin-transform-spread": "7.22.5",
     "@babel/preset-env": "7.22.20",
     "@babel/preset-react": "7.22.15",
-    "@commitlint/cli": "17.7.1",
+    "@commitlint/cli": "17.7.2",
     "@commitlint/config-conventional": "17.7.0",
     "@next/eslint-plugin-next": "^13.1.6",
     "@testing-library/jest-dom": "6.1.3",
