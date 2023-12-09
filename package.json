@@ -61,7 +61,7 @@
     "@babel/eslint-parser": "7.23.3",
     "babel-jest": "29.7.0",
     "coveralls": "3.1.1",
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.29.0",
