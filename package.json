@@ -58,7 +58,7 @@
     "@next/eslint-plugin-next": "^14.0.0",
     "@testing-library/jest-dom": "6.3.0",
     "@testing-library/react": "14.1.2",
-    "@babel/eslint-parser": "7.23.9",
+    "@babel/eslint-parser": "7.23.10",
     "babel-jest": "29.7.0",
     "coveralls": "3.1.1",
     "eslint": "8.56.0",
