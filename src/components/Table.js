@@ -35,7 +35,7 @@ Table.propTypes = {
   className: T.string,
   forwardedRef: T.oneOfType([
     T.func,
-    T.shape({ current: T.instanceOf(global.Element) }),
+    T.shape({ current: T.instanceOf(globalThis.Element) }),
   ]),
 };
 
