@@ -28,12 +28,4 @@ TdInner.propTypes = {
   colSpan: T.oneOfType([T.number, T.string]),
 };
 
-TdInner.defaultProps = {
-  children: undefined,
-  headers: undefined,
-  columnKey: undefined,
-  className: undefined,
-  colSpan: undefined,
-};
-
 export default TdInner;
