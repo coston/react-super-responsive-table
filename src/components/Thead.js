@@ -17,8 +17,4 @@ Thead.propTypes = {
   children: T.node,
 };
 
-Thead.defaultProps = {
-  children: undefined,
-};
-
 export default Thead;

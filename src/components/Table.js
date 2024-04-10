@@ -39,11 +39,6 @@ Table.propTypes = {
   ]),
 };
 
-Table.defaultProps = {
-  className: undefined,
-  forwardedRef: undefined,
-};
-
 const TableForwardRef = React.forwardRef((props, ref) => (
   <Table {...props} forwardedRef={ref} />
 ));

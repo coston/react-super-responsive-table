@@ -42,10 +42,4 @@ TrInner.propTypes = {
   inHeader: T.bool,
 };
 
-TrInner.defaultProps = {
-  children: undefined,
-  headers: undefined,
-  inHeader: undefined,
-};
-
 export default TrInner;
