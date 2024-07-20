@@ -82,7 +82,7 @@
     "react-pkg-demo": "^0.1.8",
     "react-test-renderer": "18.3.1",
     "react-window-ui": "2.2.0",
-    "rimraf": "5.0.8",
+    "rimraf": "5.0.9",
     "styled-components": "6.1.11"
   },
   "peerDependencies": {
