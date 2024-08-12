@@ -1,45 +1,30 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import T from 'prop-types';
+import { HeaderContext } from '../utils/tableContext';
 
 import allowed from '../utils/allowed';
 
-class TrInner extends React.Component {
-  constructor(props) {
-    super(props);
-    const { headers } = props;
-    if (headers && props.inHeader) {
-      React.Children.map(props.children, (child, i) => {
-        if (child) {
-          headers[i] = child.props.children;
-        }
-      });
+function TrInner({ children, inHeader, ...props }) {
+  const { setHeaders } = useContext(HeaderContext);
+
+  useEffect(() => {
+    if (inHeader) {
+      const newHeaders = React.Children.map(
+        children,
+        (child) => child?.props.children
+      );
+      setHeaders(newHeaders);
     }
-  }
+  }, [children, inHeader, setHeaders]);
 
-  render() {
-    const { children } = this.props;
-    return (
-      <tr data-testid="tr" {...allowed(this.props)}>
-        {children &&
-          React.Children.map(
-            children,
-            (child, i) =>
-              child &&
-              React.cloneElement(child, {
-                // eslint-disable-next-line react/no-array-index-key
-                key: i,
-                columnKey: i,
-              })
-          )}
-      </tr>
-    );
-  }
+  return (
+    <tr data-testid="tr" {...allowed(props)}>
+      {children &&
+        React.Children.map(children, (child, i) =>
+          child ? React.cloneElement(child, { key: i, columnKey: i }) : null
+        )}
+    </tr>
+  );
 }
-
-TrInner.propTypes = {
-  children: T.node,
-  headers: T.shape({}),
-  inHeader: T.bool,
-};
 
 export default TrInner;

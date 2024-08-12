@@ -1,48 +1,29 @@
-import React from 'react';
-import T from 'prop-types';
-
-import { Provider } from '../utils/tableContext';
+/* eslint-disable react/prop-types */
+import React, { forwardRef } from 'react';
 
 import allowed from '../utils/allowed';
+import { HeaderProvider } from '../utils/tableContext';
 
-class Table extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      headers: {},
-    };
-  }
+const Table = forwardRef(({ className, ...props }, ref) => {
+  const classes = `${className || ''} responsiveTable`;
+  return (
+    <table
+      data-testid="table"
+      {...allowed(props)}
+      className={classes}
+      ref={ref}
+    />
+  );
+});
 
-  render() {
-    const { headers } = this.state;
-    const { className, forwardedRef } = this.props;
-    const classes = `${className || ''} responsiveTable`;
+Table.displayName = Table.name;
 
-    return (
-      <Provider value={headers}>
-        <table
-          data-testid="table"
-          {...allowed(this.props)}
-          className={classes}
-          ref={forwardedRef}
-        />
-      </Provider>
-    );
-  }
+function TableWithHeaderProvider(props) {
+  return (
+    <HeaderProvider>
+      <Table {...props} />
+    </HeaderProvider>
+  );
 }
 
-Table.propTypes = {
-  className: T.string,
-  forwardedRef: T.oneOfType([
-    T.func,
-    T.shape({ current: T.instanceOf(global.Element) }),
-  ]),
-};
-
-const TableForwardRef = React.forwardRef((props, ref) => (
-  <Table {...props} forwardedRef={ref} />
-));
-
-TableForwardRef.displayName = Table.name;
-
-export default TableForwardRef;
+export default TableWithHeaderProvider;

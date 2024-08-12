@@ -19,10 +19,9 @@ function TdInner(props) {
     </td>
   );
 }
-
 TdInner.propTypes = {
   children: T.node,
-  headers: T.shape({}),
+  headers: T.arrayOf(T.string),
   columnKey: T.number,
   className: T.string,
   colSpan: T.oneOfType([T.number, T.string]),

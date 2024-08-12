@@ -1,4 +1,17 @@
-import React from 'react';
+import React, { createContext, useState, useMemo } from 'react';
 
-const { Provider, Consumer } = React.createContext({});
-export { Provider, Consumer };
+const HeaderContext = createContext();
+
+function HeaderProvider({ children }) {
+  const [headers, setHeaders] = useState([]);
+
+  const contextValue = useMemo(() => ({ headers, setHeaders }), [headers]);
+
+  return (
+    <HeaderContext.Provider value={contextValue}>
+      {children}
+    </HeaderContext.Provider>
+  );
+}
+
+export { HeaderProvider, HeaderContext };
