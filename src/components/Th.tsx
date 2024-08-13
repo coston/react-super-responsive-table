@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { TableHTMLAttributes } from 'react';
 
 import allowed from '../utils/allowed';
 
-function Th(props) {
+function Th(props: TableHTMLAttributes<HTMLTableCellElement>) {
   return <th data-testid="th" {...allowed(props)} />;
 }
 

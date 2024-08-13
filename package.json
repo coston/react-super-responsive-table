@@ -2,10 +2,13 @@
   "name": "react-super-responsive-table",
   "version": "5.2.2",
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
-  "main": "dist/index.js",
   "files": [
-    "dist/**"
+    "/lib",
+    "src/SuperResponsiveTableStyle.css"
   ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "author": "Coston Perkins (https://coston.io)",
   "homepage": "https://github.com/coston/react-super-responsive-table",
   "repository": {
@@ -20,46 +23,36 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "next",
+    "build": "npm run build:esm && npm run build:cjs && npm run copy-css",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build:esm": "tsc",
+    "build:watch": "tsc --watch",
     "build-site": "npm run build && next build",
-    "build": "babel -d dist src --copy-files",
     "clean": "rimraf dist && mkdir dist",
+    "copy-css": "mkdir -p lib/cjs lib/esm && cp src/SuperResponsiveTableStyle.css lib/cjs/ && cp src/SuperResponsiveTableStyle.css lib/esm/",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "dev": "concurrently \"npm run start\" \"npm run build:watch\"",
     "export": "npm run build-site && next export",
-    "watch": "babel -w -d dist src --copy-files",
-    "lint": "eslint --ext=js --ext=jsx ./src",
-    "lint:fix": "eslint --ext=js --ext=jsx ./src --fix",
+    "lint": "eslint --ext=js,jsx ./src",
+    "lint:fix": "eslint --ext=js,jsx ./src --fix",
+    "postpublish": "git push && git push --tags",
     "preversion": "npm run test && npm run lint:fix && npm run clean && npm run build && npm run build-site",
-    "postpublish": "git push && git push --tag",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
-  },
-  "jest": {
-    "setupFiles": [
-      "./test/jestsetup.js"
-    ],
-    "testURL": "http://localhost/",
-    "testEnvironment": "jsdom",
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "identity-obj-proxy"
-    }
+    "start": "next",
+    "test": "jest --config jest.config.ts",
+    "test:coverage": "jest --coverage --config jest.config.ts",
+    "test:watch": "jest --watch --config jest.config.ts"
   },
   "devDependencies": {
-    "@babel/cli": "7.24.8",
-    "@babel/core": "7.25.2",
-    "@babel/plugin-transform-runtime": "7.24.7",
-    "@babel/plugin-transform-spread": "7.24.7",
-    "@babel/preset-env": "7.25.3",
-    "@babel/preset-react": "7.24.7",
+    "@babel/plugin-transform-spread": "^7.24.7",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@next/eslint-plugin-next": "^14.0.0",
-    "@testing-library/jest-dom": "6.4.8",
-    "@testing-library/react": "16.0.0",
-    "@babel/eslint-parser": "7.25.1",
-    "babel-jest": "29.7.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.0",
+    "concurrently": "^8.2.2",
     "coveralls": "3.1.1",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
@@ -83,7 +76,9 @@
     "react-test-renderer": "18.3.1",
     "react-window-ui": "2.2.0",
     "rimraf": "6.0.1",
-    "styled-components": "6.1.12"
+    "styled-components": "6.1.12",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "prop-types": ">= 15",

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "allowJs": true,
+    "target": "es2015",
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
+  "exclude": ["node_modules"]
+}

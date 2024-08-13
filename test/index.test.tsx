@@ -1,8 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
+import { Table, Thead, Tbody, Tr, Th, Td } from '../src';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+
+describe('CSS Import', () => {
+  it('should import the CSS file without errors', () => {
+    expect(true).toBe(true); // If the import fails, this test will not run
+  });
+});
 
 describe('SuperResponsiveTable CommonCase', () => {
   // START OF COMPONENT SETUP
@@ -95,7 +102,6 @@ describe('SuperResponsiveTable CommonCase', () => {
 });
 
 describe('SuperResponsiveTable UniqueCase', () => {
-  // START OF COMPONENT SETUP
   const setup = (components) => {
     const { getAllByTestId, getByTestId, getAllByText } = render(components);
     return {
@@ -109,7 +115,6 @@ describe('SuperResponsiveTable UniqueCase', () => {
       getTdBefore: getAllByTestId('td-before'),
     };
   };
-  // END OF COMPONENT SETUP
 
   it('Render table with an only one column', () => {
     const { getTr, getTh, getTd } = setup(
@@ -133,94 +138,164 @@ describe('SuperResponsiveTable UniqueCase', () => {
     expect(getTh[0].childNodes[0].textContent).toBe('Annual Conference');
     expect(getTd[0].childNodes[1].textContent).toBe('31');
   });
+
+  test('Render table with colSpan attribute', () => {
+    const { getByText } = render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Month</Th>
+            <Th>Savings</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>January</Td>
+            <Td>$100</Td>
+          </Tr>
+          <Tr>
+            <Td>February</Td>
+            <Td>$80</Td>
+          </Tr>
+          <Tr>
+            <Td colSpan={2}>Sum: $180</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    const spannedColumn = getByText('Sum: $180');
+    expect(spannedColumn).toBeInTheDocument();
+    expect(spannedColumn).toHaveAttribute('colSpan', '2');
+  });
+  test('Render table without any cells', () => {
+    render(
+      <Table>
+        <Thead>
+          <Tr></Tr>
+        </Thead>
+        <Tbody>
+          <Tr></Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(screen.getByRole('table')).toBeInTheDocument();
+
+    expect(screen.queryByRole('cell')).not.toBeInTheDocument();
+    expect(screen.queryByRole('columnheader')).not.toBeInTheDocument();
+  });
+
+  test('Render table with only header and empty row', () => {
+    render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Header 1</Th>
+            <Th>Header 2</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr></Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(screen.getByText('Header 1')).toBeInTheDocument();
+    expect(screen.getByText('Header 2')).toBeInTheDocument();
+
+    const tbody = screen.getAllByRole('rowgroup')[1];
+    expect(tbody).toBeInTheDocument();
+
+    expect(tbody.querySelectorAll('td').length).toBe(0);
+  });
+
+  test('Render table with conditional column', () => {
+    let showColumn = true;
+
+    const { rerender } = render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Header 1</Th>
+            <Th>Header 2</Th>
+            {showColumn && <Th>Conditional Header</Th>}
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>Cell 1</Td>
+            <Td>Cell 2</Td>
+            {showColumn && <Td>Conditional Cell</Td>}
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(screen.getByRole('table')).toBeInTheDocument();
+
+    expect(screen.getAllByText('Conditional Header')).toHaveLength(2);
+    expect(screen.getAllByText('Conditional Cell')).toHaveLength(1);
+
+    showColumn = false;
+    rerender(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Header 1</Th>
+            <Th>Header 2</Th>
+            {showColumn && <Th>Conditional Header</Th>}
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>Cell 1</Td>
+            <Td>Cell 2</Td>
+            {showColumn && <Td>Conditional Cell</Td>}
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(screen.queryByText('Conditional Header')).not.toBeInTheDocument();
+    expect(screen.queryByText('Conditional Cell')).not.toBeInTheDocument();
+  });
+
+  test('Render table with conditional columns', () => {
+    render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>C1</Th>
+            {false && <Th>C2</Th>}
+            <Th>C3</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>V1</Td>
+            {false && <Td>V2</Td>}
+            <Td>V3</Td>
+            <Td>V4</Td>
+            <Td>V6</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    // Check that the headers appear twice in the DOM
+    expect(screen.getAllByText('C1')).toHaveLength(2);
+    expect(screen.queryAllByText('C2')).toHaveLength(0); // C2 should not appear
+    expect(screen.getAllByText('C3')).toHaveLength(2);
+
+    // Check that the cells are rendered correctly
+    expect(screen.getByText('V1')).toBeInTheDocument();
+    expect(screen.queryByText('V2')).not.toBeInTheDocument();
+    expect(screen.getByText('V3')).toBeInTheDocument();
+    expect(screen.getByText('V4')).toBeInTheDocument();
+    expect(screen.getByText('V6')).toBeInTheDocument();
+  });
 });
-
-// TODO
-
-//   test('Render table without any column', () => {
-//     const wrapper = render(
-//       <Table>
-//         <Thead>
-//           <Tr></Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr></Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Render table with only header and empty row', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>Test Column</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr></Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Render table with conditional column', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>{false && <Td>Test Header Column</Td>}</Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>{false && <Td>Test Body Column</Td>}</Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Render table with conditional and unconditional column', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             {false && <Td>C2</Td>}
-//             <Td>C3</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>V1</Td>
-//             {false && <Td>V2</Td>}
-//             <Td>V3</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Render table with more columns in body', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             {false && <Td>C2</Td>}
-//             <Td>C3</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>V1</Td>
-//             {false && <Td>V2</Td>}
-//             <Td>V3</Td>
-//             <Td>V4</Td>
-//             <Td>V6</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
 
 //   test('Render table with more columns in header', () => {
 //     let component = render(
