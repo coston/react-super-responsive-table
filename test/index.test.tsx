@@ -366,9 +366,9 @@ describe('SuperResponsiveTable UniqueCase', () => {
       <Table>
         <Thead>
           <Tr>
-            <Td>C1</Td>
-            <Td>C2</Td>
-            <Td>C3</Td>
+            <Th>C1</Th>
+            <Th>C2</Th>
+            <Th>C3</Th>
           </Tr>
         </Thead>
         <Tbody>
