@@ -3,7 +3,9 @@ import TdInner from './TdInner';
 import { HeaderContext } from '../utils/tableContext';
 import { TdProps } from '../types';
 
-function Td(props: TdProps) {
+type CombinedTdProps = TdProps & React.TdHTMLAttributes<HTMLTableCellElement>;
+
+function Td(props: CombinedTdProps) {
   const context = useContext(HeaderContext);
 
   if (!context) {

@@ -14,7 +14,7 @@ function TdInner(props: TdInnerProps) {
   if (colSpan) {
     return <td data-testid="td" {...allowed(props)} />;
   }
-  console.log({ headers, columnKey });
+
   return (
     <td data-testid="td" {...allowed(props)} className={classes}>
       <div data-testid="td-before" className="tdBefore">
