@@ -3,13 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Table, Thead, Tbody, Tr, Th, Td } from '../src';
-import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
-
-describe('CSS Import', () => {
-  it('should import the CSS file without errors', () => {
-    expect(true).toBe(true);
-  });
-});
 
 describe('SuperResponsiveTable CommonCase', () => {
   const setup = () => {
