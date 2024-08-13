@@ -7,12 +7,11 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 describe('CSS Import', () => {
   it('should import the CSS file without errors', () => {
-    expect(true).toBe(true); // If the import fails, this test will not run
+    expect(true).toBe(true);
   });
 });
 
 describe('SuperResponsiveTable CommonCase', () => {
-  // START OF COMPONENT SETUP
   const setup = () => {
     const [val1, val2, val3] = [0, '', false];
     const { getAllByTestId, getByTestId, getAllByText } = render(
@@ -50,7 +49,6 @@ describe('SuperResponsiveTable CommonCase', () => {
       getTdBefore: getAllByTestId('td-before'),
     };
   };
-  // END OF COMPONENT SETUP
 
   it('render the table element', () => {
     const { getTable } = setup();
@@ -283,138 +281,112 @@ describe('SuperResponsiveTable UniqueCase', () => {
       </Table>
     );
 
-    // Check that the headers appear twice in the DOM
     expect(screen.getAllByText('C1')).toHaveLength(2);
-    expect(screen.queryAllByText('C2')).toHaveLength(0); // C2 should not appear
+    expect(screen.queryAllByText('C2')).toHaveLength(0);
     expect(screen.getAllByText('C3')).toHaveLength(2);
 
-    // Check that the cells are rendered correctly
     expect(screen.getByText('V1')).toBeInTheDocument();
     expect(screen.queryByText('V2')).not.toBeInTheDocument();
     expect(screen.getByText('V3')).toBeInTheDocument();
     expect(screen.getByText('V4')).toBeInTheDocument();
     expect(screen.getByText('V6')).toBeInTheDocument();
   });
+
+  test('Render table with more columns in header', () => {
+    render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>C1</Th>
+            {false && <Th>C2</Th>}
+            <Th>C3</Th>
+            <Th>C4</Th>
+            <Th>C5</Th>
+            <Th>C6</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>V1</Td>
+            {false && <Td>V2</Td>}
+            <Td>V3</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    expect(screen.getAllByText('C1')).toHaveLength(2);
+    expect(screen.queryByText('C2')).not.toBeInTheDocument();
+    expect(screen.getAllByText('C3')).toHaveLength(2);
+    expect(screen.getAllByText('C4')).toHaveLength(1);
+    expect(screen.getAllByText('C5')).toHaveLength(1);
+    expect(screen.getAllByText('C6')).toHaveLength(1);
+
+    expect(screen.getByText('V1')).toBeInTheDocument();
+    expect(screen.queryByText('V2')).not.toBeInTheDocument();
+    expect(screen.getByText('V3')).toBeInTheDocument();
+  });
+
+  test('Table updates correctly upon change of key prop', () => {
+    const Parent = ({ headers, i }) => (
+      <Table key={i}>
+        <Thead>
+          <Tr>
+            <Th>{headers[0]}</Th>
+            <Th>{headers[1]}</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>item 1</Td>
+            <Td>item 2</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    const headersA = ['alpha', 'beta'];
+    const headersB = ['one', 'two'];
+
+    const { rerender } = render(<Parent headers={headersA} i={1} />);
+    expect(screen.getAllByText('alpha')).toHaveLength(2);
+    expect(screen.getAllByText('beta')).toHaveLength(2);
+    expect(screen.queryByText('one')).not.toBeInTheDocument();
+    expect(screen.queryByText('two')).not.toBeInTheDocument();
+
+    rerender(<Parent headers={headersB} i={2} />);
+    expect(screen.getAllByText('one')).toHaveLength(2);
+    expect(screen.getAllByText('two')).toHaveLength(2);
+    expect(screen.queryByText('alpha')).not.toBeInTheDocument();
+    expect(screen.queryByText('beta')).not.toBeInTheDocument();
+  });
+
+  test('Renders rowSpan correctly', () => {
+    render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Td>C1</Td>
+            <Td>C2</Td>
+            <Td>C3</Td>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>V3</Td>
+            <Td rowSpan={2}>V4</Td>
+            <Td>V6</Td>
+          </Tr>
+          <Tr>
+            <Td>V5</Td>
+            <Td>V6</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    const cellWithRowSpan = screen.getByText('V4');
+    expect(cellWithRowSpan).toBeInTheDocument();
+    expect(cellWithRowSpan).toHaveAttribute('rowSpan', '2');
+  });
 });
-
-//   test('Render table with more columns in header', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             {false && <Td>C2</Td>}
-//             <Td>C3</Td>
-//             <Td>C4</Td>
-//             <Td>C5</Td>
-//             <Td>C6</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>V1</Td>
-//             {false && <Td>V2</Td>}
-//             <Td>V3</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Table updates correctly upon change of key prop', () => {
-//     // stateful container above
-//     const Parent = ({ headers, i }) => (
-//       <Table key={i}>
-//         <Thead>
-//           <Tr>
-//             <Th>{headers[0]}</Th>
-//             <Th>{headers[1]}</Th>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>item 1</Td>
-//             <Td>item 2</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-
-//     const headersA = ['alpha', 'beta']
-//     const headersB = ['one', 'two']
-
-//     // mount with initial headers
-//     const wrapper = mount(<Parent headers={headersA} i={1} />)
-//     expect(wrapper).toMatchSnapshot('headersA')
-
-//     // modify the headers by passing new prop, adjust key
-//     wrapper.setProps({ headers: headersB, i: 2 })
-//     expect(wrapper).toMatchSnapshot('headersB')
-//   })
-
-//   test('Renders colSpan', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             <Td>C2</Td>
-//             <Td>C3</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td></Td>
-//             <Td colSpan="2">V4</Td>
-//             <Td>V6</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Renders rowSpan', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             <Td>C2</Td>
-//             <Td>C3</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td>V3</Td>
-//             <Td rowSpan="2">V4</Td>
-//             <Td>V6</Td>
-//           </Tr>
-//           <Tr>
-//             <Td>V4</Td>
-//             <Td>V6</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
-
-//   test('Renders div in empty cell', () => {
-//     let component = render(
-//       <Table>
-//         <Thead>
-//           <Tr>
-//             <Td>C1</Td>
-//             <Td>C2</Td>
-//             <Td>C3</Td>
-//           </Tr>
-//         </Thead>
-//         <Tbody>
-//           <Tr>
-//             <Td></Td>
-//             <Td>V4</Td>
-//             <Td>V6</Td>
-//           </Tr>
-//         </Tbody>
-//       </Table>
-//     )
-//   })
