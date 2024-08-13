@@ -4,7 +4,7 @@
   "description": "react-super-responsive-table converts your table data to a user-friendly list in mobile view.",
   "files": [
     "/lib",
-    "/dist"
+    "/src/SuperResponsiveTableStyle.css"
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -30,7 +30,6 @@
     "build:watch": "tsc --watch",
     "build-demo": "next build",
     "clean": "rimraf dist lib",
-    "copy-css": "mkdir -p dist && cp src/SuperResponsiveTableStyle.css dist/",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "eslint '**/*.{js,ts,tsx}'",
     "lint:fix": "eslint '**/*.{js,ts,tsx}' --fix",
