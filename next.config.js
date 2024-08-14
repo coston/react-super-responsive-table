@@ -1,9 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ['react-pkg-demo'],
-  eslint: {
-    ignoreDuringBuilds: true,
+module.exports = {
+  typescript: {
+    tsconfigPath: './tsconfig.next.json',
   },
 };
-
-module.exports = nextConfig;

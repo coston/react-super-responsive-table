@@ -1,8 +1,7 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PkgDemo from 'react-pkg-demo';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from '../dist/index';
+import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 
 const textContent = `
 ## Installation
