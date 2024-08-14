@@ -23,5 +23,5 @@
       { "ignoreRestSiblings": true }
     ]
   },
-  "ignorePatterns": ["node_modules/", "lib/", ".next/", "out/"]
+  "ignorePatterns": ["node_modules/", "dist/", ".next/", "out/"]
 }

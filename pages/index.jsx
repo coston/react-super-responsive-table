@@ -1,7 +1,7 @@
 import React from 'react';
 import PkgDemo from 'react-pkg-demo';
 
-import { Table, Thead, Tbody, Tr, Th, Td } from '../lib/esm/index';
+import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 
 const textContent = `
 ## Installation
