@@ -44,4 +44,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Dry Run Release
-        run: npx semantic-release --dry-run
+        run: npx semantic-release --branches=refactor--modernize-react --dry-run
