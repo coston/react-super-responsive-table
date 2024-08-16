@@ -38,8 +38,7 @@
     "start": "cd demo && npm start",
     "test": "jest --config jest.config.ts",
     "test:coverage": "jest --coverage --config jest.config.ts",
-    "test:watch": "jest --watch --config jest.config.ts",
-    "postinstall": "if [ \"$CI\" != \"true\" ]; then cd demo && npm install; fi"
+    "test:watch": "jest --watch --config jest.config.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
