@@ -2,8 +2,8 @@
 
 import React from 'react';
 import PkgDemo from 'react-pkg-demo';
-import { Table, Thead, Tbody, Tr, Th, Td } from '../../../../src';
-import '../../../../src/SuperResponsiveTableStyle.css';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 
 function Button({ ...rest }) {
   return <button style={{ background: 'white' }} {...rest} />;
