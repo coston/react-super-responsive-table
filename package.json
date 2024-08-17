@@ -41,7 +41,7 @@
     "test:watch": "jest --watch --config jest.config.ts"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.3.0",
+    "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
     "@next/eslint-plugin-next": "^14.0.0",
     "@testing-library/jest-dom": "^6.4.8",
