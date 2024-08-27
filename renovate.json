@@ -8,6 +8,7 @@
   "prCreation": "not-pending",
   "masterIssue": true,
   "automerge": true,
+  "requiredStatusChecks": ["Node.js CI", "Vercel"],
   "packageRules": [
     {
       "packagePatterns": ["^react"],
