@@ -12,7 +12,7 @@ export async function getStaticProps() {
     return fs.readFileSync(absolutePath, 'utf8');
   };
 
-  const content = readFile('./readme.md');
+  const content = readFile('readme.md');
 
   return {
     props: {
