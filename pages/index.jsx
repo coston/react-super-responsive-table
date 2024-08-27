@@ -6,7 +6,7 @@ import { Table, Thead, Tbody, Tr, Th, Td } from '../src/index';
 
 const PkgDemo = dynamic(() => import('react-pkg-demo'), { ssr: false });
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const readFile = (filePath) => {
     const absolutePath = path.resolve(process.cwd(), filePath);
     return fs.readFileSync(absolutePath, 'utf8');
