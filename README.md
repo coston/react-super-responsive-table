@@ -1,4 +1,4 @@
-# react-super-responsive-table
+# ⌗ react-super-responsive-table
 
 [![Coverage Status](https://coveralls.io/repos/github/coston/react-super-responsive-table/badge.svg?branch=master)](https://coveralls.io/github/coston/react-super-responsive-table?branch=master)
 [![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
@@ -16,9 +16,9 @@ react-super-responsive-table converts your table data to a user-friendly list in
 
 ## Demo
 
-![Demo Gif](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
+![Demo Gif md-only](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
 
-Live demo: [https://react-super-responsive-table.vercel.app/](https://react-super-responsive-table.vercel.app/)
+View the live code demo at [https://react-super-responsive-table.vercel.app/](https://react-super-responsive-table.vercel.app/).
 
 ## Installation
 
@@ -29,38 +29,49 @@ npm install react-super-responsive-table --save
 ## Usage
 
 1. `import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'`
-2. Copy to customize or import `react-super-responsive-table/dist/SuperResponsiveTableStyle.css` into your project
+2. Copy or import `react-super-responsive-table/dist/SuperResponsiveTableStyle.css` into your project. Customize breakpoint in the css as needed.
 3. Write your html table with the imported components.
+4. Resize your browser window width to pivot this super responsive table!
 
 ```jsx
-() => (
-  <Table>
-    <Thead>
-      <Tr>
-        <Th>Event</Th>
-        <Th>Date</Th>
-        <Th>Location</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      <Tr>
-        <Td>Tablescon</Td>
-        <Td>9 April 2019</Td>
-        <Td>East Annex</Td>
-      </Tr>
-      <Tr>
-        <Td>Capstone Data</Td>
-        <Td>19 May 2019</Td>
-        <Td>205 Gorgas</Td>
-      </Tr>
-      <Tr>
-        <Td>Tuscaloosa D3</Td>
-        <Td>29 June 2019</Td>
-        <Td>Github</Td>
-      </Tr>
-    </Tbody>
-  </Table>
-);
+<Table>
+  <Thead>
+    <Tr>
+      <Th>Event</Th>
+      <Th>Date</Th>
+      <Th>Location</Th>
+      <Th>Organizer</Th>
+      <Th>Theme</Th>
+      <Th>Agent</Th>
+    </Tr>
+  </Thead>
+  <Tbody>
+    <Tr>
+      <Td>Tablescon</Td>
+      <Td>9 April 2019</Td>
+      <Td>East Annex</Td>
+      <Td>Super Friends</Td>
+      <Td>Data Tables</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+    <Tr>
+      <Td>Capstone Data</Td>
+      <Td>19 May 2019</Td>
+      <Td>205 Gorgas</Td>
+      <Td>Data Underground</Td>
+      <Td>Data Scence</Td>
+      <Td>Jason Phillips</Td>
+    </Tr>
+    <Tr>
+      <Td>Tuscaloosa D3</Td>
+      <Td>29 June 2019</Td>
+      <Td>Github</Td>
+      <Td>The Contributors Consortium</Td>
+      <Td>Data Viz</Td>
+      <Td>Coston Perkins</Td>
+    </Tr>
+  </Tbody>
+</Table>
 ```
 
 ## Using Dynamic Headers
