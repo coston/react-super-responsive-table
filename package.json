@@ -27,7 +27,7 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:esm": "tsc",
     "build:watch": "tsc --watch",
-    "build-demo": "next build",
+    "build-demo": "rapid build",
     "clean": "rimraf dist dist",
     "copy-css": "cp src/SuperResponsiveTableStyle.css dist/",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
@@ -35,7 +35,7 @@
     "lint:fix": "eslint '**/*.{js,ts,tsx}' --fix",
     "postpublish": "git push && git push --tags",
     "preversion": "npm run test && npm run lint:fix && npm run clean && npm run build && npm run build-demo",
-    "start": "next",
+    "start": "rapid dev",
     "test": "jest --config jest.config.ts",
     "test:coverage": "jest --coverage --config jest.config.ts",
     "test:watch": "jest --watch --config jest.config.ts"
@@ -43,7 +43,6 @@
   "devDependencies": {
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
-    "@next/eslint-plugin-next": "^14.0.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
@@ -64,11 +63,10 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "lint-staged": "15.2.9",
-    "next": "14.2.5",
     "prettier": "3.3.3",
+    "rapid-react-pkg-demo": "^0.5.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-pkg-demo": "^0.8.0",
     "rimraf": "6.0.1",
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.4"
