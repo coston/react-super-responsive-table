@@ -1,10 +1,8 @@
-import { Table, Thead, Tbody, Tr, Th, Td } from './src';
-import './src/SuperResponsiveTableStyle.css';
+/* eslint-disable @typescript-eslint/no-require-imports */
+const { Table, Thead, Tbody, Tr, Th, Td } = require('./src');
+require('./src/SuperResponsiveTableStyle.css');
 
-const i = 5;
-const headers = ['Name', 'Age'];
-
-const config = {
+module.exports = {
   color: '#ffa3b3',
   packageName: 'react-super-responsive-table',
   description:
@@ -17,9 +15,7 @@ const config = {
     Tr,
     Th,
     Td,
-    i,
-    headers,
+    i: 5,
+    headers: ['Name', 'Age'],
   },
 };
-
-export default config;
