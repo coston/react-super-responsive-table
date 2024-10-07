@@ -9,7 +9,7 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "author": "Coston Perkins (https://coston.io)",
-  "homepage": "https://github.com/coston/react-super-responsive-table",
+  "homepage": "https://react-super-responsive-table.coston.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/coston/react-super-responsive-table.git"

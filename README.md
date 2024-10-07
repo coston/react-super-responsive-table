@@ -1,8 +1,10 @@
 # ⌗ react-super-responsive-table
 
-[![Coverage Status](https://coveralls.io/repos/github/coston/react-super-responsive-table/badge.svg?branch=master)](https://coveralls.io/github/coston/react-super-responsive-table?branch=master)
-[![npm downloads](https://img.shields.io/npm/dm/react-super-responsive-table.svg)](https://www.npmjs.com/package/react-super-responsive-table)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/Coston/react-super-responsive-table)
+[![NPM Downloads](https://img.shields.io/npm/dm/react-super-responsive-table?style=flat-square&logo=npm)
+](https://www.npmjs.com/package/react-super-responsive-table)
+[![GitHub Repo stars](https://img.shields.io/github/stars/coston/react-super-responsive-table)
+](https://github.com/coston/react-super-responsive-table)
 
 react-super-responsive-table converts your table data to a user-friendly list in mobile view.
 
@@ -18,7 +20,7 @@ react-super-responsive-table converts your table data to a user-friendly list in
 
 ![Demo Gif md-only](https://user-images.githubusercontent.com/7424180/55982530-baab9900-5c5e-11e9-97c0-0336c5889504.gif)
 
-View the live code demo at [https://react-super-responsive-table.vercel.app/](https://react-super-responsive-table.vercel.app/).
+View the live code demo at [https://react-super-responsive-table.coston.io](https://react-super-responsive-table.coston.io).
 
 ## Installation
 
