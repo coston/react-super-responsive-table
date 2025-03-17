@@ -1,15 +1,10 @@
-import React, {
-  PropsWithChildren,
-  ReactElement,
-  useContext,
-  useEffect,
-} from 'react';
+import React, { ReactElement, useContext, useEffect } from 'react';
 import { HeaderContext } from '../utils/tableContext';
 
 import allowed from '../utils/allowed';
-import { OmitProps } from '../types';
+import { TrProps } from '../types';
 
-type TrInnerProps = PropsWithChildren<OmitProps> & {
+type TrInnerProps = TrProps & {
   headers: string[];
 };
 

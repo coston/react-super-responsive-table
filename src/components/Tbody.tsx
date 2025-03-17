@@ -1,8 +1,8 @@
 import React from 'react';
 import allowed from '../utils/allowed';
-import { OmitProps } from '../types';
+import { TbodyProps } from '../types';
 
-function Tbody(props: OmitProps) {
+function Tbody(props: TbodyProps) {
   return <tbody data-testid="tbody" {...allowed(props)} />;
 }
 export default Tbody;

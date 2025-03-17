@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Table, Thead, Tbody, Tr, Th, Td } from '../src';
@@ -381,5 +381,62 @@ describe('SuperResponsiveTable UniqueCase', () => {
     const cellWithRowSpan = screen.getByText('V4');
     expect(cellWithRowSpan).toBeInTheDocument();
     expect(cellWithRowSpan).toHaveAttribute('rowSpan', '2');
+  });
+
+  it('should handle events and pass React HTMLAttributes props to Tr, Th, and Td components', () => {
+    const handleClick = jest.fn();
+    const handleMouseEnter = jest.fn();
+    const handleDoubleClick = jest.fn();
+    const handleKeyDown = jest.fn();
+
+    const { getByTestId } = render(
+      <Table>
+        <Thead>
+          <Tr>
+            <Th
+              data-testid="header"
+              onMouseEnter={handleMouseEnter}
+              onDoubleClick={handleDoubleClick}
+              onKeyDown={handleKeyDown}
+            >
+              Header 1
+            </Th>
+            <Th>Header 2</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr data-testid="clickable-row" onClick={handleClick}>
+            <Td
+              data-testid="cell"
+              onMouseEnter={handleMouseEnter}
+              onDoubleClick={handleDoubleClick}
+              onKeyDown={handleKeyDown}
+            >
+              Cell 1
+            </Td>
+            <Td>Cell 2</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    );
+
+    const row = getByTestId('clickable-row');
+    const header = getByTestId('header');
+    const cell = getByTestId('cell');
+
+    fireEvent.click(row);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+
+    fireEvent.mouseEnter(header);
+    fireEvent.mouseEnter(cell);
+    expect(handleMouseEnter).toHaveBeenCalledTimes(2);
+
+    fireEvent.doubleClick(header);
+    fireEvent.doubleClick(cell);
+    expect(handleDoubleClick).toHaveBeenCalledTimes(2);
+
+    fireEvent.keyDown(header, { key: 'Enter', code: 'Enter' });
+    fireEvent.keyDown(cell, { key: 'Enter', code: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(2);
   });
 });

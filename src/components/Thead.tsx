@@ -1,9 +1,9 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 import allowed from '../utils/allowed';
-import { OmitProps } from '../types';
+import { TheadProps } from '../types';
 
-function Thead(props: PropsWithChildren<OmitProps>) {
+function Thead(props: TheadProps) {
   const { children } = props;
 
   return (
