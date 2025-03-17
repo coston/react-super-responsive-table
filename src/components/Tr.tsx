@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import TrInner from './TrInner';
 import { HeaderContext } from '../utils/tableContext';
-import { OmitProps } from '../types';
+import { TrProps } from '../types';
 
-function Tr(props: OmitProps) {
+function Tr(props: TrProps) {
   const context = useContext(HeaderContext);
 
   if (!context) {

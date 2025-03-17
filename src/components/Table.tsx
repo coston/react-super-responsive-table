@@ -1,12 +1,8 @@
 import { forwardRef } from 'react';
-import { OmitProps } from '../types';
+import { TableProps } from '../types';
 import { allowed } from '../utils/allowed';
 import React from 'react';
 import { HeaderProvider } from '../utils/tableContext';
-
-type TableProps = {
-  className?: string;
-} & OmitProps;
 
 const Table = forwardRef<HTMLTableElement, TableProps>(
   ({ className, ...props }, ref) => {
